@@ -1,0 +1,194 @@
+<?php
+include_once 'lib/database.php';
+include_once 'helpers/format.php';
+spl_autoload_register(function ($class) {
+  include_once "classes/" . $class . ".php";
+});
+$product = new product();
+if (isset($_GET['proid']) && $_GET['proid'] != NULL) {
+  $id = $_GET['proid'];
+} else {
+  header('Location:404.php');
+}
+$get_product_details = $product->get_details($id);
+if ($get_product_details) {
+  while ($get_title = $get_product_details->fetch_assoc()) {
+    $title = $get_title['sanpham_name'];
+  }
+}
+?>
+<?php
+include 'inc/header.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+  $quantity = $_POST['quantity'];
+  $addtoCart = $ct->add_to_cart($quantity, $id);
+}
+?>
+<?php include 'inc/sale.php'; ?>
+
+<section>
+  <div class="main-breac">
+    <div class="container">
+      <span><a href="./" class="clblack">Trang chủ</a></span>
+      <span style="margin: 0 7px;"><img src="./img/back.png" alt="" style="transform: rotate(180deg);"
+          width="18"></span>
+      <span class="clpink">Chi tiết sản phẩm</span>
+      <span style="margin: 0 7px;"><img src="./img/back.png" alt="" style="transform: rotate(180deg);"
+          width="18"></span>
+      <span class="clpink">Yến sào</span>
+    </div>
+  </div>
+  <div class="main-wraper">
+    <div class="clear20"></div>
+    <div class="container">
+      <div class="row flex-order">
+        <?php if (isset($addtoCart)) { ?>
+        <a href="giohang.php">
+          <?php echo  $addtoCart ?> <i>|</i> <span class='success'>Xem giỏ hàng <span class='test'>>></span></span>
+        </a>
+        <?php } else {
+          echo "<div class='clear20'></div>";
+        } ?>
+        <div class='clear20'></div>
+        <div class="col-12">
+          <?php
+          $get_product_details = $product->get_details($id);
+          if ($get_product_details) {
+            while ($result_detils = $get_product_details->fetch_assoc()) {
+          ?>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-12">
+              <div class="block-gal-img">
+                <div class="block-gal-img">
+                  <img src="./img/<?php echo $result_detils['hinh'] ?>" alt="" width="100%">
+                </div>
+              </div>
+            </div>
+            <div class="clear20 show767"></div>
+            <div class="col-md-6 col-sm-12 col-12">
+              <h3 class="nomargin bold clred"><?php echo $result_detils['sanpham_name'] ?></h3>
+              <div class="clear10"></div>
+              <p> <span>Thương hiệu:</span><span class="bold">Thương hiệu
+                  <?php echo $result_detils['brand_name'] ?></span> | <span>Tình trạng: </span><span class="bold">
+                  <?php $tinhtrang = $result_detils['sanpham_soluong'];
+                      if ($tinhtrang > 0) {
+                        echo "Còn hàng";
+                      } else {
+                        echo "Đã bán hết";
+                      }; ?></span>
+              </p>
+              <div class="clear10"></div>
+              <div class="flex">
+                <h3 class="nomargin bold clred gia-sp">
+                  <?php echo number_format($result_detils['sanpham_giakhuyenmai']) . " đ"; ?><span class="donvi"></span>
+                </h3>
+                <p class="old-pri"><?php echo number_format($result_detils['sanpham_gia']) . " đ"; ?></p>
+              </div>
+              <hr>
+              <div class="clear20"></div>
+              <form action="" method="post">
+                <div class="thanhtoan">
+                  <div class="soluong">
+                    <span>Số lượng:</span><input type="number" class="center" name="quantity" min="1" value="1">
+                  </div>
+                  <div class="muahang but-buy">
+                    <img src="./img/cart.png"></img>
+                    <input type="submit" class="" name="submit" value="Mua hàng">
+                  </div>
+                </div>
+              </form>
+              <div class="clear20"></div>
+              <div class="p-tuvan">
+                <p class="bold flex"><img src="img/tuvan.png"> Tư vấn & đặt hàng: <span class="clred">(028)36 221
+                    286</span></p>
+              </div>
+              <div class="clear20"></div>
+            </div>
+          </div>
+
+          <div class="clear40"></div>
+
+          <div class="container">
+            <h1 class="text-danger">1 -Thông tin sản phẩm</h1>
+            <div class="clear20"></div>
+            <h2><?php echo $result_detils['sanpham_chitiet'] ?></h2>
+            <img src="./img/<?php echo $result_detils['hinh'] ?>" alt="san-pham-yen-sao" width="40%">
+            <?php echo $result_detils['sanpham_mota'] ?>
+          </div>
+
+
+
+          <?php }
+          } ?>
+
+          <div class="clear20"></div>
+          <p class="tag-p">
+            <span><i class="fas fa-tag"></i> Tag: </span>
+            <a href="#">Tag 1,</a>
+            <a href="#">Tag 2,</a>
+            <a href="#">Tag 3,</a>
+            <a href="#">Tag 4,</a>
+            <a href="#">Tag 5</a>
+          </p>
+
+
+          <div class="clear40"></div>
+          <div class="pro-relative">
+            <div class="tit-pr">
+              <h3 class="bold clred nomargin text-uppercase">Sản phẩm cùng loại</h3>
+            </div>
+            <div class="clear40"></div>
+
+            <div class="img-slider">
+              <?php
+              if ($id < 200) {
+                $cate_id = 1;
+              } elseif ($id < 300) {
+                $cate_id = 2;
+              } elseif ($id < 400) {
+                $cate_id = 3;
+              } elseif ($id < 500) {
+                $cate_id = 4;
+              } elseif ($id < 600) {
+                $cate_id = 5;
+              } elseif ($id < 700) {
+                $cate_id = 6;
+              } elseif ($id < 800) {
+                $cate_id = 7; 
+              }else {
+                $cate_id = 8;
+              };
+              $sp_cungloai = $product->samekind($cate_id);
+              if ($sp_cungloai) {
+                while ($result_cungloai = $sp_cungloai->fetch_assoc()) {
+              ?>
+              <div class="img-item">
+                <div class="home-product__item-img"
+                  style="background-image:url(./img/<?php echo $result_cungloai['hinh']; ?>);"></div>
+                <div class="ct-item-pro">
+                  <p class="bold item-name"><?php echo $result_cungloai['sanpham_name']; ?></p>
+                  <div class="clear10"></div>
+                  <div class="flex-bw">
+                    <p class="old-pri">
+                      <?php echo number_format($result_cungloai['sanpham_gia']) . " đ"; ?></p>
+                    <p class="new-pri bold">
+                      <?php echo number_format($result_cungloai['sanpham_giakhuyenmai']) . " đ"; ?>
+                    </p>
+                  </div>
+                  <div class="clear10"></div>
+                  <a href="chi-tiet/<?php echo $result_cungloai['sanpham_id'] ?>.html" class="addtocart">xem sản phẩm
+                  </a>
+                </div>
+              </div>
+              <?php }
+              } ?>
+            </div>
+            <div class="clear20"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<?php include 'inc/footer.php'; ?>

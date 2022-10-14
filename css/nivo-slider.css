@@ -1,0 +1,272 @@
+/*
+ * jQuery Nivo Slider v3.2
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2012, Dev7studios
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+ 
+/* The Nivo Slider styles */
+.nivoSlider {
+	position:relative;
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	max-width: none;
+}
+.nivo-main-image {
+	display: block !important;
+	position: relative !important; 
+	width: unset !important;
+}
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+	background:white; 
+	filter:alpha(opacity=0); 
+	opacity:0;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+	top:0;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+	overflow:hidden;
+}
+.nivo-box img { display:block; }
+/* Caption styles */
+.nivo-caption {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background:#000;
+	color:#fff;
+	width:100%;
+	z-index:8;
+	padding: 5px 10px;
+	opacity: 0.8;
+	overflow: hidden;
+	display: none;
+	-moz-opacity: 0.8;
+	filter:alpha(opacity=8);
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.nivo-caption p {
+	padding:5px; color:#fff;
+	margin:0;
+}
+.nivo-caption a {
+	display:inline !important;
+}
+.nivo-html-caption {
+    display:none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+  color: #fff;
+  cursor: pointer;
+  font-size: 25px;
+  margin-top: -25px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  z-index: 8;
+}
+.nivo-directionNav a i {
+  height: 50px; display:block;
+  line-height: 50px;
+  width: 35px;
+}
+
+.nivo-directionNav a.nivo-nextNav:after{right:0;}
+.nivo-directionNav a.nivo-prevNav:after {
+  transform: rotate(180deg);left:0;
+}
+.nivo-nextNav {
+  right: 40px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav {
+	right: 20px;
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	bottom: 20px;
+	z-index:8;
+}
+.nivo-control.active {
+    background: #fe5858 none repeat scroll 0 0;
+    position: relative;
+}
+.nivo-controlNav a {
+	border-radius: 50%;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0;
+	margin-left: 5px;
+	width:8px;
+	height:8px;
+	border:1px solid #fe5858;
+	background:transparent;
+	transition: all 0.5s ease 0s;
+}
+.nivo-controlNav a.active {
+	font-weight:bold;
+	transition: all 0.5s ease 0s;
+}
+
+/* slider area */
+.slider-wrapper{position:relative;}
+.nivoSlider > img {max-width: 100%; width:100% !important; display:block !important;}
+.nivo-caption {
+	background: transparent none repeat scroll 0 0;
+	box-sizing: border-box;
+	color: #fff;
+	display: none;
+	left: 0;
+	opacity: 1;
+	overflow: visible;
+	top:50%;
+}
+.nivo-caption .slider-right {
+	left: inherit;
+	position: absolute;
+	right: 0;
+	margin-top: -75px;
+}
+.right-width p {width: 80%;}
+.nivo-caption p,.nivo-caption  {padding:0;}
+.nivo-caption .slider-right {
+  width: 100%; text-align:center;
+}
+.slide-text h3 {
+	color: #425f9c;
+	font-size: 25px; margin-bottom:10px;
+	font-weight: 400; text-transform:uppercase;
+}
+.slide-text .titleLarge{
+	color: #425f9c;
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 1.2em; text-transform:uppercase;
+	margin-bottom: 0;
+}
+.slide-text span {
+	color: #425f9c;
+	font-size: 20px;
+	font-weight: 300; display:block;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+.slide-text p.one-p {
+	color: #ffff;
+	font-size: 13px;
+	font-weight: 400;
+}
+.slider-btn {
+  margin-top: 27px;
+}
+.nivo-caption a {
+  border: 1px solid #fe5858;
+  color: #fe5858;
+  display: inline-block !important;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 50px;
+}
+.nivo-caption a:hover {
+	border-color: #fe5858 ;
+	background: #fe5858 ;
+	color:#fff;
+}
+/* Normal desktop :992px. */
+@media (min-width: 1200px) and (max-width: 1666px) {
+/* slider */
+.slide-text .titleLarge {font-size: 40px;}
+.nivo-caption .slider-right {right:0;}
+.main-slider-two .nivo-caption .slider-right {margin-top: -80px;right:0;}
+.main-slider-two .nivo-caption .slider-right.two-caption-text {margin-top: -120px;right:0;width: 100%;}
+}
+/* Normal desktop :992px. */
+@media (min-width: 1170px) and (max-width: 1200px) {
+.middel-top .center input{width:350px;}
+/* slider */
+.slide-text .titleLarge {font-size: 50px;}
+.nivo-caption .slider-right {right: 0;}
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 970px) and (max-width: 1169px) {
+/* slider */
+.slide-text.titleLarge {font-size: 50px;}
+.nivo-caption .slider-right {right: 0;}
+.main-slider-two .nivo-caption .slider-right {margin-top: -125px;right: -5%;}
+.main-slider-two .nivo-caption .slider-right.two-caption-text {margin-top: -120px;right: 3%;width: 100%;}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+/* slider */
+.nivo-caption .slider-right {width: 100%;}
+.slide-text .titleLarge {font-size: 48px;}
+.nivo-caption p {display: none;}
+.nivo-caption .slider-right {margin-top: -115px;right: 8%;}
+.main-slider-two .nivo-caption .slider-right.two-caption-text {margin-top: -100px;right: 10%;width: 100%;}
+.slide-text .titleLarge {font-size: 44px;}
+.main-slider-two .nivo-caption .slider-right {margin-top: -110px;right: 0;}
+.main-slider-two .nivo-caption .slider-right {width: 100%;}
+}
+/* small mobile :320px. */
+@media (max-width: 767px) {
+/* slider */
+
+ .nivo-caption .slider-right {width: 100%;}
+.slide-text h3 ,.slide-text span,.nivo-caption p{max-width:90%; margin:0 auto;}
+.slide-text .titleLarge {font-size: 18px;line-height: 22px;}
+.slider-btn {margin-top: 10px;}
+.nivo-caption a {line-height: 30px;padding: 0 10px;}
+.nivo-caption .slider-right {margin-top: -40px;right: 0;}
+.main-slider-two .nivo-caption .slider-right.two-caption-text {margin-top: -40px;right: 15px;width: 150px;}
+.main-slider-two .nivo-caption .slider-right {margin-top: -40px;right: 0;}
+.main-slider-two .nivo-caption .slider-right {width: 100%;}
+.main-slider-two .nivo-caption a {padding: 0 10px;}
+.nivo-directionNav a {display: none;}
+}
+
+@media (max-width: 500px) {
+	.slide-text span{line-height:1.2em; font-size:16px;}
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.nivo-caption .slider-right {width: 100%;}
+.slide-text .titleLarge {font-size: 30px;line-height: 35px;}
+.main-slider-two .nivo-caption .slider-right.two-caption-text {
+  margin-top: -50px;
+  right: 0;
+  width: 100%;
+}
+}
