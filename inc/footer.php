@@ -21,18 +21,22 @@
           <h4 class="tit-ft" id="tuvan">THƯƠNG HIỆU CÔNG TY SX TM XNK TIẾN THỊNH PHÁT</h4>
           <p class="clwhite">Địa chỉ: 180 Nguyễn Thị Búp, Phường Tân Chánh Hiệp, Quận 12, Thành Phố Hồ Chí Minh.
           </p>
-          <p class="clwhite">Email: ttpsalanest@gmail.com.</p>
           <div class="clear20"></div>
           <h4 class="tit-ft">HOTLINE LIÊN HỆ.</h4>
-          <p class="clwhite">(+84)47 28 38 38</p>
-          <p class="clwhite">(028)36 221 286</p>
+          <p class="clwhite">(08)76.88.39.39</p>
+          <p class="clwhite">Email :hotro24/7@tienthinhphatgroup.com</p>
+          <p class="clwhite">Website: salanest.com</p>
+          <p class="clwhite">Email: ttpsalanest@gmail.com.</p>
+
         </div>
         <div class="col-md-3 col-sm-4">
           <h4 class="tit-ft">CHÍNH SÁCH</h4>
-          <p class="footer_cs"><a href="bai-viet/4.html" title="Chinh-sach-bao-mat">- Chính sách bảo mật.</a></p>
-          <p class="footer_cs"><a href="bai-viet/2.html" title="Phuong-thuc-thanh-toan">- Phương Thức Thanh Toán</a></p>
-          <p class="footer_cs"><a href="bai-viet/3.html" title="Hinh-thuc-van-chuyen">- Phương Thức Vận Chuyển.</a></p>
-          <p class="footer_cs"><a href="bai-viet/1.html" title="Gioi-thieu-cong-ty.">- Quy định đặt hàng.</a></p>
+          <p class="footer_cs"><a href="bai-viet/4.html" title="Chinh-sach-bao-mat">- Chính sách khiếu nại.</a></p>
+          <p class="footer_cs"><a href="bai-viet/2.html" title="Chinh-sach-thanh-toan">- Chính sách thanh toán.</a></p>
+          <p class="footer_cs"><a href="bai-viet/3.html" title="chinh-sach-mua-hang">- Chính sách mua hàng.</a></p>
+          <p class="footer_cs"><a href="bai-viet/1.html" title="chinh-sach-bao-mat.">- Chính sách bảo mật.</a></p>
+          <p class="footer_cs"><a href="bai-viet/1.html" title="chinh-sach-van-chuyen.">- Chính sách vận chuyển.</a></p>
+          <p class="footer_cs"><a href="bai-viet/1.html" title="chinh-sach-doi-tra.">- Chính sách đổi trả.</a></p>
           <p class="clwhite"><img src="img/visa-all.webp" alt="ngan-hang-thanh-toan" width="40%">
           <div class="clear10"></div>
           <p class="clwhite"><img src="img/dathongbao.png" alt="chung-nhan-cua-bo-cong-thương" width="30%">
@@ -40,12 +44,8 @@
         </div>
         <div class="clear20 show767"></div>
         <div class="col-md-3 col-sm-4">
-          <div class="fb-page" data-href="https://www.facebook.com/ctytnhhtienthinhphat" data-tabs="timeline"
-            data-width="" data-height="100" data-small-header="false" data-adapt-container-width="true"
-            data-hide-cover="false" data-show-facepile="true">
-            <blockquote cite="https://www.facebook.com/ctytnhhtienthinhphat" class="fb-xfbml-parse-ignore"><a
-                href="https://www.facebook.com/ctytnhhtienthinhphat">TTP - Yến Sào Salanest</a></blockquote>
-          </div>
+        <h4 class="tit-ft">VỊ TRÍ</h4></h4>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.167756178061!2d106.6261484139766!3d10.874842160345052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b8c1dec9bb1%3A0x40c9948611c328fc!2zY2l0eSwgMTgwIE5ndXnhu4VuIFRo4buLIELDunAsIEhp4buHcCBUaMOgbmgsIFF14bqtbiAxMiwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1666169846961!5m2!1sen!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div class="clear20"></div>
           <img src="img/iso.png" alt="" width="40%">
 
@@ -57,12 +57,13 @@
     <div class="clear40">
     </div>
   </div>
+
   <div class="copyright">
     <div class="container">
       <div class="flex-bw">
         <p>* Tuân thủ Nghị định số 185/2013/NĐ-CP của Chính phủ và luật quảng cáo số 16/2012/QH13 về kinh doanh bán hàng
           qua mạng.</p>
-        <p>* hoặc gọi tới số hotline <strong>(028)36 221 286</strong>.để được tư vấn.</p>
+        <p>* hoặc gọi tới số hotline <strong>(08)76.88.39.39</strong>.để được tư vấn.</p>
       </div>
     </div>
   </div>
@@ -111,7 +112,7 @@ window.fbAsyncInit = function() {
 <script type="text/javascript" src="https://web.cmbliss.com/webtools/hotline/js/hotline.js"></script>
 <script type="text/javascript">
 $("body").hotline({
-  phone: "02.836.221.286",
+  phone: "0876.88.39.39",
   p_bottom: true,
   bottom: 0,
   p_left: true,
@@ -122,7 +123,10 @@ $("body").hotline({
   position: "fixed",
 });
 </script>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSKPTHQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 </body>
 
 </html>

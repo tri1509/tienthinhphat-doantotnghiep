@@ -33,15 +33,14 @@
         }
 
         public function show_brand(){
-            $query = "SELECT * FROM tbl_brand ORDER BY brand_id DESC";
+            $query = "SELECT * FROM tbl_brand ORDER BY brand_id ASC";
             $result = $this->db->select($query);
             return $result;
         }
 
+
         public function show_brand_lv2($id_lv2){
-            $query = "SELECT * FROM tbl_brand_lv2 WHERE brand_id = '$id_lv2' 
-            -- AND tinhtrang = '1' 
-            ORDER BY brand_id_lv2 DESC";
+            $query = "SELECT * FROM tbl_brand_lv2 WHERE brand_id = '$id_lv2' ORDER BY brand_id_lv2 ASC";
             $result = $this->db->select($query);
             return $result;
         }
@@ -118,6 +117,28 @@
             AND tbl_sanpham.brand_id_lv2 = '$idlv2' ";
             $result = $this->db->select($query);
             return $result ;
+        }
+
+        public function show_water() {
+            $query = "SELECT * FROM tbl_water ORDER BY water_id DESC";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
+        public function get_product_by_water($id) {
+            $query = "SELECT * FROM tbl_sanpham WHERE water_id = '$id' ORDER BY water_id ASC";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
+        public function get_name_by_water($id) {
+            $query = 
+            "SELECT tbl_sanpham.*,tbl_water.water_name, tbl_water.water_id
+            FROM tbl_sanpham,tbl_water
+            WHERE tbl_sanpham.water_id = tbl_water.water_id
+            AND tbl_sanpham.water_id = '$id' ";
+            $result = $this->db->select($query);
+            return $result;
         }
         
     }

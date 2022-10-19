@@ -210,6 +210,7 @@
         }
 
         public function samekind($cate_id){
+            $cate_id = $this->fm->validation($cate_id);
             $query ="SELECT * FROM tbl_sanpham WHERE category_id = '$cate_id' ";
             $result = $this->db->select($query);
             return $result;

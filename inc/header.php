@@ -116,22 +116,21 @@ header("Cache-Control: max-age=2592000");
             <div class="header-bottom-item-menu">
               <div class="header-bottom-item-menu-left">
                 <div class="bottom-product">
-                  <ul class="bottom-list">
+                  <div class="row">
                     <?php
-                  if(isset($_GET['brandid']) && $_GET['brandid']!=NULL){
-                    $idbrand = $_GET['brandid'];
-                  }else{
-                      $idbrand ="";
-                  }
-                  $show_brand = $brand->show_brand();
-                  if ($show_brand) {
-                    while ($result = $show_brand->fetch_assoc()) {
-                ?>
-                    <li class="bottom-item">
+                      if(isset($_GET['brandid']) && $_GET['brandid']!=NULL){
+                        $idbrand = $_GET['brandid'];
+                      }else{
+                          $idbrand ="";
+                      }
+                      $show_brand = $brand->show_brand();
+                      if ($show_brand) {
+                        while ($result = $show_brand->fetch_assoc()) {
+                    ?>
+                    <div class="col-3 border-right">
                       <a href="san-pham-theo-thuong-hieu/<?php echo $result['brand_id'] ?>.html" class="bottom-link 
                       <?php if($idbrand == $result['brand_id']){echo "active";}?>">
                         <?php echo $result['brand_name'] ?>
-                        <img src="./img/diamond.png" width="10" style="margin-bottom:3px;">
                       </a>
                       <div class="bottom-child">
                         <ul class="bottom-list-child">
@@ -142,15 +141,17 @@ header("Cache-Control: max-age=2592000");
                         while ($result_lv2 = $show_brand_lv2->fetch_assoc()) {
                       ?>
                           <li class="bottom-item-child">
-                            <a href="san-pham-theo-thuong-hieu/<?php echo $result_lv2['brand_id'] ?>/<?php echo $result_lv2['brand_id_lv2'] ?>.html"
-                              class=""><?php echo $result_lv2['brand_name_lv2'] ?></a>
+                            <a
+                              href="san-pham-theo-thuong-hieu/<?php echo $result_lv2['brand_id'] ?>/<?php echo $result_lv2['brand_id_lv2'] ?>.html">
+                              <?php echo $result_lv2['brand_name_lv2'] ?>
+                            </a>
                           </li>
                           <?php } } ?>
                         </ul>
                       </div>
-                    </li>
+                    </div>
                     <?php } } ?>
-                  </ul>
+                  </div>
                 </div>
               </div>
               <div class="header-bottom-item-menu-right">
@@ -176,18 +177,38 @@ header("Cache-Control: max-age=2592000");
             </a>
             <div class="header-bottom-item-menu-contry">
               <div class="header-bottom-item-menu-left">
-
+                <div class="bottom-product">
+                  <div class="row">
+                    <?php
+                      if(isset($_GET['waterid']) && $_GET['waterid']!=NULL){
+                        $idwater = $_GET['waterid'];
+                      }else{
+                          $idwater ="";
+                      }
+                      $show_water = $brand->show_water();
+                      if ($show_water) {
+                        while ($result_water = $show_water->fetch_assoc()) {
+                    ?>
+                    <div class="col-3 border-right">
+                      <a href="nuoc-giai-khat/<?php echo $result_water['water_id'] ?>.html" class="bottom-link 
+                      <?php if($idwater == $result_water['water_id']){echo "active";}?>">
+                        <?php echo $result_water['water_name'] ?>
+                      </a>
+                    </div>
+                    <?php } } ?>
+                  </div>
+                </div>
               </div>
               <div class="header-bottom-item-menu-right">
                 <div class="grid">
                   <div class="grid-item">
-                    <img src="./img/heranest_2.webp" alt="ảnh heranest" />
+                    <img src="./img/ngktraxanhhuongdau.jpg" alt="ảnh heranest" />
                   </div>
                   <div class="grid-item">
-                    <img src="./img/salanest_2.webp" alt="ảnh salanest" />
+                    <img src="./img/ngknuocsuoi.jpg" alt="ảnh salanest" />
                   </div>
                   <div class="grid-item">
-                    <img src="./img/giabao_2.webp" alt="ảnh gia bao" />
+                    <img src="./img/ngklinhchi.jpg" alt="ảnh gia bao" />
                   </div>
                 </div>
               </div>
@@ -198,9 +219,8 @@ header("Cache-Control: max-age=2592000");
         </ul>
 
         <form action="timkiem.php" method="POST">
-          <div class="search-toggle" id="search-toggle">
-            <input type="text" name="search_product" id="search_product" required="vui lòng nhập thông tin"
-              placeholder="Tìm kiếm sản phẩm...">
+          <div class="search-toggle hide1294" id="search-toggle">
+            <input type="text" name="search_product" id="search_product" required placeholder="Tìm kiếm sản phẩm...">
             <button class="btn search_button" name="search_button">
               <img src="./img/search.png" alt="tìm kiếm" width='18'
                 style="margin-right: 5px; filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1);">
@@ -237,40 +257,33 @@ header("Cache-Control: max-age=2592000");
     </div>
     <a href="./" class="logo"><img src="img/salanest.png" alt="anh-lo-go-tien-thinh-phat"></a>
     <div id="mySidenav" class="sidenav">
+
       <form action="timkiem.php" method="POST">
         <div class="search-toggle" style="margin-top:30px">
           <input type="text" placeholder="Bạn muốn mua gì?" name="search_product" id="search_product" required="" />
           <button class="btn search_button" name="search_button" id="search_button">
-            <i class="fa fa-search"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
           </button>
         </div>
       </form>
 
-
       <ul class="menu-mobile" id="accordion">
         <li><a href="./" title="trang chủ">Trang chủ</a></li>
         <li><a href="gioithieusalanest.html" title="giới thiệu">Giới thiệu</a></li>
-
         <li class="hassub-mb panel">
-          <p class="phelp"><a href="sanpham.html">Sản phẩm</a></p>
-          <ul class="sub-menu-mb accordion-collapse panel-collapse collapse mobile-menu-list" id="flush-collapseOne"
-            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <?php
-            $showCat = $cat->show_category();
-            if ($showCat) {
-              while ($result = $showCat->fetch_assoc()) {
-            ?>
-            <li><a
-                href="san-pham-theo-danh-muc/<?php echo $result['category_id'] ?>.html"><?php echo $result['category_name'] ?></a>
-            </li>
-            <?php }
-            } ?>
-          </ul>
-        </li>
-        <li class="hassub-mb panel">
-          <p class="phelp"><a href="baiviet.html">Thương hiệu</a><a data-bs-toggle="collapse"
+          <p class="phelp"><a href="sanpham.html">Thương hiệu</a><a data-bs-toggle="collapse"
               data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"
-              class="a-icon"><img src="img/down-arrow-1767526-1502430.webp" alt="ảnh icon thương hiệu"></a></p>
+              class="a-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              </svg>
+            </a></p>
           <ul class="sub-menu-mb accordion-collapse panel-collapse collapse mobile-menu-list" id="flush-collapseTwo"
             aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
             <?php
@@ -278,13 +291,40 @@ header("Cache-Control: max-age=2592000");
             if ($show_brand) {
               while ($result = $show_brand->fetch_assoc()) {
             ?>
-            <li><a
-                href="san-pham-theo-thuong-hieu/<?php echo $result['brand_id'] ?>.html"><?php echo $result['brand_name'] ?></a>
+            <li>
+              <a href="san-pham-theo-thuong-hieu/<?php echo $result['brand_id'] ?>.html">
+                <?php echo $result['brand_name'] ?>
+              </a>
             </li>
-            <?php }
-            } ?>
+            <?php } } ?>
           </ul>
         </li>
+        <li class="hassub-mb panel">
+          <p class="phelp"><a href="sanpham.html">Sản phẩm</a><a data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"
+              class="a-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              </svg>
+            </a></p>
+          <ul class="sub-menu-mb accordion-collapse panel-collapse collapse mobile-menu-list" id="flush-collapseOne"
+            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <?php
+            $showCat = $cat->show_category();
+            if ($showCat) {
+              while ($result = $showCat->fetch_assoc()) {
+            ?>
+            <li>
+              <a href="san-pham-theo-danh-muc/<?php echo $result['category_id'] ?>.html">
+                <?php echo $result['category_name'] ?>
+              </a>
+            </li>
+            <?php } } ?>
+          </ul>
+        </li>
+
 
         <?php
         if (isset($_GET['customerid'])) {

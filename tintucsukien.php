@@ -1,5 +1,5 @@
 <?php
-$title = "Giới Thiệu-TIẾN THỊNH PHÁT group";
+$title = "Tin Tức & Sự Kiện - TIẾN THỊNH PHÁT group";
 include 'inc/header.php';include 'inc/sale.php';?>
 <section>
   <div class="container">
@@ -7,7 +7,7 @@ include 'inc/header.php';include 'inc/sale.php';?>
     <span style="margin: 0 7px;">
       <img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18">
     </span>
-    <span class="clpink">Giới thiệu</span>
+    <span class="clpink">Tin Tức & Sự Kiện</span>
     <div class="clear20"></div>
   </div>
   <div class="main-wraper ">
@@ -16,7 +16,8 @@ include 'inc/header.php';include 'inc/sale.php';?>
         <?php  include 'inc/danhmuc.php';?>
         <div class="col-12">
           <div id="right">
-            <div class="tieude_giua"> Giới thiệu</div>
+            <h1 class="text-center">Tin Tức & Sự Kiện</h1>
+            <div class="clear20"></div>
             <div class="wap_box_new clear">
               <?php
                 $get_post = $ps -> show_post();

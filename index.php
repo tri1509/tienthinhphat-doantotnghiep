@@ -9,8 +9,8 @@ include 'inc/header.php';
       <div class="main-banner">
         <div class="slider-wrapper">
           <div id="mainSlider" class="nivoSlider">
-            <a href="javascript:void(0);"><img src="img/banner-new.webp" alt="banner" class="fullwidth" /></a>
-            <a href="javascript:void(0);"><img src="img/banner2.webp" alt="banner" class="fullwidth" /></a>
+            <a href="javascript:void(0);"><img src="img/banner_web2.webp" alt="banner" class="fullwidth" /></a>
+            <a href="javascript:void(0);"><img src="img/banner1.webp" alt="banner" class="fullwidth" /></a>
           </div>
         </div>
       </div>
@@ -22,30 +22,28 @@ include 'inc/header.php';
     <div class="container">
       <div class="wide-700 sanpham-noibat">
         <?php
-            $showProduct = $product->getproduct_feathered_6();
-            if ($showProduct) {
-              while ($result = $showProduct->fetch_assoc()) {
-            ?>
+          $showProduct = $product->getproduct_feathered_6();
+          if ($showProduct) {
+            while ($result = $showProduct->fetch_assoc()) {
+        ?>
         <div class="sanpham-noibat-item">
           <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html" title="<?php echo $result['sanpham_name'] ?>">
-            <div class="">
-              <div class="home-product__item-img" style="background-image:url(./img/<?php echo $result['hinh'] ?>);">
+            <div class="home-product__item-img" style="background-image:url(./img/<?php echo $result['hinh'] ?>);">
+            </div>
+            <div class="ct-item-pro">
+              <p class="bold item-name"><?php echo $result['sanpham_name'] ?></p>
+              <div class="clear10"></div>
+              <div class="flex-bw">
+                <p class="old-pri"><?php echo number_format($result['sanpham_gia']) . " đ"; ?></p>
+                <p class="new-pri bold"><?php echo number_format($result['sanpham_giakhuyenmai']) . " đ"; ?></p>
               </div>
-              <div class="ct-item-pro">
-                <p class="bold item-name"><?php echo $result['sanpham_name'] ?></p>
-                <div class="clear10"></div>
-                <div class="flex-bw">
-                  <p class="old-pri"><?php echo number_format($result['sanpham_gia']) . " đ"; ?></p>
-                  <p class="new-pri bold"><?php echo number_format($result['sanpham_giakhuyenmai']) . " đ"; ?></p>
-                </div>
-                <div class="clear10"></div>
-                <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html" class="addtocart">Xem ngay</a>
-              </div>
+              <div class="clear10"></div>
+              <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html" class="addtocart"
+                title="<?php echo $result['sanpham_name'] ?>">Xem ngay</a>
             </div>
           </a>
         </div>
-        <?php }
-            } ?>
+        <?php } } ?>
       </div>
       <div class="clear20"></div>
     </div>

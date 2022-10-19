@@ -157,5 +157,26 @@
                 return $alert ;
             }
         }
+
+        public function insert_contact($data) {
+            $yourname = mysqli_real_escape_string($this->db->link, $data['yourname']);
+            $tel = mysqli_real_escape_string($this->db->link, $data['tel']);
+            $youremail = mysqli_real_escape_string($this->db->link, $data['youremail']);
+            $message = mysqli_real_escape_string($this->db->link, $data['message']);
+            if($yourname == "" || $tel == "" || $youremail == "" || $message == "" ) {
+                $alert = "<span class='notok'>Bạn vui lòng điền đầy đủ thông tin !</span>";
+                return $alert;
+            }else{
+                $query = "INSERT INTO tbl_contact(yourname,tel,youremail,message) values ('$yourname','$tel','$youremail','$message')";
+                $result = $this->db->insert($query);
+                if($result){
+                    $alert = "<span class='success'>Thêm thông tin thành công!</span>";
+                    return $alert;
+                }else{
+                    $alert = "<span class='notok'>Thất bại !</span>";
+                    return $alert;
+                }
+            }
+        }
     }
 ?>

@@ -22,7 +22,7 @@
   <div class="main-breac">
     <div class="container">
       <span><a href="./" class="clblack">Trang chủ</a></span>
-      <span style="margin: 0 7px;"><i class="fas fa-angle-right"></i></span>
+      <span style="margin: 0 7px;"><img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18"></span>
       <span class="clpink">Sản phẩm</span>
     </div>
   </div>

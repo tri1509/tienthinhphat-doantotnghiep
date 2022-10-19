@@ -16,26 +16,28 @@ if ($get_product_details) {
     $title = $get_title['sanpham_name'];
   }
 }
-?>
-<?php
+
 include 'inc/header.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   $quantity = $_POST['quantity'];
   $addtoCart = $ct->add_to_cart($quantity, $id);
 }
+
+include 'inc/sale.php'; 
 ?>
-<?php include 'inc/sale.php'; ?>
 
 <section>
   <div class="main-breac">
     <div class="container">
       <span><a href="./" class="clblack">Trang chủ</a></span>
-      <span style="margin: 0 7px;"><img src="./img/back.png" alt="" style="transform: rotate(180deg);"
-          width="18"></span>
+      <span style="margin: 0 7px;">
+        <img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18">
+      </span>
       <span class="clpink">Chi tiết sản phẩm</span>
-      <span style="margin: 0 7px;"><img src="./img/back.png" alt="" style="transform: rotate(180deg);"
-          width="18"></span>
-      <span class="clpink">Yến sào</span>
+      <span style="margin: 0 7px;">
+        <img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18">
+      </span>
+      <span class="clpink"><?php echo $title ?></span>
     </div>
   </div>
   <div class="main-wraper">
@@ -46,15 +48,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
         <a href="giohang.php">
           <?php echo  $addtoCart ?> <i>|</i> <span class='success'>Xem giỏ hàng <span class='test'>>></span></span>
         </a>
-        <?php } else {
-          echo "<div class='clear20'></div>";
-        } ?>
+        <?php } else {echo "<div class='clear20'></div>";} ?>
         <div class='clear20'></div>
         <div class="col-12">
           <?php
-          $get_product_details = $product->get_details($id);
-          if ($get_product_details) {
-            while ($result_detils = $get_product_details->fetch_assoc()) {
+            $get_product_details = $product->get_details($id);
+            if ($get_product_details) {
+              while ($result_detils = $get_product_details->fetch_assoc()) {
+                $cate_id = $result_detils['category_id'];
           ?>
 
           <div class="row">
@@ -106,9 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
               <div class="clear20"></div>
             </div>
           </div>
-
           <div class="clear40"></div>
-
           <div class="container">
             <h1 class="text-danger">1 -Thông tin sản phẩm</h1>
             <div class="clear20"></div>
@@ -116,10 +115,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
             <img src="./img/<?php echo $result_detils['hinh'] ?>" alt="san-pham-yen-sao" width="40%">
             <?php echo $result_detils['sanpham_mota'] ?>
           </div>
-
-
-
-          <?php }
+          <?php }}else {
+            header('Location:404.php');
           } ?>
 
           <div class="clear20"></div>
@@ -142,23 +139,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 
             <div class="img-slider">
               <?php
-              if ($id < 200) {
-                $cate_id = 1;
-              } elseif ($id < 300) {
-                $cate_id = 2;
-              } elseif ($id < 400) {
-                $cate_id = 3;
-              } elseif ($id < 500) {
-                $cate_id = 4;
-              } elseif ($id < 600) {
-                $cate_id = 5;
-              } elseif ($id < 700) {
-                $cate_id = 6;
-              } elseif ($id < 800) {
-                $cate_id = 7; 
-              }else {
-                $cate_id = 8;
-              };
               $sp_cungloai = $product->samekind($cate_id);
               if ($sp_cungloai) {
                 while ($result_cungloai = $sp_cungloai->fetch_assoc()) {
@@ -181,8 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                   </a>
                 </div>
               </div>
-              <?php }
-              } ?>
+              <?php } } ?>
             </div>
             <div class="clear20"></div>
           </div>

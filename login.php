@@ -11,13 +11,10 @@
 ?>
 
 <?php  
-
-// đăng nhập
 	if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 		$loginCustomer = $cs->login_customer($_POST);
 }
 ?>
-
 <div id="form_login">
   <div class="container">
     <div class="row">

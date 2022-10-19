@@ -73,6 +73,10 @@ li {
   padding: 0px 30px;
 }
 
+.none {
+  display: none;
+}
+
 .wide-700 {
   max-width: 700px;
   margin: 0 auto;
@@ -248,13 +252,43 @@ li {
   z-index: 3;
 }
 
+@media screen and (min-width: 991px) and (max-width: 1294.98px) {
+  .search-toggle input[type="text"] {
+    width: 20px;
+  }
+
+  .search-toggle input[type="text"]:focus,
+  .search-toggle input[type="text"]:hover {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .search-toggle input[type="text"] {
+    border: var(--red--nhat) 1px solid;
+    background: #f9f9f9;
+  }
+
+  .search-toggle input[type="text"]::placeholder {
+    color: var(--red--nhat) !important;
+    opacity: 1;
+    font-style: italic;
+  }
+
+  .search_button {
+    transform: translateX(-110%);
+    z-index: 3;
+    color: var(--red--nhat);
+  }
+}
+
 .header-bottom-item-menu,
 .header-bottom-item-menu-contry {
   width: 100%;
   position: absolute;
   height: 400px;
-  background-color: rgb(255, 221, 221);
-  top: calc(100% + 10px);
+  background-color: rgb(255, 246, 246);
+  top: calc(100% + 5px);
   right: 0;
   left: 0;
   z-index: 99;
@@ -262,7 +296,7 @@ li {
   visibility: hidden;
   display: flex;
   box-shadow: 0px 10px 20px rgb(0 0 0 / 0.3);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 
 .header-bottom-item-dropdown:hover .header-bottom-item-menu,
@@ -272,71 +306,54 @@ li {
   top: 100%;
 }
 
-.header-bottom-item-menu-left,
+.header-bottom-item-menu-left {
+  padding: 20px;
+  width: 60%;
+}
 .header-bottom-item-menu-right {
-  width: 50%;
-  padding: 30px 70px;
+  width: 40%;
+  padding: 30px;
+}
+
+.bottom-product {
+  width: 100%;
+  text-align: start;
+}
+.border-right {
+  border-right: 1px solid var(--red--dam);
+}
+
+.border-right:last-child {
+  border-right: none;
 }
 
 .bottom-list,
 .bottom-list-child {
   list-style-type: none;
-  float: right;
   margin: 0;
   padding: 0;
+  line-height: 25px !important;
 }
-.bottom-item {
-  position: relative;
-}
+
 .bottom-link {
   display: block;
-  padding: 5px 20px;
+  padding: 0 10px !important;
   letter-spacing: 1px;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   position: relative;
 }
 .bottom-link:hover,
 .bottom-link.active,
-.bottom-item-child a:hover {
+.bottom-item-child a:hover,
+.bottom-item-child a.active {
   color: var(--red--nhat);
-}
-
-.bottom-link::after {
-  content: "";
-  position: absolute;
-  top: 42%;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid var(--red--nhat);
-}
-
-.bottom-child {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 2px;
-  left: -10px;
-  border-right: 1px solid #be0312;
-  background-color: #ffffff;
-  transform: translateX(-100%);
-  transition: all 0.3s ease-in-out;
-}
-
-.bottom-item:hover .bottom-child {
-  opacity: 1;
-  visibility: visible;
-  top: 0;
-  left: 0;
 }
 
 .bottom-item-child a {
   display: block;
-  padding: 2px 20px;
+  padding: 2px 10px !important;
   font-size: 1.5rem;
   transition: 0.1s;
   font-weight: 500;
@@ -377,8 +394,11 @@ li {
 
 .sanpham-noibat-item {
   background: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.2) 3px 2px 6px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 6px 5px;
+}
+.sanpham-noibat-item:hover {
+  box-shadow: rgb(0 0 0 / 30%) 0px 10px 8px;
 }
 @media screen and (max-width: 750px) {
   .sanpham-noibat {
@@ -1384,6 +1404,7 @@ li {
   font-size: 13px;
   margin-top: 5px;
 }
+
 .main-camket {
   padding: 30px 0;
   background: #fafafa;
@@ -1451,7 +1472,6 @@ li {
 
 .ct-item-pro {
   padding: 8px;
-  background: #ffff;
   border-top: none;
   text-align: center;
   text-transform: lowercase;
@@ -3404,4 +3424,12 @@ footer p a:hover {
   border: 1px solid rgba(5, 5, 5, 0.3);
   box-shadow: 1px 1px 5px rgba(223, 3, 3, 0.4);
   border: 1px solid rgba(116, 72, 72, 0.3);
+}
+
+.ten_baiviet {
+  font-size: 2.5rem;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
