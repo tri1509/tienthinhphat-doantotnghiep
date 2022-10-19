@@ -170,7 +170,7 @@ header("Cache-Control: max-age=2592000");
             </div>
           </li>
           <li class="header-bottom-item header-bottom-item-country">
-            <a class="header-bottom-link" href="sanpham.html" title="Sản Phẩm">
+            <a class="header-bottom-link" href="water.html" title="Sản Phẩm">
               NƯỚC GIẢI KHÁT
               <img src="./img/back.png" alt="" width='15'
                 style="margin-left: 1px;margin-bottom: 3px; filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1); transform: rotate(-90deg);">
@@ -188,14 +188,15 @@ header("Cache-Control: max-age=2592000");
                       $show_water = $brand->show_water();
                       if ($show_water) {
                         while ($result_water = $show_water->fetch_assoc()) {
+                          if($result_water['category_id'] > 14){
                     ?>
                     <div class="col-3 border-right">
-                      <a href="nuoc-giai-khat/<?php echo $result_water['water_id'] ?>.html" class="bottom-link 
-                      <?php if($idwater == $result_water['water_id']){echo "active";}?>">
-                        <?php echo $result_water['water_name'] ?>
+                      <a href="nuoc-giai-khat/<?php echo $result_water['category_id'] ?>.html" class="bottom-link 
+                      <?php if($idwater == $result_water['category_id']){echo "active";}?>">
+                        <?php echo $result_water['category_name'] ?>
                       </a>
                     </div>
-                    <?php } } ?>
+                    <?php } } } ?>
                   </div>
                 </div>
               </div>

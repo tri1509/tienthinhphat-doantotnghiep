@@ -35,7 +35,7 @@ include 'inc/header.php' ;?>
                   <div class="home-product__item-img"
                     style="background-image:url(./img/<?php echo $result['hinh']; ?>);"></div>
                   <div class="ct-item-pro">
-                    <p class="bold"><a href="chitietsp.php?proid=<?php echo $result['sanpham_id'] ?>"
+                    <p class="bold"><a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html"
                         class="clpink item-name"><?php echo $result['sanpham_name'] ?></a></p>
                     <div class="clear10"></div>
                     <div class="flex-bw">

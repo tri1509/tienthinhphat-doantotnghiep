@@ -197,12 +197,6 @@
             return $result;
         }
 
-        public function getLastestDell() {
-            $query ="SELECT * FROM tbl_product WHERE brandId = '16' ORDER BY productId DESC LIMIT 1";
-            $result = $this->db->select($query);
-            return $result;
-        }
-
         public function getinformation($id) {
             $query ="SELECT * FROM tbl_sanpham WHERE sanpham_id = '$id' ";
             $result = $this->db->select($query);

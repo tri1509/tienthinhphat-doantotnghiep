@@ -120,7 +120,7 @@
         }
 
         public function show_water() {
-            $query = "SELECT * FROM tbl_water ORDER BY water_id DESC";
+            $query = "SELECT * FROM tbl_category ORDER BY category_id ";
             $result = $this->db->select($query);
             return $result;
         }

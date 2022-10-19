@@ -70,14 +70,18 @@ include 'inc/sale.php';
             <div class="col-md-6 col-sm-12 col-12">
               <h3 class="nomargin bold clred"><?php echo $result_detils['sanpham_name'] ?></h3>
               <div class="clear10"></div>
-              <p> <span>Thương hiệu:</span><span class="bold">Thương hiệu
-                  <?php echo $result_detils['brand_name'] ?></span> | <span>Tình trạng: </span><span class="bold">
+              <p> <span>Thương hiệu:</span>
+                <span class="bold">
+                  <?php echo $result_detils['brand_name'] ?>
+                </span> | <span>Tình trạng: </span>
+                <span class="bold">
                   <?php $tinhtrang = $result_detils['sanpham_soluong'];
                       if ($tinhtrang > 0) {
                         echo "Còn hàng";
                       } else {
                         echo "Đã bán hết";
-                      }; ?></span>
+                      }; ?>
+                </span>
               </p>
               <div class="clear10"></div>
               <div class="flex">
