@@ -1,7 +1,7 @@
 RewriteEngine On
 
 RewriteRule "index.html" "index.php"
-RewriteRule "gioithieu.html" "gioithieu.php"
+RewriteRule "tintucsukien.html" "tintucsukien.php"
 RewriteRule "sanpham.html" "sanpham.php"
 RewriteRule "giohang.html" "giohang.php"
 RewriteRule "login.html" "login.php"
@@ -12,6 +12,7 @@ RewriteRule "restore.html" "restore.php"
 RewriteRule "restorepass.html" "restorepass.php"
 RewriteRule "success.html" "success.php"
 RewriteRule "donhang.html" "donhang.php"
+RewriteRule "gioithieusalanest.html" "gioithieusalanest.php"
 
 RewriteRule "^san-pham-theo-danh-muc/([0-9]+).html$" "productbycat.php?catid=$1"
 RewriteRule "^san-pham-theo-thuong-hieu/([0-9]+).html$" "productbybrand.php?brandid=$1"
@@ -20,4 +21,4 @@ RewriteRule "^chi-tiet/([0-9]+).html$" "chitietsp.php?proid=$1"
 RewriteRule "^giohang/([0-9]+).html$" "giohang.html?cartid=$1"
 RewriteRule "^san-pham-theo-thuong-hieu/([0-9]+)/([0-9]+).html$" "productbybrandlv2.php?brandid=$1&brandidlv2=$2"
 RewriteRule "^san-pham/trang([0-9]+).html$" "sanpham.php?trang=$1"
-RewriteRule "^bai-viet/trang([0-9]+).html$" "gioithieu.php?trang=$1"
+RewriteRule "^bai-viet/trang([0-9]+).html$" "tintucsukien.php?trang=$1"

@@ -128,8 +128,8 @@ header("Cache-Control: max-age=2592000");
                     while ($result = $show_brand->fetch_assoc()) {
                 ?>
                     <li class="bottom-item">
-                      <a href="san-pham-theo-thuong-hieu/<?php echo $result['brand_id'] ?>.html" class="bottom-link <?php 
-							if($idbrand == $result['brand_id']){echo "active";}?>">
+                      <a href="san-pham-theo-thuong-hieu/<?php echo $result['brand_id'] ?>.html" class="bottom-link 
+                      <?php if($idbrand == $result['brand_id']){echo "active";}?>">
                         <?php echo $result['brand_name'] ?>
                         <img src="./img/diamond.png" width="10" style="margin-bottom:3px;">
                       </a>
@@ -194,6 +194,7 @@ header("Cache-Control: max-age=2592000");
             </div>
           </li>
           <li class="header-bottom-item"><a class="header-bottom-link" href="tintucsukien.html">TIN TỨC</a></li>
+          <li class="header-bottom-item"><a class="header-bottom-link" href="lienhe.html">LIÊN HỆ</a></li>
         </ul>
 
         <form action="timkiem.php" method="POST">
