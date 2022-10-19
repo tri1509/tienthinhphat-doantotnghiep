@@ -6,16 +6,17 @@
 	}else{
       $idcat ="";
       $idbrand ="";
-   }
+}
 ?>
-<!-- <div class="col-xl-4 col-lg-4 col-md-12 order-lg-1 order-md-2 order-2">
+<!-- 
+<div class="col-xl-4 col-lg-4 col-md-12 order-lg-1 order-md-2 order-2">
   <div class="block-aside">
     <h4 class="tit-aside"><i class="fas fa-list-ul"></i> DANH MỤC SẢN PHẨM</h4>
     <div class="ct-aside">
       <?php 
-         $showCat = $cat -> show_category();
-         if($showCat){
-            while($result_showCat = $showCat -> fetch_assoc()){
+        $showCat = $cat -> show_category();
+        if($showCat){
+          while($result_showCat = $showCat -> fetch_assoc()){
       ?>
       <a href="san-pham-theo-danh-muc/<?php echo $result_showCat['category_id'] ?>.html" class="
 						<?php 
@@ -30,9 +31,9 @@
     <h4 class="tit-aside"><i class="fas fa-award"></i> THƯƠNG HIỆU</h4>
     <div class="ct-aside">
       <?php
-         $show_brand = $brand->show_brand();
-         if($show_brand){
-            while($result_showBrand = $show_brand->fetch_assoc()){
+        $show_brand = $brand->show_brand();
+        if($show_brand){
+          while($result_showBrand = $show_brand->fetch_assoc()){
       ?>
       <a href="san-pham-theo-thuong-hieu/<?php echo $result_showBrand['brand_id'] ?>.html"
         class="<?php if($idbrand == $result_showBrand['brand_id']){ echo "active";}?>"><img
@@ -49,7 +50,7 @@
     <?php
             $get_post = $ps -> show_post();
             if($get_post){
-               while($result = $get_post -> fetch_assoc()){
+              while($result = $get_post -> fetch_assoc()){
       ?>
     <div class="ct-aside">
       <a href="bai-viet/<?php echo $result['baiviet_id'] ; ?>.html"><img src="./img/diamond.png"><span
@@ -57,4 +58,6 @@
     </div>
     <?php }} ?>
   </div>
-</div> -->
+</div> 
+
+-->

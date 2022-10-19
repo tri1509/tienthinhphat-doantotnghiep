@@ -18,7 +18,7 @@ include 'inc/header.php' ;?>
     <div class="cart_background">
       <div class="row">
         <?php 
-					include 'inc/danhmuc.php';
+					// include 'inc/danhmuc.php';
 				?>
         <div class="col-12">
           <h4 class="nomargin text-uppercase clredt">SẢN PHẨM</h4><br>

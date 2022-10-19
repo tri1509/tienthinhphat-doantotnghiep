@@ -18,7 +18,9 @@
 	if($namebybrand) {
 		while($get_title = $namebybrand -> fetch_assoc()){
 		$title = $get_title['brand_name'];
-	}}
+	}}else{
+		$title = "Sản phẩm đang cập nhật";
+	}
 
 	include 'inc/header.php';
 	include 'inc/sale.php';
@@ -37,18 +39,14 @@
     <div class="clear20"></div>
     <div class="container">
       <div class="cart_background">
-
         <div class="row">
-          <?php 
-					include 'inc/danhmuc.php';
-				?>
           <div class="col-12">
             <?php
-					$namebybrand = $brand -> get_name_by_brand($id);
-					$namebybrandlv2 = $brand -> get_name_by_brand_lv2($id,$idlv2);
-					$result_name = $namebybrand -> fetch_assoc();
-				?>
-            <?php 
+              $namebybrand = $brand -> get_name_by_brand($id);
+              $namebybrandlv2 = $brand -> get_name_by_brand_lv2($id,$idlv2);
+              if ($namebybrand){
+                $result_name = $namebybrand -> fetch_assoc();
+              }
               if ($namebybrandlv2){ 				
                 $result_name_lv2 = $namebybrandlv2 -> fetch_assoc();
             ?>
@@ -85,7 +83,7 @@
                 </a>
               </div>
               <?php } }else{ ?>
-              <h4 class="nomargin text-uppercase clredt text-center">sản phẩm đang cập nhật</h4>
+              <h4 class="text-uppercase clredt text-center">sản phẩm đang cập nhật</h4>
               <div class="loader loader--style6" title="5">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"

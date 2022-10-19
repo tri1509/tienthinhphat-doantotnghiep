@@ -217,9 +217,14 @@
 
         public function timkiem($tukhoa){
             $tukhoa = $this->fm->validation($tukhoa);
-            $query = "SELECT * FROM tbl_sanpham WHERE sanpham_name LIKE '%$tukhoa%' OR sanpham_chitiet LIKE '%$tukhoa%' OR sanpham_mota LIKE '%$tukhoa%'";
+            if(empty($tukhoa) || $tukhoa == '') {
+                echo "<p class='nomargin text-uppercase clredt'>Mời bạn nhập đầy đủ</p>";
+            }else{
+            $query = "SELECT * FROM tbl_sanpham WHERE sanpham_name OR sanpham_mota OR sanpham_chitiet LIKE '%$tukhoa%' ";
             $result = $this->db->select($query);
             return $result;
+            }
+
         }
     }
 ?>

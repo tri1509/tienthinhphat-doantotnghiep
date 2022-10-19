@@ -18,17 +18,8 @@ include 'inc/header.php';
   </div>
   <?php include 'inc/sale.php'; ?>
   <div class="main-sanphamchinh">
-    <img src="img/banner-new.webp" alt="hình ảnh tổ yến" title="hình anh tổ yến" width="100%">
+    <img src="img/mobile_banner2.png" alt="hình ảnh tổ yến" title="hình anh tổ yến" width="100%">
     <div class="container">
-      <div class="clear20"></div>
-      <h3 class="tit-pub nen">
-        <span>
-          <img src="./img/nen.png" alt="" width='40'>
-          SẢN PHẨM NỔI BẬT
-          <img src="./img/nen.png" alt="" width='40'>
-        </span>
-      </h3>
-      <div class="clear20"></div>
       <div class="wide-700 sanpham-noibat">
         <?php
             $showProduct = $product->getproduct_feathered_6();
@@ -75,7 +66,6 @@ include 'inc/header.php';
             while($result = $get_post_new -> fetch_assoc()){
               $i++;
         ?>
-
           <div class="col-md-6 zoomshow delay-<?php echo $i ?>">
             <div class="block-news-home">
               <div class="flex-nh">
