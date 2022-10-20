@@ -18,7 +18,7 @@ include 'inc/header.php';
   </div>
   <?php include 'inc/sale.php'; ?>
   <div class="main-sanphamchinh">
-    <img src="img/mobile_banner2.png" alt="hình ảnh tổ yến" title="hình anh tổ yến" width="100%">
+    <img src="img/mobile_banner2.png" alt="hình ảnh tổ yến" title="hình anh tổ yến" width="100%" height="auto">
     <div class="container">
       <div class="wide-700 sanpham-noibat">
         <?php

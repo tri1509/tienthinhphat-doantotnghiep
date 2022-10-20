@@ -2,7 +2,6 @@
 $title = "SALANEST-yến sào-gia bảo-salanest-heranest.";
 include 'inc/header.php' ;?>
 <?php include 'inc/sale.php' ;?>
-
 <section>
   <div class="main-breac">
     <div class="container">
@@ -56,7 +55,7 @@ include 'inc/header.php' ;?>
           <?php 
             $product_all = $product -> getproduct_main();
             $product_count = mysqli_num_rows($product_all);
-            $product_button = $product_count / 9;
+            $product_button = $product_count / 12;
             if(!isset($_GET['trang'])) {
                 $trang = 1;
             }else{

@@ -2,8 +2,6 @@
 include 'lib/session.php';
 Session::init();
 ob_start();
-?>
-<?php
 include_once 'lib/database.php';
 include_once 'helpers/format.php';
 spl_autoload_register(function ($class) {
@@ -18,8 +16,7 @@ $cat = new category();
 $brand = new brand();
 $product = new product();
 $ps = new post();
-?>
-<?php
+
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
@@ -190,7 +187,7 @@ header("Cache-Control: max-age=2592000");
                         while ($result_water = $show_water->fetch_assoc()) {
                           if($result_water['category_id'] > 14){
                     ?>
-                    <div class="col-3 border-right">
+                    <div class="col-2 border-right">
                       <a href="nuoc-giai-khat/<?php echo $result_water['category_id'] ?>.html" class="bottom-link 
                       <?php if($idwater == $result_water['category_id']){echo "active";}?>">
                         <?php echo $result_water['category_name'] ?>
@@ -219,7 +216,7 @@ header("Cache-Control: max-age=2592000");
           <li class="header-bottom-item"><a class="header-bottom-link" href="lienhe.html">LIÊN HỆ</a></li>
         </ul>
 
-        <form action="timkiem.php" method="POST">
+        <form action="timkiem.html" method="POST">
           <div class="search-toggle hide1294" id="search-toggle">
             <input type="text" name="search_product" id="search_product" required placeholder="Tìm kiếm sản phẩm...">
             <button class="btn search_button" name="search_button">
@@ -259,7 +256,7 @@ header("Cache-Control: max-age=2592000");
     <a href="./" class="logo"><img src="img/salanest.png" alt="anh-lo-go-tien-thinh-phat"></a>
     <div id="mySidenav" class="sidenav">
 
-      <form action="timkiem.php" method="POST">
+      <form action="timkiem.html" method="POST">
         <div class="search-toggle" style="margin-top:30px">
           <input type="text" placeholder="Bạn muốn mua gì?" name="search_product" id="search_product" required="" />
           <button class="btn search_button" name="search_button" id="search_button">

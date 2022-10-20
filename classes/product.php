@@ -174,7 +174,7 @@
         }
 
         public function get_all_product(){
-            $so_sp_trang = 9 ;
+            $so_sp_trang = 12 ;
             if(!isset($_GET['trang'])) {
                 $trang = 1;
             }else{
@@ -215,7 +215,8 @@
             if(empty($tukhoa) || $tukhoa == '') {
                 echo "<p class='nomargin text-uppercase clredt'>Mời bạn nhập đầy đủ</p>";
             }else{
-            $query = "SELECT * FROM tbl_sanpham WHERE sanpham_name OR sanpham_mota OR sanpham_chitiet LIKE '%$tukhoa%' ";
+            // $query = "SELECT * FROM tbl_sanpham WHERE sanpham_name OR sanpham_mota OR sanpham_chitiet LIKE '%$tukhoa%' ";
+            $query = "SELECT * FROM tbl_sanpham WHERE MATCH(sanpham_name) AGAINST ('%$tukhoa%')";
             $result = $this->db->select($query);
             return $result;
             }
