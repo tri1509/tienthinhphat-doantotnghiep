@@ -16,17 +16,30 @@ $cat = new category();
 $brand = new brand();
 $product = new product();
 $ps = new post();
-
-header("Cache-Control: no-cache, must-revalidate");
-header("Pragma: no-cache");
-header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-header("Cache-Control: max-age=2592000");
 ?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='vi'>
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-PSKPTHQ');
+  </script>
+  <!-- End Google Tag Manager -->
   <base href="http://localhost/ttpnew/">
   <meta http-equiv="Content-Type" content="text/php; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -54,36 +67,57 @@ header("Cache-Control: max-age=2592000");
     <div class="header">
       <div class="header-top">
         <div class="logo">
-          <img src="img/salanest.png" alt="logo-group-Tiến Thịnh Phát." title="logo-Tiến-Thịnh-Phát" width="100px">
+          <img src="img/salanest.png" alt="logo-group-Tiến Thịnh Phát" title="logo-Tiến-Thịnh-Phát" width="100"
+            height="auto">
         </div>
         <div class="header-contact">
           <div class="header-contact-item">
-            <div class="header-contact-item-login">
-              <?php 
+            <?php 
                 $login_check = Session::get('customer_login');
                   if($login_check) {
               ?>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18px" height="18px"
-                style="margin-right: 5px; filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1);">
-                <path
-                  d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128V384c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32h64zM504.5 273.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32H320v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z" />
-              </svg>
+            <div class="header-contact-item-login">
+              <a href='profile.html'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffff" class="bi bi-person-circle"
+                  viewBox="0 0 16 16" style="margin-right:5px">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                  <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+                <?php echo Session::get('customer_name') ?>
+              </a>
+            </div>
+            <div class="header-contact-item-login">
               <a title="Đăng xuất tài khoản" href="?customerid=<?php echo Session::get('customer_id')?>"
                 onclick="return confirm('Bạn có muốn đăng xuất không?')">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18"
+                  style="margin-right:5px" fill="#ffff">
+                  <path
+                    d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128V384c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32h64zM504.5 273.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32H320v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z" />
+                </svg>
                 Đăng xuất
               </a>
-              <?php } else { ?>
-              <img src="./img/user.png" alt="" width='22'
-                style="margin-right: 5px; filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1);">
+            </div>
+            <?php } else { ?>
+            <div class="header-contact-item-login">
               <a href="login.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffff" class="bi bi-person-circle"
+                  viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                  <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
                 Đăng nhập / Đăng ký
               </a>
-              <?php } ?>
             </div>
+            <?php } ?>
 
             <div class="header-contact-item-cart">
-              <img src="./img/basket.png" alt="" width='18'
-                style="margin-right: 5px; filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffff" class="bi bi-basket3-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z" />
+              </svg>
               <?php
               $check_cart = $ct->check_cart();
               if ($check_cart) {
@@ -98,7 +132,8 @@ header("Cache-Control: max-age=2592000");
       </div>
       <div class="header-bottom" id="header-bottom">
         <div class="logo-header-bottom" id="logo-header-bottom">
-          <img src="img/salanest.png" alt="logo-group-Tiến Thịnh Phát." title="logo-Tiến-Thịnh-Phát" width="50px">
+          <img src="img/salanest.png" alt="logo-group-Tiến Thịnh Phát" title="logo-Tiến-Thịnh-Phát" width="50"
+            height="50">
         </div>
         <ul class="header-bottom-list">
           <li class="header-bottom-item"><a class="header-bottom-link" href="./" title="Trang chủ">TRANG CHỦ</a></li>
@@ -107,8 +142,11 @@ header("Cache-Control: max-age=2592000");
           <li class="header-bottom-item header-bottom-item-dropdown">
             <a class="header-bottom-link" href="sanpham.html" title="Sản Phẩm">
               YẾN SÀO
-              <img src="./img/back.png" alt="" width='15'
-                style="margin-left: 1px;margin-bottom: 3px; filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1); transform: rotate(-90deg);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-down" viewBox="0 0 16 16" style="margin-bottom:3px;">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              </svg>
             </a>
             <div class="header-bottom-item-menu">
               <div class="header-bottom-item-menu-left">
@@ -154,10 +192,10 @@ header("Cache-Control: max-age=2592000");
               <div class="header-bottom-item-menu-right">
                 <div class="grid">
                   <div class="grid-item">
-                    <img src="./img/heranest_2.webp" alt="ảnh heranest" />
+                    <img src="./img/heranest_2-compressed.webp" alt="ảnh heranest" />
                   </div>
                   <div class="grid-item">
-                    <img src="./img/salanest_2.webp" alt="ảnh salanest" />
+                    <img src="./img/salanest_2-compressed.webp" alt="ảnh salanest" />
                   </div>
                   <div class="grid-item">
                     <img src="./img/giabao_2.webp" alt="ảnh gia bao" />
@@ -169,9 +207,13 @@ header("Cache-Control: max-age=2592000");
           <li class="header-bottom-item header-bottom-item-country">
             <a class="header-bottom-link" href="water.html" title="Sản Phẩm">
               NƯỚC GIẢI KHÁT
-              <img src="./img/back.png" alt="" width='15'
-                style="margin-left: 1px;margin-bottom: 3px; filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1); transform: rotate(-90deg);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-down" viewBox="0 0 16 16" style="margin-bottom:3px;">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              </svg>
             </a>
+            <!--  
             <div class="header-bottom-item-menu-contry">
               <div class="header-bottom-item-menu-left">
                 <div class="bottom-product">
@@ -211,6 +253,7 @@ header("Cache-Control: max-age=2592000");
                 </div>
               </div>
             </div>
+            -->
           </li>
           <li class="header-bottom-item"><a class="header-bottom-link" href="tintucsukien.html">TIN TỨC</a></li>
           <li class="header-bottom-item"><a class="header-bottom-link" href="lienhe.html">LIÊN HỆ</a></li>
@@ -220,8 +263,11 @@ header("Cache-Control: max-age=2592000");
           <div class="search-toggle hide1294" id="search-toggle">
             <input type="text" name="search_product" id="search_product" required placeholder="Tìm kiếm sản phẩm...">
             <button class="btn search_button" name="search_button">
-              <img src="./img/search.png" alt="tìm kiếm" width='18'
-                style="margin-right: 5px; filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffff" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+              </svg>
             </button>
           </div>
         </form>
@@ -231,18 +277,26 @@ header("Cache-Control: max-age=2592000");
 
   <div class="show991 sider-bar-tablet">
     <div class="flex-bw">
-      <span style="cursor:pointer;display: inline-block; height:80px" class="sp-sn">
-        <img src="./img/menu.png" alt="img-menu" width='25' onclick="openNav()"
-          style="filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1);">
+      <span class="sp-sn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" class="bi bi-list" viewBox="0 0 16 16"
+          onclick="openNav()">
+          <path fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+        </svg>
       </span>
-      <span style="cursor:pointer;display: inline-block; height:80px" class="sp-cn">
-        <img src="./img/close.png" alt="img close" width='20' onclick="closeNav()"
-          style="filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1);">
+      <span class="sp-cn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-x-lg" viewBox="0 0 16 16"
+          onclick="closeNav()">
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+        </svg>
       </span>
-      <span style="cursor:pointer;display: inline-block; height:80px; position: relative;" class="sp-cl">
+      <span class="sp-cl">
         <a href="giohang.html">
-          <img src="./img/basket.png" alt="hinh-gio-hang-san-pham" width='25'
-            style="filter: brightness(0) invert(1);-webkit-filter: brightness(0) invert(1);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-basket3-fill" viewBox="0 0 16 16">
+            <path
+              d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z" />
+          </svg>
           <?php
           $check_cart = $ct->check_cart();
           if ($check_cart) {
@@ -260,7 +314,7 @@ header("Cache-Control: max-age=2592000");
         <div class="search-toggle" style="margin-top:30px">
           <input type="text" placeholder="Bạn muốn mua gì?" name="search_product" id="search_product" required="" />
           <button class="btn search_button" name="search_button" id="search_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--red--nhat)" class="bi bi-search"
               viewBox="0 0 16 16">
               <path
                 d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -322,22 +376,17 @@ header("Cache-Control: max-age=2592000");
             <?php } } ?>
           </ul>
         </li>
-
-
         <?php
         if (isset($_GET['customerid'])) {
           $delCart = $ct->del_all_data_cart();
           session::destroy();
         }
-        ?>
-        <?php
         $customer_id = Session::get('customer_id');
         $check_order = $ct->check_order($customer_id);
         if ($check_order) {
         ?>
         <li><a href='donhang.php' title="đơn hàng">Đơn hàng</a></li>
         <?php } ?>
-
         <?php
         $login_check = Session::get('customer_login');
         if ($login_check) {

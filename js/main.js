@@ -47,37 +47,6 @@ $(document).ready(function () {
       },
     ],
   });
-
-  /*--------------------------------------------*/
-
-  $(".prev-pr").click(function () {
-    slpr.goToPrevSlide();
-  });
-  $(".next-pr").click(function () {
-    slpr.goToNextSlide();
-  });
-  /*--------------------------------------------*/
-  $("#back-to-top").hide();
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-      $("#back-to-top").show();
-    } else {
-      $("#back-to-top").hide();
-    }
-  });
-  /*--------------------------------------------*/
-
-  $("#back-to-top").click(function () {
-    $("#back-to-top").tooltip("hide");
-    $("body,html").animate(
-      {
-        scrollTop: 0,
-      },
-      800
-    );
-    return false;
-  });
-  $("#back-to-top").tooltip("show");
 });
 /*--------------------------------------------*/
 
@@ -194,9 +163,9 @@ $(document).ready(function () {
     autoplay: true,
     autoplaySpeed: 2000,
     prevArrow:
-      "<img class='container-item-nav-left' src='./img/left.svg' alt='' width='15'>",
+      "<img class='container-item-nav left' src='./img/left.svg' alt='' width='15' height='15'>",
     nextArrow:
-      "<img class='container-item-nav-right' src='./img/left.svg' alt='' width='15'>",
+      "<img class='container-item-nav right' src='./img/right.svg' alt='' width='15' height='15'>",
     responsive: [
       {
         breakpoint: 1200,

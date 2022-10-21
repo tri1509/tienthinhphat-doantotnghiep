@@ -31,11 +31,19 @@ include 'inc/sale.php';
     <div class="container">
       <span><a href="./" class="clblack">Trang chủ</a></span>
       <span style="margin: 0 7px;">
-        <img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" class="bi bi-chevron-right"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </svg>
       </span>
       <span class="clpink">Chi tiết sản phẩm</span>
       <span style="margin: 0 7px;">
-        <img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" class="bi bi-chevron-right"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </svg>
       </span>
       <span class="clpink"><?php echo $title ?></span>
     </div>
@@ -46,7 +54,13 @@ include 'inc/sale.php';
       <div class="row flex-order">
         <?php if (isset($addtoCart)) { ?>
         <a href="giohang.php">
-          <?php echo  $addtoCart ?> <i>|</i> <span class='success'>Xem giỏ hàng <span class='test'>>></span></span>
+          <?php echo  $addtoCart ?> <i>|</i> <span class='success'>Xem giỏ hàng <span class='test'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+              </svg>
+            </span></span>
         </a>
         <?php } else {echo "<div class='clear20'></div>";} ?>
         <div class='clear20'></div>
@@ -98,8 +112,12 @@ include 'inc/sale.php';
                     <span>Số lượng:</span><input type="number" class="center" name="quantity" min="1" value="1">
                   </div>
                   <div class="muahang but-buy">
-                    <img src="./img/cart.png"></img>
-                    <input type="submit" class="" name="submit" value="Mua hàng">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-basket3-fill"
+                      viewBox="0 0 16 16" fill="#ffff">
+                      <path
+                        d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z" />
+                    </svg>
+                    <input type="submit" name="submit" value="Mua hàng">
                   </div>
                 </div>
               </form>

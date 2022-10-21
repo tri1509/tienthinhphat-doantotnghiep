@@ -18,6 +18,12 @@ a:active,
 a:focus {
   text-decoration: none !important;
 }
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
 img {
   max-width: 100%;
 }
@@ -115,7 +121,6 @@ li {
   position: absolute;
   top: 0;
   right: 50px;
-  width: 400px;
   height: 100px;
   display: flex;
   flex-direction: column;
@@ -135,9 +140,7 @@ li {
 
 .header-contact-item-cart a,
 .header-contact-item-login a {
-  line-height: 50px;
   color: #ffff;
-  height: 50px;
 }
 
 .header-contact-item-cart a:hover,
@@ -151,8 +154,8 @@ li {
 
 .header-contact-item-cart-span {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: -16px;
+  left: -3px;
   width: 20px;
   height: 20px;
   background-color: var(--yellow-nhat);
@@ -230,6 +233,7 @@ li {
 .search-toggle input[type="text"] {
   position: relative;
   padding: 5px 23px 5px 20px;
+  margin-right: 34px;
   width: 200px;
   height: 35px;
   color: white;
@@ -243,13 +247,13 @@ li {
 
 .search-toggle input[type="text"]::placeholder {
   color: rgb(255, 255, 255) !important;
-  opacity: 1;
   font-style: italic;
 }
 
 .search_button {
-  transform: translateX(-110%);
-  z-index: 3;
+  position: absolute;
+  top: 4px;
+  right: 40px;
 }
 
 @media screen and (min-width: 991px) and (max-width: 1294.98px) {
@@ -273,12 +277,6 @@ li {
     color: var(--red--nhat) !important;
     opacity: 1;
     font-style: italic;
-  }
-
-  .search_button {
-    transform: translateX(-110%);
-    z-index: 3;
-    color: var(--red--nhat);
   }
 }
 
@@ -838,10 +836,13 @@ li {
   bottom: 25px;
   right: 25px;
   display: none;
+  text-align: center;
+  background-color: transparent;
   transition: 0.3s;
 }
 #top-up:hover {
-  color: #064628;
+  color: #ff7b00;
+  transform: scale(1.2);
 }
 
 .wrapper {
@@ -894,39 +895,6 @@ li {
     opacity: 0;
   }
 }
-@-webkit-keyframes my {
-  0% {
-    color: #198754;
-  }
-  50% {
-    color: #fff;
-  }
-  100% {
-    color: #198754;
-  }
-}
-@-moz-keyframes my {
-  0% {
-    color: #198754;
-  }
-  50% {
-    color: #fff;
-  }
-  100% {
-    color: #198754;
-  }
-}
-@-o-keyframes my {
-  0% {
-    color: #198754;
-  }
-  50% {
-    color: #fff;
-  }
-  100% {
-    color: #198754;
-  }
-}
 @keyframes my {
   0% {
     color: #198754;
@@ -940,9 +908,6 @@ li {
 }
 .test {
   font-weight: bold;
-  -webkit-animation: my 0.5s infinite;
-  -moz-animation: my 0.5s infinite;
-  -o-animation: my 0.5s infinite;
   animation: my 0.5s infinite;
 }
 
@@ -993,7 +958,7 @@ li {
   margin: 0px 20px;
 }
 
-.container-item-nav-left {
+.container-item-nav {
   display: block;
   position: absolute;
   margin: 0;
@@ -1006,26 +971,16 @@ li {
   box-shadow: 0 0 4px 2px rgb(0 0 0 / 15%);
   transition: 0.2s;
   z-index: 99;
+}
+
+.container-item-nav.left {
   filter: invert(0);
   left: -10px;
 }
 
-.container-item-nav-right {
-  display: block;
-  position: absolute;
-  margin: 0;
-  padding: 10px;
-  top: 35%;
-  border-radius: 0 5px 5px 0;
-  background: #fff;
-  width: 34px;
-  height: 36px;
-  box-shadow: 0 0 4px 2px rgb(0 0 0 / 15%);
-  transition: 0.2s;
-  z-index: 99;
+.container-item-nav.right {
   filter: invert(0);
   right: -10px;
-  transform: rotate(180deg);
 }
 
 .container-item-nav:hover {
@@ -1658,6 +1613,12 @@ li {
   background: var(--red--nhat);
 }
 
+@media screen and (max-width: 767.98px) {
+  .footer-top {
+    padding: 30px;
+  }
+}
+
 .tit-ft {
   margin: 0;
   margin-bottom: 20px;
@@ -1839,24 +1800,19 @@ li {
 .but-buy {
   display: inline-flex;
   height: 32px;
-  background: #ed1c24;
+  background: var(--red--nhat);
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   color: #fff;
   margin-top: 30px;
   border-radius: 5px;
-  overflow: hidden;
 }
-.but-buy img {
+.but-buy svg {
   display: inline-flex;
-  width: 22px;
   margin: 0 10px;
   align-items: center;
   justify-content: center;
-  fill: #00502b;
-  filter: brightness(0) invert(1);
-  -webkit-filter: brightness(0) invert(1);
 }
 
 .but-buy input {
@@ -1865,6 +1821,7 @@ li {
   background-color: transparent;
   color: #ffff;
   font-size: 20px;
+  letter-spacing: 1px;
 }
 
 .soluong span {
@@ -2333,15 +2290,19 @@ a.but-buy span {
   .sp-cl {
     width: 50px;
     position: relative;
+    cursor: pointer;
+    display: inline-block;
+    height: 80px;
   }
-  .sp-sn img,
-  .sp-cn img,
-  .sp-cl img {
+  .sp-sn svg,
+  .sp-cn svg,
+  .sp-cl svg {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 99;
+    fill: #ffff;
   }
 
   .sp-cl span {

@@ -15,9 +15,7 @@
     <div class="clear40"></div>
     <div class="container">
       <div class="row">
-        <div class="col-md-1 col-sm-4">
-        </div>
-        <div class="col-md-4 col-sm-4">
+        <div class="col-md-4 col-12">
           <h4 class="tit-ft" id="tuvan">THƯƠNG HIỆU CÔNG TY SX TM XNK TIẾN THỊNH PHÁT</h4>
           <p class="clwhite">Địa chỉ: 180 Nguyễn Thị Búp, Phường Tân Chánh Hiệp, Quận 12, Thành Phố Hồ Chí Minh.
           </p>
@@ -27,8 +25,8 @@
           <p class="clwhite">Email :hotro24/7@tienthinhphatgroup.com</p>
           <p class="clwhite">Website: salanest.com</p>
           <p class="clwhite">Email: ttpsalanest@gmail.com.</p>
-
         </div>
+        <div class="clear20 show767"></div>
         <div class="col-md-3 col-sm-4">
           <h4 class="tit-ft">CHÍNH SÁCH</h4>
           <p class="footer_cs"><a href="bai-viet/4.html" title="Chinh-sach-bao-mat">- Chính sách khiếu nại.</a></p>
@@ -43,7 +41,7 @@
           </p>
         </div>
         <div class="clear20 show767"></div>
-        <div class="col-md-3 col-sm-4">
+        <div class="col-md-4 col-12">
           <h4 class="tit-ft">VỊ TRÍ</h4>
           </h4>
           <iframe
@@ -52,14 +50,11 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div class="clear20"></div>
           <img src="img/iso.png" alt="" width="40%">
-
           <img src="img/DMCA_logo-grn-btn100w.png" alt="" width="30%">
         </div>
       </div>
     </div>
-
-    <div class="clear40">
-    </div>
+    <div class="clear40"></div>
   </div>
 
   <div class="copyright">
@@ -76,7 +71,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <div title="Về đầu trang" id="top-up">
-  <img src="./img/back.png" alt="" width='50' style="transform: rotate(90deg);">
+  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up-circle-fill"
+    viewBox="0 0 16 16">
+    <path
+      d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+  </svg>
 </div>
 
 <script src="js/lightslider.js"></script>

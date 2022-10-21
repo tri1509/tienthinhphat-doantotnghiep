@@ -7,7 +7,11 @@ include 'inc/header.php' ;?>
     <div class="container">
       <span><a href="./" class="clblack">Trang chủ</a></span>
       <span style="margin: 0 7px;">
-        <img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" class="bi bi-chevron-right"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </svg>
       </span>
       <span class="clpink">Sản phẩm</span>
     </div>
@@ -16,9 +20,6 @@ include 'inc/header.php' ;?>
     <div class="clear20"></div>
     <div class="cart_background">
       <div class="row">
-        <?php 
-					// include 'inc/danhmuc.php';
-				?>
         <div class="col-12">
           <h4 class="nomargin text-uppercase clredt">SẢN PHẨM</h4><br>
           <div class="clear20"></div>
@@ -49,9 +50,7 @@ include 'inc/header.php' ;?>
             </div>
             <?php } }?>
           </div>
-
           <div class="clear40"></div>
-
           <?php 
             $product_all = $product -> getproduct_main();
             $product_count = mysqli_num_rows($product_all);
@@ -68,7 +67,7 @@ include 'inc/header.php' ;?>
                 if($trang >=2){
               ?>
               <a href="san-pham/trang<?php echo $trang - 1 ?>.html" class="pagination-item__link">
-                <img class='' src='./img/left.svg' alt='' width='15'>
+                <img class='' src='./img/left.svg' alt='' width='15' height="auto">
               </a>
               <?php } ?>
             </li>
@@ -90,7 +89,7 @@ include 'inc/header.php' ;?>
                 if ($trang < ceil($product_button)){
               ?>
               <a href="san-pham/trang<?php echo $trang + 1 ?>.html" class="pagination-item__link">
-                <img class='' src='./img/right.svg' alt='' width='15'>
+                <img class='' src='./img/right.svg' alt='' width='15' height="auto">
               </a>
               <?php } ?>
             </li>
