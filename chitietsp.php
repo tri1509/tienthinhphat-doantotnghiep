@@ -77,58 +77,78 @@ include 'inc/sale.php';
               <div class="block-gal-img">
                 <div class="block-gal-img">
                   <img src="./img/<?php echo $result_detils['hinh'] ?>" alt="" width="100%">
+                  <span onclick="xemthem()">
+                    Xem thêm
+                  </span>
                 </div>
               </div>
             </div>
             <div class="clear20 show767"></div>
-            <div class="col-md-6 col-sm-12 col-12">
-              <h3 class="nomargin bold clred"><?php echo $result_detils['sanpham_name'] ?></h3>
-              <div class="clear10"></div>
-              <p> <span>Thương hiệu:</span>
-                <span class="bold">
-                  <?php echo $result_detils['brand_name'] ?>
-                </span> | <span>Tình trạng: </span>
-                <span class="bold">
-                  <?php $tinhtrang = $result_detils['sanpham_soluong'];
+            <div class="col-md-6 col-sm-12 col-12 detail">
+              <div class="details">
+                <h3 class="nomargin bold clred"><?php echo $result_detils['sanpham_name'] ?></h3>
+                <div class="clear10"></div>
+                <p> <span>Thương hiệu:</span>
+                  <span class="bold">
+                    <?php echo $result_detils['brand_name'] ?>
+                  </span> | <span>Tình trạng: </span>
+                  <span class="bold">
+                    <?php $tinhtrang = $result_detils['sanpham_soluong'];
                       if ($tinhtrang > 0) {
                         echo "Còn hàng";
                       } else {
                         echo "Đã bán hết";
                       }; ?>
-                </span>
-              </p>
-              <div class="clear10"></div>
-              <div class="flex">
-                <h3 class="nomargin bold clred gia-sp">
-                  <?php echo number_format($result_detils['sanpham_giakhuyenmai']) . " đ"; ?><span class="donvi"></span>
-                </h3>
-                <p class="old-pri"><?php echo number_format($result_detils['sanpham_gia']) . " đ"; ?></p>
-              </div>
-              <hr>
-              <div class="clear20"></div>
-              <form action="" method="post">
-                <div class="thanhtoan">
-                  <div class="soluong">
-                    <span>Số lượng:</span><input type="number" class="center" name="quantity" min="1" value="1">
-                  </div>
-                  <div class="muahang but-buy">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-basket3-fill"
-                      viewBox="0 0 16 16" fill="#ffff">
-                      <path
-                        d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z" />
-                    </svg>
-                    <input type="submit" name="submit" value="Mua hàng">
-                  </div>
+                  </span>
+                </p>
+                <div class="clear10"></div>
+                <div class="flex">
+                  <h3 class="nomargin bold clred gia-sp">
+                    <?php echo number_format($result_detils['sanpham_giakhuyenmai']) . " đ"; ?><span
+                      class="donvi"></span>
+                  </h3>
+                  <p class="old-pri"><?php echo number_format($result_detils['sanpham_gia']) . " đ"; ?></p>
                 </div>
-              </form>
-              <div class="clear20"></div>
-              <div class="p-tuvan">
-                <p class="bold flex"><img src="img/tuvan.png"> Tư vấn & đặt hàng: <span class="clred">(028)36 221
-                    286</span></p>
+                <hr>
+                <div class="clear20"></div>
+                <form action="" method="post">
+                  <div class="thanhtoan">
+                    <div class="soluong">
+                      <span>Số lượng:</span><input type="number" class="center" name="quantity" min="1" value="1">
+                    </div>
+                    <div class="muahang but-buy">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-basket3-fill"
+                        viewBox="0 0 16 16" fill="#ffff">
+                        <path
+                          d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z" />
+                      </svg>
+                      <input type="submit" name="submit" value="Mua hàng">
+                    </div>
+                  </div>
+                </form>
+                <div class="clear20"></div>
+                <div class="p-tuvan">
+                  <p class="bold flex"><img src="img/tuvan.png"> Tư vấn & đặt hàng: <span class="clred">(028)36 221
+                      286</span></p>
+                </div>
+                <div class="clear20"></div>
               </div>
-              <div class="clear20"></div>
+
             </div>
           </div>
+          <div class="showdetailimg" id="showdetailimg">
+            <img src="./img/dongtrung_front_tra.webp" alt="" width="200" height="200">
+            <img src="./img/dongtrung_front_tra.webp" alt="" width="200" height="200">
+            <img src="./img/dongtrung_front_tra.webp" alt="" width="200" height="200">
+            <img src="./img/dongtrung_front_tra.webp" alt="" width="200" height="200">
+            <img src="./img/dongtrung_front_tra.webp" alt="" width="200" height="200">
+          </div>
+          <script>
+          function xemthem() {
+            var xemthem = document.getElementById("showdetailimg");
+            xemthem.classList.toggle("show");
+          }
+          </script>
           <div class="clear40"></div>
           <div class="container">
             <h1 class="text-danger">1 -Thông tin sản phẩm</h1>
