@@ -73,7 +73,7 @@ include 'inc/sale.php';
           ?>
 
           <div class="row">
-            <div class="col-md-6 col-sm-12 col-12">
+            <div class="col-md-6 col-sm-12 col-12 order-sm-1 order-2">
               <div class="block-gal-img">
                 <div class="block-gal-img">
                   <img src="./img/<?php echo $result_detils['hinh'] ?>" alt="" width="100%">
@@ -84,7 +84,7 @@ include 'inc/sale.php';
               </div>
             </div>
             <div class="clear20 show767"></div>
-            <div class="col-md-6 col-sm-12 col-12 detail">
+            <div class="col-md-6 col-sm-12 col-12 detail order-sm-2 order-1">
               <div class="details">
                 <h3 class="nomargin bold clred"><?php echo $result_detils['sanpham_name'] ?></h3>
                 <div class="clear10"></div>
