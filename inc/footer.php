@@ -44,10 +44,10 @@
         <div class="col-md-4 col-12">
           <h4 class="tit-ft">VỊ TRÍ</h4>
           </h4>
-          <iframe
+          <!-- <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.167756178061!2d106.6261484139766!3d10.874842160345052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b8c1dec9bb1%3A0x40c9948611c328fc!2zY2l0eSwgMTgwIE5ndXnhu4VuIFRo4buLIELDunAsIEhp4buHcCBUaMOgbmgsIFF14bqtbiAxMiwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1666169846961!5m2!1sen!2s"
             width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
           <div class="clear20"></div>
           <img src="img/iso.png" alt="" width="40%">
           <img src="img/DMCA_logo-grn-btn100w.png" alt="" width="30%">

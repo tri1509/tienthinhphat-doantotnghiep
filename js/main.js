@@ -90,15 +90,9 @@ function togglePass2() {
 
 $("#inputPassword, #inputPassword2").on("keyup", function () {
   if ($("#inputPassword").val() == $("#inputPassword2").val()) {
-    $("#thongbao")
-      .html('<i class="fa-solid fa-check"></i>')
-      .css("color", "green");
     $("#dangky").removeAttr("disabled");
     $("#restorepass").removeAttr("disabled");
   } else {
-    $("#thongbao")
-      .html('<i class="fa-solid fa-xmark"></i>')
-      .css("color", "red");
     $("#dangky").attr("disabled", "disabled");
     $("#restorepass").attr("disabled", "disabled");
   }
@@ -198,6 +192,19 @@ $(document).ready(function () {
     ],
   });
 });
+/*--------------------------------------------*/
+
+$(document).ready(function () {
+  $(".slider-detail").slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: true,
+    prevArrow:
+      "<img class='container-item-nav left' src='./img/left.svg' alt='' width='15' height='15'>",
+    nextArrow:
+      "<img class='container-item-nav right' src='./img/right.svg' alt='' width='15' height='15'>",
+  });
+});
 
 /*--------------------------------------------*/
 let items = document.querySelectorAll(".parallax");
@@ -208,3 +215,35 @@ document.addEventListener("scroll", (event) => {
     }
   });
 });
+/*--------------------------------------------*/
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}

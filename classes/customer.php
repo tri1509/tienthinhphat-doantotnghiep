@@ -145,8 +145,7 @@
         public function restore_Pass($data,$id) {
             $restorepass = mysqli_real_escape_string($this->db->link, $data['passwordrestore']);
             $query = "UPDATE tbl_customer SET password = '$restorepass'
-            WHERE md5(id)='$id';
-            ";
+            WHERE md5(id)='$id' ";
             $result = $this->db->update($query);
             if($result) {
                 $alert = "<span class='ok'>Đổi mật khẩu thành công</span>";
@@ -173,7 +172,7 @@
                     $alert = "<span class='success'>Thêm thông tin thành công!</span>";
                     return $alert;
                 }else{
-                    $alert = "<span class='notok'>Thất bại !</span>";
+                    $alert = "<span class='notok'>Lỗi hệ thống, bạn vui lòng đợi một chút !</span>";
                     return $alert;
                 }
             }

@@ -3,7 +3,6 @@
 	include 'inc/header.php';
 	include 'inc/sale.php';
 ?>
-
 <div id="form_login">
   <div class="container">
     <div class="row">

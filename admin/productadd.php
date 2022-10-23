@@ -77,7 +77,6 @@
             <td>
               <select id="select" name="type">
                 <option>-----Chọn loại-----</option>
-
                 <option value="1">Đường phèn</option>
                 <option value="2">Nhân sâm</option>
                 <option value="3">Đông trùng</option>
@@ -86,6 +85,7 @@
                 <option value="6">Táo đỏ</option>
                 <option value="7">Saffron</option>
                 <option value="8">KIDS</option>
+                <option value="9">Đông Trùng Không Đường</option>
               </select>
             </td>
           </tr>
@@ -150,7 +150,6 @@
               <input type="submit" name="submit" Value="Thêm vào" />
             </td>
           </tr>
-
         </table>
       </form>
     </div>

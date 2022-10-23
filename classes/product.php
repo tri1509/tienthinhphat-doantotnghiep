@@ -197,6 +197,12 @@
             return $result;
         }
 
+        public function get_img($img_id){
+            $query ="SELECT * FROM tbl_sphinh WHERE sanpham_id = '$img_id' ";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
         public function getinformation($id) {
             $query ="SELECT * FROM tbl_sanpham WHERE sanpham_id = '$id' ";
             $result = $this->db->select($query);

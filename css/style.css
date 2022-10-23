@@ -971,16 +971,15 @@ li {
   box-shadow: 0 0 4px 2px rgb(0 0 0 / 15%);
   transition: 0.2s;
   z-index: 99;
+  cursor: pointer;
 }
 
 .container-item-nav.left {
-  filter: invert(0);
-  left: -10px;
+  left: 0px;
 }
 
 .container-item-nav.right {
-  filter: invert(0);
-  right: -10px;
+  right: 0px;
 }
 
 .container-item-nav:hover {
@@ -1480,7 +1479,7 @@ li {
 
 .home-product__item-img {
   background-repeat: no-repeat;
-  padding-top: 83%;
+  padding-top: 100%;
   background-size: cover;
   background-position: center;
   object-fit: cover;
@@ -3441,4 +3440,20 @@ footer p a:hover {
 
 .showdetailimg.show {
   display: block;
+}
+
+.demo {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.25s linear;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.slider-detail {
+  position: relative;
 }

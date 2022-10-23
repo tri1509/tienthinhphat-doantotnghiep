@@ -2,7 +2,6 @@
 $title = "Salanest group - Trang Chủ - Tiến Thịnh Phát - Yến Sào";
 include 'inc/header.php';
 ?>
-
 <section>
   <div class="row cart_hot">
     <div class="col-xl-12 col-12">
@@ -18,7 +17,7 @@ include 'inc/header.php';
   </div>
   <?php include 'inc/sale.php'; ?>
   <div class="main-sanphamchinh">
-    <img src="img/mobile_banner2.png" alt="hình ảnh tổ yến" title="hình anh tổ yến" width="100%" height="auto">
+    <img src="img/mobile_banner2.webp" alt="hình ảnh tổ yến" title="hình anh tổ yến" width="100%" height="auto">
     <div class="container">
       <div class="wide-700 sanpham-noibat">
         <?php
@@ -27,7 +26,7 @@ include 'inc/header.php';
             while ($result = $showProduct->fetch_assoc()) {
         ?>
         <div class="sanpham-noibat-item">
-          <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html" title="<?php echo $result['sanpham_name'] ?>">
+          <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html" title="<?php echo $result['sanpham_name'] ;?>">
             <div class="home-product__item-img" style="background-image:url(./img/<?php echo $result['hinh'] ?>);">
             </div>
             <div class="ct-item-pro">

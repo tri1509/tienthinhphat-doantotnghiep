@@ -53,38 +53,62 @@ include 'inc/sale.php';
     <div class="container">
       <div class="row flex-order">
         <?php if (isset($addtoCart)) { ?>
-        <a href="giohang.php">
+        <a href="giohang.html">
           <?php echo  $addtoCart ?> <i>|</i> <span class='success'>Xem giỏ hàng <span class='test'>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-chevron-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                   d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
               </svg>
-            </span></span>
         </a>
         <?php } else {echo "<div class='clear20'></div>";} ?>
-        <div class='clear20'></div>
         <div class="col-12">
           <?php
             $get_product_details = $product->get_details($id);
             if ($get_product_details) {
               while ($result_detils = $get_product_details->fetch_assoc()) {
                 $cate_id = $result_detils['category_id'];
+                $img_id = $result_detils['sanpham_id'];
           ?>
-
           <div class="row">
-            <div class="col-md-6 col-sm-12 col-12 order-sm-1 order-2">
+            <div class="col-xl-4 col-md-6 col-sm-12 col-12">
               <div class="block-gal-img">
                 <div class="block-gal-img">
-                  <img src="./img/<?php echo $result_detils['hinh'] ?>" alt="" width="100%">
-                  <span onclick="xemthem()">
-                    Xem thêm
-                  </span>
+                  <?php
+                      $get_product_img = $product->get_img($img_id);
+                      if ($get_product_img) {
+                        while ($result_img = $get_product_img->fetch_assoc()) {
+                    ?>
+                  <div class="mySlides">
+                    <div class="home-product__item-img"
+                      style="background-image:url(./img/<?php echo $result_img['hinh'] ;?>);">
+                    </div>
+                  </div>
+                  <?php }}else{ ?>
+                  <div class="home-product__item-img"
+                    style="background-image:url(./img/<?php echo $result_detils['hinh'] ;?>);">
+                  </div>
+                  <?php } ?>
+                  <div class="slider-detail">
+                    <?php
+                      $get_product_img = $product->get_img($img_id);
+                      if ($get_product_img) {
+                        $i = 0;
+                        while ($result_img = $get_product_img->fetch_assoc()) {
+                          $i++;
+                    ?>
+                    <div class="demo">
+                      <div onclick="currentSlide(<?php echo $i ?>)" class="home-product__item-img"
+                        style="background-image:url(./img/<?php echo $result_img['hinh'] ;?>);">
+                      </div>
+                    </div>
+                    <?php }} ?>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="clear20 show767"></div>
-            <div class="col-md-6 col-sm-12 col-12 detail order-sm-2 order-1">
+            <div class="col-md-6 col-sm-12 col-12 detail">
               <div class="details">
                 <h3 class="nomargin bold clred"><?php echo $result_detils['sanpham_name'] ?></h3>
                 <div class="clear10"></div>
@@ -133,22 +157,8 @@ include 'inc/sale.php';
                 </div>
                 <div class="clear20"></div>
               </div>
-
             </div>
           </div>
-          <div class="showdetailimg" id="showdetailimg">
-            <img src="./img/dongtrung_front_tra.webp" alt="" width="200" height="200">
-            <img src="./img/dongtrung_front_tra.webp" alt="" width="200" height="200">
-            <img src="./img/dongtrung_front_tra.webp" alt="" width="200" height="200">
-            <img src="./img/dongtrung_front_tra.webp" alt="" width="200" height="200">
-            <img src="./img/dongtrung_front_tra.webp" alt="" width="200" height="200">
-          </div>
-          <script>
-          function xemthem() {
-            var xemthem = document.getElementById("showdetailimg");
-            xemthem.classList.toggle("show");
-          }
-          </script>
           <div class="clear40"></div>
           <div class="container">
             <h1 class="text-danger">1 -Thông tin sản phẩm</h1>
@@ -199,7 +209,8 @@ include 'inc/sale.php';
                     </p>
                   </div>
                   <div class="clear10"></div>
-                  <a href="chi-tiet/<?php echo $result_cungloai['sanpham_id'] ?>.html" class="addtocart">xem sản phẩm
+                  <a href="chi-tiet/<?php echo $result_cungloai['sanpham_id'] ?>.html" class="addtocart">xem sản
+                    phẩm
                   </a>
                 </div>
               </div>

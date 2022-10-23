@@ -194,10 +194,10 @@ $ps = new post();
               <div class="header-bottom-item-menu-right">
                 <div class="grid">
                   <div class="grid-item">
-                    <img src="./img/heranest_2.webp" alt="ảnh heranest" />
+                    <img src="./img/hera-compressed.webp" alt="ảnh heranest" />
                   </div>
                   <div class="grid-item">
-                    <img src="./img/salanest_2.webp" alt="ảnh salanest" />
+                    <img src="./img/salanest_2-compressed.webp" alt="ảnh salanest" />
                   </div>
                   <div class="grid-item">
                     <img src="./img/giabao_2.webp" alt="ảnh gia bao" />
