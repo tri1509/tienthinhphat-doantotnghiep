@@ -84,7 +84,10 @@ include 'inc/sale.php';
                       style="background-image:url(./img/<?php echo $result_img['hinh'] ;?>);">
                     </div>
                   </div>
-                  <?php }}else{ ?>
+                  <?php } ?>
+                  <a class="mySlidesprev" onclick="plusSlides(-1)">❮</a>
+                  <a class="mySlidesnext" onclick="plusSlides(1)">❯</a>
+                  <?php }else{ ?>
                   <div class="home-product__item-img"
                     style="background-image:url(./img/<?php echo $result_detils['hinh'] ;?>);">
                   </div>
@@ -152,24 +155,22 @@ include 'inc/sale.php';
                 </form>
                 <div class="clear20"></div>
                 <div class="p-tuvan">
-                  <p class="bold flex"><img src="img/tuvan.png"> Tư vấn & đặt hàng: <span class="clred">(028)36 221
-                      286</span></p>
+                  <p class="bold flex">
+                    <img src="img/tuvan.png">
+                    Tư vấn & đặt hàng: <span class="clred">(028)36 221 286</span>
+                  </p>
                 </div>
                 <div class="clear20"></div>
+                <?php echo $result_detils['sanpham_chitiet'] ?>
               </div>
             </div>
           </div>
           <div class="clear40"></div>
           <div class="container">
-            <h1 class="text-danger">1 -Thông tin sản phẩm</h1>
             <div class="clear20"></div>
-            <h2><?php echo $result_detils['sanpham_chitiet'] ?></h2>
-            <img src="./img/<?php echo $result_detils['hinh'] ?>" alt="san-pham-yen-sao" width="40%">
             <?php echo $result_detils['sanpham_mota'] ?>
           </div>
-          <?php }}else {
-            header('Location:404.php');
-          } ?>
+          <?php }}else { header('Location:404.php');} ?>
 
           <div class="clear20"></div>
           <p class="tag-p">
@@ -180,8 +181,6 @@ include 'inc/sale.php';
             <a href="#">Tag 4,</a>
             <a href="#">Tag 5</a>
           </p>
-
-
           <div class="clear40"></div>
           <div class="pro-relative">
             <div class="tit-pr">
@@ -191,26 +190,26 @@ include 'inc/sale.php';
 
             <div class="img-slider">
               <?php
-              $sp_cungloai = $product->samekind($cate_id);
-              if ($sp_cungloai) {
-                while ($result_cungloai = $sp_cungloai->fetch_assoc()) {
+              $sp_samekind = $product->samekind($cate_id);
+              if ($sp_samekind) {
+                while ($result_samekind = $sp_samekind->fetch_assoc()) {
               ?>
               <div class="img-item">
                 <div class="home-product__item-img"
-                  style="background-image:url(./img/<?php echo $result_cungloai['hinh']; ?>);"></div>
+                  style="background-image:url(./img/<?php echo $result_samekind['hinh']; ?>);"></div>
                 <div class="ct-item-pro">
-                  <p class="bold item-name"><?php echo $result_cungloai['sanpham_name']; ?></p>
+                  <p class="bold item-name"><?php echo $result_samekind['sanpham_name']; ?></p>
                   <div class="clear10"></div>
                   <div class="flex-bw">
                     <p class="old-pri">
-                      <?php echo number_format($result_cungloai['sanpham_gia']) . " đ"; ?></p>
+                      <?php echo number_format($result_samekind['sanpham_gia']) . " đ"; ?></p>
                     <p class="new-pri bold">
-                      <?php echo number_format($result_cungloai['sanpham_giakhuyenmai']) . " đ"; ?>
+                      <?php echo number_format($result_samekind['sanpham_giakhuyenmai']) . " đ"; ?>
                     </p>
                   </div>
                   <div class="clear10"></div>
-                  <a href="chi-tiet/<?php echo $result_cungloai['sanpham_id'] ?>.html" class="addtocart">xem sản
-                    phẩm
+                  <a href="chi-tiet/<?php echo $result_samekind['sanpham_id'] ?>.html" class="addtocart">
+                    xem sản phẩm
                   </a>
                 </div>
               </div>
