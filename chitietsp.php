@@ -208,7 +208,8 @@ include 'inc/sale.php';
                     </p>
                   </div>
                   <div class="clear10"></div>
-                  <a href="chi-tiet/<?php echo $result_samekind['sanpham_id'] ?>.html" class="addtocart">
+                  <a href="chi-tiet/<?php echo $result_samekind['sanpham_id'] ?>/<?php echo $result_samekind['sanpham_url'] ?>.html"
+                    class="addtocart">
                     xem sản phẩm
                   </a>
                 </div>
