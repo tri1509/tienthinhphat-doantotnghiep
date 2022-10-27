@@ -165,7 +165,8 @@ $ps = new post();
                         while ($result = $show_brand->fetch_assoc()) {
                     ?>
                     <div class="col-3 border-right">
-                      <a href="san-pham-theo-thuong-hieu/<?php echo $result['brand_id'] ?>.html" class="bottom-link 
+                      <a href="san-pham-theo-thuong-hieu/<?php echo $result['brand_id'] ?>-<?php echo $result['brand_url'] ?>.html"
+                        class="bottom-link 
                       <?php if($idbrand == $result['brand_id']){echo "active";}?>">
                         <?php echo $result['brand_name'] ?>
                       </a>
@@ -179,7 +180,7 @@ $ps = new post();
                       ?>
                           <li class="bottom-item-child">
                             <a
-                              href="san-pham-theo-thuong-hieu/<?php echo $result_lv2['brand_id'] ?>/<?php echo $result_lv2['brand_id_lv2'] ?>.html">
+                              href="san-pham-theo-thuong-hieu/<?php echo $result_lv2['brand_id'] ?>/<?php echo $result_lv2['brand_id_lv2'] ?>-<?php echo $result_lv2['url'] ?>.html">
                               <?php echo $result_lv2['brand_name_lv2'] ?>
                             </a>
                           </li>

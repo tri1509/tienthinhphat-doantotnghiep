@@ -3428,7 +3428,7 @@ footer p a:hover {
   margin: 0 1px;
 }
 
-.active,
+.demo.active,
 .demo:hover {
   opacity: 1;
   border: 1px solid #999;

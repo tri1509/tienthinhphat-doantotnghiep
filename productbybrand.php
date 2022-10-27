@@ -22,7 +22,8 @@
   <div class="main-breac">
     <div class="container">
       <span><a href="./" class="clblack">Trang chủ</a></span>
-      <span style="margin: 0 7px;"><img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18"></span>
+      <span style="margin: 0 7px;"><img src="./img/back.png" alt="" style="transform: rotate(180deg);"
+          width="18"></span>
       <span class="clpink">Sản phẩm</span>
     </div>
   </div>
@@ -52,7 +53,7 @@
                   while($result = $productbybrand -> fetch_assoc()) {
               ?>
               <div class="col-xl-4 col-md-4 col-sm-6 col-xs-6 col-6">
-                <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html"
+                <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
                   title="<?php echo $result['sanpham_name'] ?>">
                   <div class="item-pro">
                     <div class="home-product__item-img"
@@ -66,7 +67,8 @@
                         <p class="new-pri bold"><?php echo number_format($result['sanpham_giakhuyenmai'])." đ" ; ?></p>
                       </div>
                       <div class="clear10"></div>
-                      <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html" class="addtocart">Xem Sản
+                      <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['url'] ?>.html"
+                        class="addtocart">Xem Sản
                         Phẩm</a>
                     </div>
                   </div>

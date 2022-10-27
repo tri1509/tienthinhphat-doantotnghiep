@@ -52,8 +52,9 @@
               <label>Nội dung</label>
             </td>
             <td>
-              <textarea class="tinymce" name="baiviet_noidung"
-                value="<?php echo $result_post['baiviet_noidung'] ?>"></textarea>
+              <textarea class="tinymce" name="baiviet_noidung">
+              <?php echo $result_post['baiviet_noidung'] ?>
+              </textarea>
             </td>
           </tr>
           <tr>

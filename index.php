@@ -26,7 +26,8 @@ include 'inc/header.php';
             while ($result = $showProduct->fetch_assoc()) {
         ?>
         <div class="sanpham-noibat-item">
-          <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html" title="<?php echo $result['sanpham_name'] ;?>">
+          <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
+            title="<?php echo $result['sanpham_name'] ;?>">
             <div class="home-product__item-img" style="background-image:url(./img/<?php echo $result['hinh'] ?>);">
             </div>
             <div class="ct-item-pro">
@@ -37,8 +38,8 @@ include 'inc/header.php';
                 <p class="new-pri bold"><?php echo number_format($result['sanpham_giakhuyenmai']) . " đ"; ?></p>
               </div>
               <div class="clear10"></div>
-              <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html" class="addtocart"
-                title="<?php echo $result['sanpham_name'] ?>">Xem ngay</a>
+              <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
+                class="addtocart" title="<?php echo $result['sanpham_name'] ?>">Xem ngay</a>
             </div>
           </a>
         </div>
@@ -66,13 +67,14 @@ include 'inc/header.php';
           <div class="col-md-6 zoomshow delay-<?php echo $i ?>">
             <div class="block-news-home">
               <div class="flex-nh">
-                <a href="bai-viet/<?php echo $result['baiviet_id'] ; ?>.html" class="img-nh"
-                  title="<?php echo $result['baiviet_name'] ; ?>">
+                <a href="bai-viet/<?php echo $result['baiviet_id'] ?>-<?php echo $result['url'] ; ?>.html"
+                  class="img-nh" title="<?php echo $result['baiviet_name'] ; ?>">
                   <img src="img/<?php echo $result['baiviet_img'] ; ?>" class="fullwidth" style="display:block;">
                 </a>
                 <div class="ct-nh">
                   <p class="tit-nh">
-                    <a href="bai-viet/<?php echo $result['baiviet_id'] ; ?>.html" class="clblack">
+                    <a href="bai-viet/<?php echo $result['baiviet_id'] ?>-<?php echo $result['url'] ; ?>.html"
+                      class="clblack">
                       <?php echo $result['baiviet_name'] ; ?>
                     </a>
                   </p>

@@ -188,7 +188,9 @@
 
         public function get_details($id){
             $query =
-            "SELECT tbl_sanpham.*, tbl_category.category_name, tbl_brand.brand_name 
+            "SELECT tbl_sanpham.*,
+            tbl_category.category_name,
+            tbl_brand.brand_name 
             FROM tbl_sanpham 
             INNER JOIN tbl_category ON tbl_sanpham.category_id = tbl_category.category_id
             INNER JOIN tbl_brand ON tbl_sanpham.brand_id = tbl_brand.brand_id 

@@ -75,10 +75,10 @@ include 'inc/sale.php';
               <div class="block-gal-img">
                 <div class="block-gal-img">
                   <?php
-                      $get_product_img = $product->get_img($img_id);
-                      if ($get_product_img) {
-                        while ($result_img = $get_product_img->fetch_assoc()) {
-                    ?>
+                    $get_product_img = $product->get_img($img_id);
+                    if ($get_product_img) {
+                      while ($result_img = $get_product_img->fetch_assoc()) {
+                  ?>
                   <div class="mySlides">
                     <div class="home-product__item-img"
                       style="background-image:url(./img/<?php echo $result_img['hinh'] ;?>);">
@@ -97,7 +97,7 @@ include 'inc/sale.php';
                       $get_product_img = $product->get_img($img_id);
                       if ($get_product_img) {
                         $i = 0;
-                        while ($result_img = $get_product_img->fetch_assoc()) {
+                        while ($result_img = $get_product_img->fetch_assoc()){
                           $i++;
                     ?>
                     <div class="demo">

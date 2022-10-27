@@ -27,7 +27,7 @@ include 'inc/header.php';include 'inc/sale.php';?>
               <div class="box_news clear">
                 <div class="row">
                   <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
-                    <a href="bai-viet/<?php echo $result['baiviet_id'] ; ?>.html"
+                    <a href="bai-viet/<?php echo $result['baiviet_id'] ; ?>-<?php echo $result['url'] ; ?>.html"
                       title="<?php echo $result['baiviet_name'] ; ?>"><img
                         src="img/<?php echo $result['baiviet_img'] ; ?>"
                         alt="<?php echo $result['baiviet_name'] ; ?>" /></a>
@@ -35,7 +35,7 @@ include 'inc/header.php';include 'inc/sale.php';?>
 
                   <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
                     <div class="clear20"></div>
-                    <h3><a href="bai-viet/<?php echo $result['baiviet_id'] ?>.html"
+                    <h3><a href="bai-viet/<?php echo $result['baiviet_id'] ?>-<?php echo $result['url'] ; ?>.html"
                         title="<?php echo $result['baiviet_name'] ; ?>"><?php echo $result['baiviet_name']?></a></h3>
                     <p class="new_ngaydang">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width:12px;">

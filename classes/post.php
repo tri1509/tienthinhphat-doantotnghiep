@@ -32,7 +32,7 @@
                 $trang = $_GET['trang'];
             }
             $so_trang = ($trang-1)*$so_baiviet_trang ;
-            $query = "SELECT * FROM tbl_baiviet ORDER BY baiviet_id ASC LIMIT $so_trang,$so_baiviet_trang" ;
+            $query = "SELECT * FROM tbl_baiviet ORDER BY baiviet_id DESC LIMIT $so_trang,$so_baiviet_trang" ;
             $result = $this->db->select($query);
             return $result;
         }
