@@ -975,12 +975,12 @@ li {
 
 .container-item-nav.left {
   filter: invert(0);
-  left: -10px;
+  left: 0px;
 }
 
 .container-item-nav.right {
   filter: invert(0);
-  right: -10px;
+  right: 0px;
 }
 
 .container-item-nav:hover {

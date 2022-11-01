@@ -82,8 +82,10 @@ include 'inc/header-sp.php' ;?>
               <td data-label="số lượng :">
                 <form action="" method="post">
                   <input type="hidden" name="cartId" value="<?php echo $result['cartId'] ?>" />
-                  <input class="cart-sl" type="number" name="quantity" value="<?php echo $result['quantity'] ?>"
-                    min="1" />
+                  <input type="hidden" name="price" id="price-<?php echo $result['cartId'] ?>"
+                    value="<?php echo $result['price'] ?>" />
+                  <input data-id="<?php echo $result['cartId'] ?>" class="cart-sl" type="number" name="quantity"
+                    value="<?php echo $result['quantity'] ?>" min="1" />
                   <input class="cart-up" type="submit" name="capnhat" value="Cập nhật" />
                 </form>
               </td>
@@ -91,7 +93,9 @@ include 'inc/header-sp.php' ;?>
                 <p class="bold"><?php echo number_format($result['price'])."đ"  ?></p>
               </td>
               <td data-label="giá tổng :">
-                <p class="bold"><?php echo number_format($total)."đ"; ?></p>
+                <p id="sub-total-<?php echo $result['cartId'] ?>" class="bold">
+                  <?php echo number_format($total)."đ"; ?>
+                </p>
               </td>
               <td>
                 <a href="giohang.html?cartid=<?php echo $result['cartId'] ?>"
@@ -115,7 +119,7 @@ include 'inc/header-sp.php' ;?>
             <div class="clear40"></div>
             <h3 class="nomargin bold clredt">Tổng tiền thanh toán</h3>
             <div class="clear20"></div>
-            <h4 class="nomargin bold clred">
+            <h4 id="total-price" class="nomargin bold clred">
               <?php 
 							echo number_format($gtotal).'vnđ';
 							session::set('qty',$qty);

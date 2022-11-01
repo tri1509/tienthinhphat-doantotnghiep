@@ -84,6 +84,7 @@
 <script src="js/lightslider.js"></script>
 <script src="js/jquery.nivo.slider.pack.js"></script>
 <script src="js/main.js" type="text/javascript"></script>
+<script src="js/ajax.js" type="text/javascript"></script>
 
 <!--  slick -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
