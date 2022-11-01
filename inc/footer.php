@@ -16,41 +16,44 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-12">
-          <h4 class="tit-ft" id="tuvan">THƯƠNG HIỆU CÔNG TY SX TM XNK TIẾN THỊNH PHÁT</h4>
-          <p class="clwhite">Địa chỉ: 180 Nguyễn Thị Búp, Phường Tân Chánh Hiệp, Quận 12, Thành Phố Hồ Chí Minh.
+          <h4 class="tit-ft" id="tuvan">CÔNG TY TNHH SX TM XNK NƯỚC GIẢI KHÁT TIẾN THỊNH PHÁT</h4>
+          <p class="clwhite"> GPKD Số 0317198609 được cấp bởi Sở KH và ĐT TP. Hồ Chí Minh ngày 14/03/20222022
+          </p>
+          <p class="clwhite">Trụ Sở: 180 Nguyễn Thị Búp, Phường Tân Chánh Hiệp, Quận 12, Thành Phố Hồ Chí Minh.
           </p>
           <div class="clear20"></div>
-          <h4 class="tit-ft">HOTLINE LIÊN HỆ.</h4>
-          <p class="clwhite">(08)76.88.39.39</p>
-          <p class="clwhite">Email :hotro24/7@tienthinhphatgroup.com</p>
+          <h4 class="tit-ft">THÔNG TIN LIÊN HỆ.</h4>
+          <p class="clwhite">Hotline: (026)36 221 286</p>
+          <p class="clwhite">Email : hotro24/7@tienthinhphatgroup.com</p>
           <p class="clwhite">Website: salanest.com</p>
-          <p class="clwhite">Email: ttpsalanest@gmail.com.</p>
+          <p class="clwhite"><a href="https://daily.tienthinhphatgroup.com/tuyen-dung-dai-ly">Hợp Tác đại Lý: Tại
+              đây</a></p>
+
+
         </div>
         <div class="clear20 show767"></div>
         <div class="col-md-3 col-sm-4">
           <h4 class="tit-ft">CHÍNH SÁCH</h4>
-          <p class="footer_cs"><a href="bai-viet/4.html" title="Chinh-sach-bao-mat">- Chính sách khiếu nại.</a></p>
-          <p class="footer_cs"><a href="bai-viet/2.html" title="Chinh-sach-thanh-toan">- Chính sách thanh toán.</a></p>
-          <p class="footer_cs"><a href="bai-viet/3.html" title="chinh-sach-mua-hang">- Chính sách mua hàng.</a></p>
-          <p class="footer_cs"><a href="bai-viet/1.html" title="chinh-sach-bao-mat.">- Chính sách bảo mật.</a></p>
-          <p class="footer_cs"><a href="bai-viet/1.html" title="chinh-sach-van-chuyen.">- Chính sách vận chuyển.</a></p>
-          <p class="footer_cs"><a href="bai-viet/1.html" title="chinh-sach-doi-tra.">- Chính sách đổi trả.</a></p>
-          <p class="clwhite"><img src="img/visa-all.webp" alt="ngan-hang-thanh-toan" width="40%">
+          <p class="footer_cs"><a href="bai-viet/11-.html" title="Chinh-sach-bao-mat">- Chính sách khiếu nại.</a></p>
+          <p class="footer_cs"><a href="bai-viet/12-.html" title="Chinh-sach-thanh-toan">- Chính sách thanh toán.</a>
+          </p>
+          <p class="footer_cs"><a href="bai-viet/13-.html" title="chinh-sach-mua-hang">- Chính sách mua hàng.</a></p>
+          <p class="footer_cs"><a href="bai-viet/14-.html" title="chinh-sach-bao-mat.">- Chính sách bảo mật.</a></p>
+          <p class="footer_cs"><a href="bai-viet/15-.html" title="chinh-sach-van-chuyen.">- Chính sách vận chuyển.</a>
+          </p>
+          <p class="footer_cs"><a href="bai-viet/16-.html" title="chinh-sach-doi-tra.">- Chính sách đổi trả.</a></p>
           <div class="clear10"></div>
-          <p class="clwhite"><img src="img/dathongbao.png" alt="chung-nhan-cua-bo-cong-thương" width="30%">
           </p>
         </div>
         <div class="clear20 show767"></div>
         <div class="col-md-4 col-12">
           <h4 class="tit-ft">VỊ TRÍ</h4>
           </h4>
-          <!-- <iframe
+          <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.167756178061!2d106.6261484139766!3d10.874842160345052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b8c1dec9bb1%3A0x40c9948611c328fc!2zY2l0eSwgMTgwIE5ndXnhu4VuIFRo4buLIELDunAsIEhp4buHcCBUaMOgbmgsIFF14bqtbiAxMiwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1666169846961!5m2!1sen!2s"
             width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div class="clear20"></div>
-          <img src="img/iso.png" alt="" width="40%">
-          <img src="img/DMCA_logo-grn-btn100w.png" alt="" width="30%">
         </div>
       </div>
     </div>
@@ -126,6 +129,50 @@ $("body").hotline({
   position: "fixed",
 });
 </script>
+<!-- <script>
+  var link_image =
+  "https://lennguyenmedia.com/wp-content/uploads/2021/10/diem-hen-du-lich-anh-dai-dien.jpg";
+  var link = "https://namdinhweb.net/";
+  var icon_close = "https://namdinhweb.net/wp-content/uploads/2018/07/0-15.png";
+  function closePopupBeta() {
+    document.getElementById("popup_banner_beta").remove(),
+      setCookie("showPopupBannerBeta", 1, 1);
+  }
+
+  function setCookie(e, n, o) {
+    var t = "";
+    if (o) {
+      var i = new Date();
+      i.setTime(i.getTime() + 60 * 1000), (t = "; expires=" + i.toUTCString());
+    }
+    document.cookie = e + "=" + (n || "") + t + "; path=/";
+  }
+  function getCookie(e) {
+    for (
+      var n = e + "=", o = document.cookie.split(";"), t = 0;
+      t < o.length;
+      t++
+    ) {
+      for (var i = o[t]; " " == i.charAt(0); ) i = i.substring(1, i.length);
+      if (0 == i.indexOf(n)) return i.substring(n.length, i.length);
+    }
+    return null;
+  }
+  1 != getCookie("showPopupBannerBeta") &&
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var e =
+        '<div id="popup_banner_beta"><div onclick="closePopupBeta()" class="mask_popup_banner_beta"></div><div class="content_popup_banner_beta"><img src="' +
+        icon_close +
+        '" class="close_icon" onclick="closePopupBeta()" alt="Close Image"><a href="' +
+        link +
+        '"><img src="' +
+        link_image +
+        '" alt="Image Popup Banner" width="500" height="auto"/></a></div></div>';
+      setTimeout(function () {
+        document.body.innerHTML += e;
+      }, 3000);
+    });
+</script> -->
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSKPTHQ" height="0" width="0"
     style="display:none;visibility:hidden"></iframe></noscript>

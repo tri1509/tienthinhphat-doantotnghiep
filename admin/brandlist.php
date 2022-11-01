@@ -10,7 +10,7 @@
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>brand List</h2>
+                <h2>Thương Hiệu</h2>
                 <div class="block">  
 				<?php 
                 if(isset($delBrand)){echo $delBrand ;}
@@ -18,9 +18,9 @@
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
-							<th>Serial No.</th>
-							<th>brand Name</th>
-							<th>Action</th>
+							<th>Số Thứ Tự</th>
+							<th>Tên Danh Mục</th>
+							<th>Chỉnh Sửa/Xóa</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -34,7 +34,7 @@
 						<tr class="odd gradeX">
 							<td><?php echo $i ?></td>
 							<td><?php echo $result['brand_name'] ?></td>
-							<td><a href="brandedit.php?brandid=<?php echo $result['brand_id'] ?>">Edit</a> || <a href="?delid=<?php echo $result['brand_id'] ?>" onclick="return confirm('bạn có muốn xoá không?')">Delete</a></td>
+							<td><a href="brandedit.php?brandid=<?php echo $result['brand_id'] ?>">Chỉnh Sửa</a> || <a href="?delid=<?php echo $result['brand_id'] ?>" onclick="return confirm('bạn có muốn xoá không?')">Xóa</a></td>
 						</tr>
 						<?php }} ?>
 					</tbody>

@@ -46,7 +46,9 @@
           <div class="mota"></div>
         </div>
         <div class="content_text">
-          <?php echo $result['baiviet_noidung'] ; ?>
+          <?php 
+          echo $result['baiviet_noidung'] ; 
+          ?>
         </div>
       </div>
       <?php }} ?>

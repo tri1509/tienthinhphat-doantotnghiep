@@ -22,8 +22,7 @@
   <div class="main-breac">
     <div class="container">
       <span><a href="./" class="clblack">Trang chủ</a></span>
-      <span style="margin: 0 7px;"><img src="./img/back.png" alt="" style="transform: rotate(180deg);"
-          width="18"></span>
+      <span style="margin: 0 7px;"><img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18"></span>
       <span class="clpink">Sản phẩm</span>
     </div>
   </div>
@@ -56,7 +55,7 @@
                 <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
                   title="<?php echo $result['sanpham_name'] ?>">
                   <div class="item-pro">
-                    <div class="home-product__item-img"
+                    <div class="home-product__item-img "
                       style="background-image:url(./img/<?php echo $result['hinh']; ?>);"></div>
                     <div class="ct-item-pro">
                       <p class="bold"><a href="chitietsp.php?proid=<?php echo $result['sanpham_id'] ?>"
@@ -68,8 +67,7 @@
                       </div>
                       <div class="clear10"></div>
                       <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['url'] ?>.html"
-                        class="addtocart">Xem Sản
-                        Phẩm</a>
+                        class="addtocart">Xem Sản Phẩm</a>
                     </div>
                   </div>
                 </a>

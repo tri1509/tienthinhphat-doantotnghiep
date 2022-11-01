@@ -17,7 +17,7 @@ if ($get_product_details) {
   }
 }
 
-include 'inc/header.php';
+include 'inc/header-sp.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   $quantity = $_POST['quantity'];
   $addtoCart = $ct->add_to_cart($quantity, $id);

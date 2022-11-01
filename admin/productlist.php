@@ -24,12 +24,11 @@
             <th>Id</th>
             <th>Tên SP</th>
             <th>Giá</th>
-            <th>Hình ảnh</th>
-            <th>Category</th>
-            <th>Brand</th>
-            <th>Description</th>
-            <!-- <th>Type</th> -->
-            <th>Action</th>
+            <th>Hình Ảnh</th>
+            <th>ID-Danh mục</th>
+            <th>Loại</th>
+            <th>Mô Tả</th>
+            <th>Chỉnh/Xóa</th>
           </tr>
         </thead>
         <tbody>
@@ -46,19 +45,10 @@
             <td><img src="../img/<?php echo $resule['hinh'] ?>" alt="" width='100' height='100'></td>
             <td><?php echo $resule['category_id'] ?></td>
             <td><?php echo $resule['brand_id'] ?></td>
-            <td><?php echo $fm -> textShorten($resule['sanpham_mota'],50) ; ?></td>
-            <!-- <td>
-						<?php 
-							// if($resule['types'] == 0) {
-							// 	echo 'Thường';
-							// }else{
-							// 	echo 'Nổi bật';
-							// }
-						?>
-					</td> -->
-            <td><a href="productedit.php?productid=<?php echo $resule['sanpham_id'] ?>">Edit</a> || <a
+            <td><?php echo $fm -> textShorten($resule['sanpham_chitiet'],50) ; ?></td>
+            <td><a href="productedit.php?productid=<?php echo $resule['sanpham_id'] ?>">Chỉnh sửa</a> || <a
                 href="?productid=<?php echo $resule['sanpham_id'] ?>"
-                onclick="return confirm('Bạn có muốn xoá không?')">Delete</a></td>
+                onclick="return confirm('Bạn có muốn xoá không?')">Xóa</a></td>
           </tr>
           <?php } } ?>
         </tbody>
@@ -68,11 +58,11 @@
   </div>
 </div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(document).ready(function() {
   setupLeftMenu();
   $('.datatable').dataTable();
   setSidebarHeight();
 });
-</script>
+</script> -->
 <?php include 'inc/footer.php';?>

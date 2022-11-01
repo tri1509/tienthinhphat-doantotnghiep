@@ -95,7 +95,6 @@
             <td>
               <select id="select" name="type">
                 <option>-----Chọn loại-----</option>
-
                 <option value="1">Đường phèn</option>
                 <option value="2">Nhân sâm</option>
                 <option value="3">Đông trùng</option>
@@ -104,7 +103,27 @@
                 <option value="6">Táo đỏ</option>
                 <option value="7">Saffron</option>
                 <option value="8">KIDS</option>
+                <option value="9">Yến tinh chế</option>
+                <option value="10">Yến rút lông</option>
+                <option value="11">Yến thô</option>
+                <option value="12">Chân yến tinh chế</option>
+                <option value="13">Chân yến thô</option>
+                <option value="14">Hồng yến thô</option>
+                <option value="15">Ông long</option>
+                <option value="16">Nước suối</option>
+                <option value="17">Nước yến</option>
+                <option value="18">Nước tăng lực</option>
+                <option value="19">Nha đam</option>
               </select>
+            </td>  
+          </tr>
+
+          <tr>
+            <td style="vertical-align: top; padding-top: 9px;">
+              <label>Mô tả</label>
+            </td>
+            <td>
+              <textarea class="ckeditor" name="product_desc"><?php echo $result_product['sanpham_chitiet'] ?></textarea>
             </td>
           </tr>
 
@@ -113,16 +132,16 @@
               <label>Mô tả</label>
             </td>
             <td>
-              <textarea class="tinymce" name="product_desc"><?php echo $result_product['sanpham_chitiet'] ?></textarea>
+              <textarea class="ckeditor" name="product_mota"><?php echo $result_product['sanpham_mota'] ?></textarea>
             </td>
           </tr>
 
-          <tr>
-            <td style="vertical-align: top; padding-top: 9px;">
-              <label>Mô tả</label>
+           <tr>
+            <td>
+              <label>URL</label>
             </td>
             <td>
-              <textarea class="tinymce" name="product_mota"><?php echo $result_product['sanpham_mota'] ?></textarea>
+              <input type="text" value="<?php echo $result_product['sanpham_url'] ?>" class="medium" name="url" />
             </td>
           </tr>
 

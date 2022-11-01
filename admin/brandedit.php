@@ -23,7 +23,6 @@
                     $get_brand_name=$brand->getbrandbyId($id);
                     if($get_brand_name){
                         while($result = $get_brand_name->fetch_assoc()){
-
                 ?>
                  <form action="" method="post">
                     <table class="form">					
@@ -34,7 +33,7 @@
                         </tr>
 						<tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Cap nhat" />
+                                <input type="submit" name="submit" Value="Cập nhật" />
                             </td>
                         </tr>
                     </table>

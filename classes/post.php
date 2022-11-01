@@ -72,6 +72,7 @@
             $baiviet_title = mysqli_real_escape_string($this->db->link,$data['baiviet_title']);
             $baiviet_noidung = mysqli_real_escape_string($this->db->link,$data['baiviet_noidung']);
             $baiviet_date = mysqli_real_escape_string($this->db->link,$data['baiviet_date']);
+            $url = mysqli_real_escape_string($this->db->link,$data['url']);
             $baiviet_luotxem = mysqli_real_escape_string($this->db->link,$data['baiviet_luotxem']);
             $permited = array('jpg','jpeg','png','gif');
                 $file_name = $_FILES['img']['name'];
@@ -86,7 +87,7 @@
                 return $alert;
             }else{
                 move_uploaded_file($file_temp,$uploaded_image);
-                $query = "INSERT INTO tbl_baiviet(baiviet_name,baiviet_title,baiviet_noidung,baiviet_date,baiviet_luotxem,baiviet_img) VALUES('$baiviet_name','$baiviet_title','$baiviet_noidung','$baiviet_date','$baiviet_luotxem','$unique_image')";
+                $query = "INSERT INTO tbl_baiviet(baiviet_name,baiviet_title,baiviet_noidung,baiviet_date,baiviet_luotxem,baiviet_img,tbl_url) VALUES('$baiviet_name','$baiviet_title','$baiviet_noidung','$baiviet_date','$baiviet_luotxem','$unique_image','$url')";
                 $result = $this->db->insert($query);
                 if($result){
                     $alert= "<span class='success'>Thêm thành công</span>";

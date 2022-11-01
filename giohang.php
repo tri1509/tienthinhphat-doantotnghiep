@@ -1,6 +1,6 @@
 <?php
 $title = "Giỏ hàng-quản lý đơn hàng.";
-include 'inc/header.php' ;?>
+include 'inc/header-sp.php' ;?>
 <?php include 'inc/sale.php' ;?>
 
 <?php
@@ -157,16 +157,6 @@ include 'inc/header.php' ;?>
         <?php if($check_cart){ ?>
         <div class="shopright">
           <a href="order.html"><button type="button" class="check-out-btn">Thanh toán</button></a>
-          <div class="clear20"></div>
-          <form action="vnpay.php" method="POST">
-            <input type="hidden" name="giatong" value="<?php echo $gtotal ?>">
-            <button class="check-out-btn" name="payVnpay">VNPAY</button>
-          </form>
-          <div class="clear20"></div>
-          <form action="momo.php" method="POST">
-            <input type="hidden" name="giatong" value="<?php echo $gtotal ?>">
-            <button class="check-out-btn" name="payMomo">MOMO</button>
-          </form>
         </div>
         <?php } ?>
       </div>

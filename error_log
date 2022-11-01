@@ -1,0 +1,4 @@
+[29-Oct-2022 09:13:14 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined method product::get_img() in /home/teqzkfaa/public_html/chitietsp.php:78
+Stack trace:
+#0 {main}
+  thrown in /home/teqzkfaa/public_html/chitietsp.php on line 78

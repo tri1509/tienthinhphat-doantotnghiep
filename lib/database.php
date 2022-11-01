@@ -68,5 +68,6 @@ public function delete($query){
     return false;
   }
   }
+
 }
 ?>

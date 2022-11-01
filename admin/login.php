@@ -19,7 +19,7 @@ include '../classes/adminlogin.php';
 <div class="container">
 	<section id="content">
 		<form action="login.php" method="post">
-			<h1>Admin Login</h1>
+			<h1>Xin Chào Quản Trị Viên</h1>
 			<span><?php
 				if(isset($login_check)) {
 					echo $login_check;
@@ -36,7 +36,7 @@ include '../classes/adminlogin.php';
 			</div>
 		</form><!-- form -->
 		<div class="button">
-			<a href="#">Training with live project</a>
+			<a href="#">Ngày mới vui vẻ, đạt hiệu quả công việc .</a>
 		</div><!-- button -->
 	</section><!-- content -->
 </div><!-- container -->

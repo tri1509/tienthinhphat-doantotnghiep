@@ -26,7 +26,7 @@
             <!-- <th>Ngày</th> -->
             <th>Lượt xem</th>
             <th>Hình ảnh</th>
-            <th>Action</th>
+            <th>Chỉnh/Xóa</th>
           </tr>
         </thead>
         <tbody>
@@ -44,23 +44,22 @@
             <!-- <td><?php echo $fm -> formatDate($result['baiviet_date']) ?></td> -->
             <td><?php echo $resule['baiviet_luotxem'] ?></td>
             <td><img src="../img/<?php echo $resule['baiviet_img'] ?>" alt="" width='100' height='100'></td>
-            <td><a href="postedit.php?postid=<?php echo $resule['baiviet_id'] ?>">Edit</a> || <a
+            <td><a href="postedit.php?postid=<?php echo $resule['baiviet_id'] ?>">Chỉnh Sửa</a> || <a
                 href="?postid=<?php echo $resule['baiviet_id'] ?>"
-                onclick="return confirm('Bạn có muốn xoá không?')">Delete</a></td>
+                onclick="return confirm('Bạn có muốn xoá không?')">Xóa</a></td>
           </tr>
           <?php } } ?>
         </tbody>
       </table>
-
     </div>
   </div>
 </div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(document).ready(function() {
   setupLeftMenu();
   $('.datatable').dataTable();
   setSidebarHeight();
-});
+}); -->
 </script>
 <?php include 'inc/footer.php';?>

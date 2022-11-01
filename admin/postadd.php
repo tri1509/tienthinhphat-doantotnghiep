@@ -41,15 +41,15 @@
                         <label>Nội dung</label>
                     </td>
                     <td>
-                        <textarea class="tinymce" name="baiviet_noidung"></textarea>
+                         <textarea class="ckeditor" name="baiviet_noidung"></textarea>
                     </td>
                 </tr>
 				<tr>
                     <td>
-                        <label>Ngày</label>
+                        <label>Ngày viết bài</label>
                     </td>
                     <td>
-                        <input type="date" placeholder="Ngày" class="medium" name="baiviet_date" />
+                        <input type="date" placeholder="Ngày viết bài" class="medium" name="baiviet_date" />
                     </td>
                 </tr>
 
@@ -59,6 +59,15 @@
                     </td>
                     <td>
                         <input type="text" placeholder="Lượt xem" class="medium" name="baiviet_luotxem" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>URL</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="bai-viet-hay-nhat" class="medium" name="url" />
                     </td>
                 </tr>
             

@@ -2,6 +2,7 @@
 $title = "Salanest group - Trang Chủ - Tiến Thịnh Phát - Yến Sào";
 include 'inc/header.php';
 ?>
+
 <section>
   <div class="row cart_hot">
     <div class="col-xl-12 col-12">
@@ -17,7 +18,7 @@ include 'inc/header.php';
   </div>
   <?php include 'inc/sale.php'; ?>
   <div class="main-sanphamchinh">
-    <img src="img/mobile_banner2.webp" alt="hình ảnh tổ yến" title="hình anh tổ yến" width="100%" height="auto">
+    <img src="img/mobile_banner2-new.jpg" alt="hình ảnh tổ yến" title="hình anh tổ yến" width="100%" height="auto">
     <div class="container">
       <div class="wide-700 sanpham-noibat">
         <?php
@@ -25,23 +26,24 @@ include 'inc/header.php';
           if ($showProduct) {
             while ($result = $showProduct->fetch_assoc()) {
         ?>
-        <div class="sanpham-noibat-item">
-          <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
-            title="<?php echo $result['sanpham_name'] ;?>">
-            <div class="home-product__item-img" style="background-image:url(./img/<?php echo $result['hinh'] ?>);">
-            </div>
-            <div class="ct-item-pro">
-              <p class="bold item-name"><?php echo $result['sanpham_name'] ?></p>
-              <div class="clear10"></div>
-              <div class="flex-bw">
-                <p class="old-pri"><?php echo number_format($result['sanpham_gia']) . " đ"; ?></p>
-                <p class="new-pri bold"><?php echo number_format($result['sanpham_giakhuyenmai']) . " đ"; ?></p>
+        <div class="sanpham-noibat-item border-item">
+          <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html" title="<?php echo $result['sanpham_name'] ?>"> <a
+              href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
+              title="<?php echo $result['sanpham_name'] ;?>">
+              <div class="home-product__item-img" style="background-image:url(./img/<?php echo $result['hinh'] ?>);">
               </div>
-              <div class="clear10"></div>
-              <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
-                class="addtocart" title="<?php echo $result['sanpham_name'] ?>">Xem ngay</a>
-            </div>
-          </a>
+              <div class="ct-item-pro">
+                <p class="bold item-name"><?php echo $result['sanpham_name'] ?></p>
+                <div class="clear10"></div>
+                <div class="flex-bw">
+                  <p class="old-pri"><?php echo number_format($result['sanpham_gia']) . " đ"; ?></p>
+                  <p class="new-pri bold"><?php echo number_format($result['sanpham_giakhuyenmai']) . " đ"; ?></p>
+                </div>
+                <div class="clear10"></div>
+                <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
+                  class="addtocart" title="<?php echo $result['sanpham_name'] ?>">Xem ngay</a>
+              </div>
+            </a>
         </div>
         <?php } } ?>
       </div>
@@ -67,13 +69,13 @@ include 'inc/header.php';
           <div class="col-md-6 zoomshow delay-<?php echo $i ?>">
             <div class="block-news-home">
               <div class="flex-nh">
-                <a href="bai-viet/<?php echo $result['baiviet_id'] ?>-<?php echo $result['url'] ; ?>.html"
+                <a href="bai-viet/<?php echo $result['baiviet_id'] ?>-<?php echo $result['tbl_url'] ; ?>.html"
                   class="img-nh" title="<?php echo $result['baiviet_name'] ; ?>">
                   <img src="img/<?php echo $result['baiviet_img'] ; ?>" class="fullwidth" style="display:block;">
                 </a>
                 <div class="ct-nh">
                   <p class="tit-nh">
-                    <a href="bai-viet/<?php echo $result['baiviet_id'] ?>-<?php echo $result['url'] ; ?>.html"
+                    <a href="bai-viet/<?php echo $result['baiviet_id'] ?>-<?php echo $result['tbl_url'] ?>.html"
                       class="clblack">
                       <?php echo $result['baiviet_name'] ; ?>
                     </a>

@@ -13,7 +13,6 @@
 		$price = $_GET['price'];
 		$shifted = $ct -> shifted($id,$time,$price);
 	}
-
 	if(isset($_GET['delid'])){
 		$id = $_GET['delid'];
 		$time = $_GET['time'];
@@ -84,7 +83,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
         setupLeftMenu();
-
         $('.datatable').dataTable();
         setSidebarHeight();
     });

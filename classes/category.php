@@ -27,6 +27,7 @@
                 }else{
                     $alert= "<span class='notok'>Thất bại</span>";
                     return $alert;
+
                 }
             }
         }

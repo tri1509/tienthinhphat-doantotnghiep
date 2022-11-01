@@ -19,6 +19,7 @@
             $category = mysqli_real_escape_string($this->db->link,$data['category']);
             $product_desc = mysqli_real_escape_string($this->db->link,$data['product_desc']);
             $product_mota = mysqli_real_escape_string($this->db->link,$data['product_mota']);
+            $url = mysqli_real_escape_string($this->db->link,$data['url']);
             $price_old = mysqli_real_escape_string($this->db->link,$data['price_old']);
             $price_new = mysqli_real_escape_string($this->db->link,$data['price_new']);
             $quantity = mysqli_real_escape_string($this->db->link,$data['quantity']);
@@ -38,7 +39,7 @@
                 return $alert;
             }else{
                 move_uploaded_file($file_temp,$uploaded_image);
-                $query = "INSERT INTO tbl_sanpham(category_id,brand_id,brand_id_lv2,sanpham_name,sanpham_chitiet,sanpham_mota,sanpham_gia,sanpham_giakhuyenmai,sanpham_soluong,hinh) VALUES('$category','$brand','$brand_lv2','$productName','$product_desc','$product_mota','$price_old','$price_new', '$quantityfm','$unique_image')";
+                $query = "INSERT INTO tbl_sanpham(category_id,brand_id,brand_id_lv2,sanpham_name,sanpham_chitiet,sanpham_mota,sanpham_gia,sanpham_giakhuyenmai,sanpham_soluong,hinh,sanpham_url) VALUES('$category','$brand','$brand_lv2','$productName','$product_desc','$product_mota','$price_old','$price_new', '$quantityfm','$unique_image','$url')";
                 $result = $this->db->insert($query);
                 if($result){
                     $alert= "<span class='success'>Thêm thành công</span>";
@@ -78,6 +79,7 @@
             $category = mysqli_real_escape_string($this->db->link,$data['category']);
             $product_desc = mysqli_real_escape_string($this->db->link,$data['product_desc']);
             $product_mota = mysqli_real_escape_string($this->db->link,$data['product_mota']);
+            $url = mysqli_real_escape_string($this->db->link,$data['url']);
             $price_old = mysqli_real_escape_string($this->db->link,$data['price_old']);
             $price_new = mysqli_real_escape_string($this->db->link,$data['price_new']);
             $quantity = mysqli_real_escape_string($this->db->link,$data['quantity']);
@@ -114,6 +116,7 @@
                 sanpham_giakhuyenmai = '$price_new' ,
                 sanpham_chitiet = '$product_desc',
                 sanpham_mota = '$product_mota',
+                sanpham_url = '$url',
                 sanpham_soluong = '$quantityfm'
                 WHERE sanpham_id='$id' ";
             }else{
@@ -127,6 +130,7 @@
                 sanpham_giakhuyenmai = '$price_new' ,
                 sanpham_chitiet = '$product_desc',
                 sanpham_mota = '$product_mota',
+                sanpham_url = '$url',
                 sanpham_soluong = '$quantityfm'
                 WHERE sanpham_id='$id' ";
             }
@@ -166,7 +170,15 @@
             $result = $this->db->select($query);
             return $result;
         }
-
+        
+        
+        public function getproduct_feathered_10(){
+            $query = "SELECT * FROM tbl_sanpham ORDER BY rand() LIMIT 10";
+            $result = $this->db->select($query);
+            return $result;
+        }
+        
+        
         public function getproduct_main(){
             $query = "SELECT * FROM tbl_sanpham";
             $result = $this->db->select($query);
@@ -188,9 +200,7 @@
 
         public function get_details($id){
             $query =
-            "SELECT tbl_sanpham.*,
-            tbl_category.category_name,
-            tbl_brand.brand_name 
+            "SELECT tbl_sanpham.*, tbl_category.category_name, tbl_brand.brand_name 
             FROM tbl_sanpham 
             INNER JOIN tbl_category ON tbl_sanpham.category_id = tbl_category.category_id
             INNER JOIN tbl_brand ON tbl_sanpham.brand_id = tbl_brand.brand_id 
@@ -199,12 +209,13 @@
             return $result;
         }
 
-        public function get_img($img_id){
+         public function get_img($img_id){
             $query ="SELECT * FROM tbl_sphinh WHERE sanpham_id = '$img_id' ";
             $result = $this->db->select($query);
             return $result;
         }
 
+            
         public function getinformation($id) {
             $query ="SELECT * FROM tbl_sanpham WHERE sanpham_id = '$id' ";
             $result = $this->db->select($query);

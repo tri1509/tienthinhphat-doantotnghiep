@@ -25,7 +25,7 @@
                         </tr>
 						<tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Thêm" />
+                                <input type="submit" name="submit" Value="Thêm Thương Hiệu" />
                             </td>
                         </tr>
                     </table>

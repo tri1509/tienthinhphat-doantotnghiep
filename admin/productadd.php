@@ -85,7 +85,18 @@
                 <option value="6">Táo đỏ</option>
                 <option value="7">Saffron</option>
                 <option value="8">KIDS</option>
-                <option value="9">Đông Trùng Không Đường</option>
+                <option value="9">Yến tinh chế</option>
+                <option value="10">Yến rút lông</option>
+                <option value="11">Yến thô</option>
+                <option value="12">Chân yến tinh chế</option>
+                <option value="13">Chân yến thô</option>
+                <option value="14">Hồng yến thô</option>
+                <option value="15">Ông long</option>
+                <option value="16">Nước suối</option>
+                <option value="17">Nước yến</option>
+                <option value="18">Nước tăng lực</option>
+                <option value="19">Nha đam</option>
+
               </select>
             </td>
           </tr>
@@ -95,7 +106,7 @@
               <label>Chi tiết</label>
             </td>
             <td>
-              <textarea class="tinymce" name="product_desc"></textarea>
+              <textarea class="ckeditor" name="product_desc"></textarea>
             </td>
           </tr>
 
@@ -104,7 +115,16 @@
               <label>Mô tả</label>
             </td>
             <td>
-              <textarea class="tinymce" name="product_mota"></textarea>
+              <textarea class="ckeditor" name="product_mota"></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label>URL</label>
+            </td>
+            <td>
+              <input type="text" placeholder="gia-bao-duong-phen" class="medium" name="url" />
             </td>
           </tr>
 
@@ -150,6 +170,7 @@
               <input type="submit" name="submit" Value="Thêm vào" />
             </td>
           </tr>
+
         </table>
       </form>
     </div>
