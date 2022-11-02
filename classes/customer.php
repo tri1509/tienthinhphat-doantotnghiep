@@ -17,7 +17,7 @@
             $address = mysqli_real_escape_string($this->db->link, $data['address']);
             $email = mysqli_real_escape_string($this->db->link, $data['email']);
             $password = mysqli_real_escape_string($this->db->link, $data['password']);
-            $zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
+            $zipcode = mysqli_real_escape_string($this->db->link, $data['phone']);
             if($name == "" || $zipcode == "" || $address == "" || $email == "" || $password == "" ) {
                 $alert = "<span class='notok'>Bạn vui lòng điền đầy đủ thông tin !</span>";
                 return $alert;
@@ -83,7 +83,7 @@
                 $alert = "<span class='notok'>Mời bạn điền đầy đủ thông tin !</span>";
                 return $alert;
             }else{
-                $check_login = "SELECT * FROM tbl_customer WHERE email='$email' AND password = '$password' LIMIT 1";
+                $check_login = "SELECT * FROM tbl_customer WHERE email= '$email' AND password = md5('$password') LIMIT 1";
                 $result_check = $this->db->select($check_login);
                 if($result_check){
                     $value = $result_check -> fetch_assoc();
@@ -108,7 +108,6 @@
             $name = mysqli_real_escape_string($this->db->link, $data['name']);
             $address = mysqli_real_escape_string($this->db->link, $data['address']);
             $email = mysqli_real_escape_string($this->db->link, $data['email']);
-            // $phone = mysqli_real_escape_string($this->db->link, $data['zipcode']);
             $zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
             if($name == "" || $address == "" || $phone = "" || $email == "") {
                 $alert = "<span class='notok'>Mời bạn sửa lại thông tin</span>";
@@ -117,7 +116,7 @@
                 $query = "UPDATE tbl_customer SET name = '$name' , address = '$address' , zipcode = '$zipcode' , email = '$email' WHERE id = '$id' ";
                 $result = $this->db->update($query);
                 if($result){
-                    $alert = "<span class='ok'>Cập nhật thông tin thành công</span>";
+                    $alert = "<span class='success'>Cập nhật thông tin thành công</span>";
                     return $alert;
                 }else{
                     $alert = "<span class='notok'>Thất bại</span>";
@@ -144,7 +143,7 @@
 
         public function restore_Pass($data,$id) {
             $restorepass = mysqli_real_escape_string($this->db->link, $data['passwordrestore']);
-            $query = "UPDATE tbl_customer SET password = '$restorepass'
+            $query = "UPDATE tbl_customer SET password = md5('$restorepass')
             WHERE md5(id)='$id';
             ";
             $result = $this->db->update($query);

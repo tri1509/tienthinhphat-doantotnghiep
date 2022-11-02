@@ -57,10 +57,10 @@
             <div class="clear20"></div>
             <div class="row flex-wrap list-spc">
               <?php
-						$productbybrandlv2 = $brand -> get_product_by_brand_lv2($id,$idlv2);
-						if($productbybrandlv2) {
-							while($result = $productbybrandlv2 -> fetch_assoc()) {
-					?>
+                $productbybrandlv2 = $brand -> get_product_by_brand_lv2($id,$idlv2);
+                if($productbybrandlv2) {
+                  while($result = $productbybrandlv2 -> fetch_assoc()) {
+              ?>
               <div class="col-xl-4 col-md-4 col-sm-6 col-xs-6 col-6">
                 <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
                   title="<?php echo $result['sanpham_name'] ?>">

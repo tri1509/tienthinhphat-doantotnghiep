@@ -83,8 +83,8 @@ li {
   display: none;
 }
 
-.wide-700 {
-  max-width: 700px;
+.wide-850 {
+  max-width: 850px;
   margin: 0 auto;
 }
 
@@ -506,27 +506,55 @@ li {
 .modal-thanhtoan {
   position: fixed;
   top: 0;
-  height: 0;
-  bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  right: 0;
+  bottom: 0;
   z-index: 998;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-thanhtoan.hide {
+  display: none !important;
 }
 
 .hinhthuc-thanhtoan {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 500px;
-  height: 300px;
+  width: 334px;
+  height: 107px;
+  padding: 10px 20px;
   z-index: 999;
   border-radius: 10px;
   background-color: #ffff;
   transform: translate(-50%, -50%);
-  padding: 20px 30px;
+}
+
+.message_box {
+  padding-top: 25px;
+  text-align: center;
+}
+
+.message_box-btn {
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.close-act {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: url(https://rubikstore.vn/cdn/themes/metavn/img/cross.png);
+  background-repeat: no-repeat;
+  background-position: 7px 7px;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  z-index: 1200;
+  cursor: pointer;
 }
 
 .snip1547 {
@@ -602,21 +630,6 @@ li {
   padding: 0 30px;
 }
 
-.capnhat-khach {
-  margin: 0;
-  padding: 0;
-  height: 40px;
-  width: 130px;
-  outline: hidden;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 151, 0, 1) 0%,
-    rgba(251, 75, 2, 1) 100%
-  );
-  line-height: 42px;
-  border: none;
-}
-
 .main-baiviet {
   background-color: #ffffff;
 }
@@ -638,24 +651,6 @@ li {
   color: white;
 }
 
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  color: rgb(7, 7, 7);
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: "Lato", sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  outline: none;
-}
-
 .category-baiviet {
   overflow: hidden;
   display: -webkit-box;
@@ -663,79 +658,6 @@ li {
   -webkit-line-clamp: 1;
   height: 20px;
   line-height: 20px;
-}
-
-.btn-7 {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 151, 0, 1) 0%,
-    rgba(251, 75, 2, 1) 100%
-  );
-  line-height: 42px;
-  padding: 0;
-  border: none;
-}
-.btn-7 span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.btn-7:before,
-.btn-7:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  bottom: 0;
-  background: rgba(251, 75, 2, 1);
-  box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
-    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-.btn-7:before {
-  height: 0%;
-  width: 2px;
-}
-.btn-7:after {
-  width: 0%;
-  height: 2px;
-}
-.btn-7:hover {
-  color: rgba(251, 75, 2, 1);
-  background: transparent;
-}
-.btn-7:hover:before {
-  height: 100%;
-}
-.btn-7:hover:after {
-  width: 100%;
-}
-.btn-7 span:before,
-.btn-7 span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  background: rgba(251, 75, 2, 1);
-  box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
-    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-.btn-7 span:before {
-  width: 2px;
-  height: 0%;
-}
-.btn-7 span:after {
-  height: 2px;
-  width: 0%;
-}
-.btn-7 span:hover:before {
-  height: 100%;
-}
-.btn-7 span:hover:after {
-  width: 100%;
 }
 
 .check-out-btn {
@@ -829,6 +751,13 @@ li {
   flex-direction: column;
   justify-content: center;
 }
+
+.shopleft-btn {
+  font-size: 1.3rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+}
 #top-up {
   cursor: pointer;
   position: fixed;
@@ -878,10 +807,8 @@ li {
   margin-left: 20px;
   font-size: 14px;
   color: #dc3545;
-  font-weight: 700;
+  font-weight: 600;
   font-style: italic;
-  animation: thongbao 3s;
-  opacity: 0;
 }
 
 @keyframes thongbao {
@@ -894,21 +821,6 @@ li {
   100% {
     opacity: 0;
   }
-}
-@keyframes my {
-  0% {
-    color: #198754;
-  }
-  50% {
-    color: #fff;
-  }
-  100% {
-    color: #198754;
-  }
-}
-.test {
-  font-weight: bold;
-  animation: my 0.5s infinite;
 }
 
 .nav-tabs {
@@ -1015,22 +927,14 @@ li {
 }
 
 .cart-sl {
-  width: 80px;
+  width: 60px;
   text-align: center;
 }
 
 .cart-up {
-  margin-top: 20px;
   min-width: 50px;
-  border: none;
-  border-radius: 6px;
-  background-color: var(--red--nhat);
   padding: 5px 10px;
-}
-
-.cart-up:hover {
-  background-color: var(--red--dam);
-  color: #ffff;
+  font-size: 1.3rem;
 }
 
 .search input {
@@ -1091,7 +995,7 @@ li {
 
 .eye {
   position: absolute;
-  top: 10px;
+  top: 50px;
   right: 10px;
   width: 20px;
   transition: 0.2s;
@@ -2591,11 +2495,6 @@ a.but-buy span {
     padding: 0;
   }
 
-  .hinhthuc-thanhtoan {
-    width: 100%;
-    height: 400px;
-  }
-
   .snip1547 {
     background-color: transparent;
     border: none;
@@ -2679,12 +2578,10 @@ a.but-buy span {
   font-size: 15px;
   letter-spacing: 1px;
   padding: 13px 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   outline: none;
   border: none;
   border-bottom: 1px solid #f45c5d;
-  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.31);
-  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.31);
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.31);
 }
 
@@ -2878,10 +2775,6 @@ footer p a:hover {
 }
 
 /* phần đăng kí tài khoản */
-:root {
-  --input-padding-x: 1.5rem;
-  --input-padding-y: 0.75rem;
-}
 
 #form_login {
   background-image: url(../img/login.jpg);
@@ -2908,7 +2801,6 @@ footer p a:hover {
 
 .card-signin .card-img-left {
   width: 50vw;
-  /* Link to your background image using in the property below! */
   background: url("../img/nen2.jpg");
   background-size: cover;
 }
@@ -2936,56 +2828,22 @@ footer p a:hover {
 }
 
 .form-label-group input {
-  height: auto;
-  border-radius: 2rem;
-}
-
-.form-label-group > input,
-.form-label-group > label {
-  padding: var(--input-padding-y) var(--input-padding-x);
+  border-radius: 10px;
 }
 
 .form-label-group > label {
   display: block;
+  text-align: start;
   width: 100%;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   line-height: 1.5;
   color: #59738d;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
   transition: all 0.1s ease-in-out;
-}
-
-.form-label-group input::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.form-label-group input:-ms-input-placeholder {
-  color: transparent;
-}
-
-.form-label-group input::-ms-input-placeholder {
-  color: transparent;
-}
-
-.form-label-group input::-moz-placeholder {
-  color: transparent;
 }
 
 .form-label-group input::placeholder {
   color: transparent;
-}
-
-.form-label-group input:not(:placeholder-shown) {
-  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
-  padding-bottom: calc(var(--input-padding-y) / 3);
-}
-
-.form-label-group input:not(:placeholder-shown) ~ label {
-  padding-top: calc(var(--input-padding-y) / 3);
-  padding-bottom: calc(var(--input-padding-y) / 3);
-  font-size: 16px;
-  color: rgb(255, 3, 3);
 }
 
 .btn-google {
@@ -3198,20 +3056,14 @@ footer p a:hover {
 .place-order-wp {
   margin-top: 20px;
 }
-.place-order-wp input[type="submit"] {
+.place-order-wp input[type="submit"],
+.place-order-wp button[type="button"] {
   display: inline-block;
   padding: 10px 40px;
   text-transform: uppercase;
   border-radius: 3px;
   font-family: "Roboto Medium";
-  font-weight: normal;
-  border: none;
-  outline: none;
-  background: #3f5da6;
-  color: #fff;
-}
-.place-order-wp input[type="submit"]:hover {
-  background: #2b478c;
+  font-size: 1.4rem;
 }
 .order-total .total-price {
   font-family: "Roboto Medium";

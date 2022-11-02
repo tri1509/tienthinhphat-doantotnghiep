@@ -20,7 +20,7 @@ include 'inc/header.php';
   <div class="main-sanphamchinh">
     <img src="img/mobile_banner2-new.jpg" alt="hình ảnh tổ yến" title="hình anh tổ yến" width="100%" height="auto">
     <div class="container">
-      <div class="wide-700 sanpham-noibat">
+      <div class="wide-850 sanpham-noibat">
         <?php
           $showProduct = $product->getproduct_feathered_6();
           if ($showProduct) {

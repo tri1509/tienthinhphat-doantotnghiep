@@ -29,7 +29,7 @@
             $query_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sessionId = '$sId' ";
             $check_cart =  $this->db->select($query_cart); 
             if($check_cart){
-                $mgs = "<span class='success'>Sản phẩm này đã có trong giỏ hàng của bạn rồi</span>";
+                $mgs = "<span class='success'>Bạn đã thêm sản phẩm này</span>";
                 return $mgs;
             }else{
                 $query_insert =

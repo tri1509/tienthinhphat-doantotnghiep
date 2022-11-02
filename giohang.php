@@ -5,7 +5,7 @@ include 'inc/header-sp.php' ;?>
 
 <?php
 	if(!isset($_GET['id'])) {
-		echo "<meta http-equiv='refresh' content='0;URL=giohang.html?id=live'>";
+	// echo "<meta http-equiv='refresh' content='0;URL=giohang.html?id=live'>";
 	}
 	if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['capnhat'])) {
 		$cartId = $_POST['cartId'];
@@ -14,9 +14,9 @@ include 'inc/header-sp.php' ;?>
 		echo "<meta http-equiv='refresh' content='0;URL=giohang.html?id=live'>";
 	}
 	if(isset($_GET['cartid']) && $_GET['cartid']!=NULL){
-        $cartDel = $_GET['cartid'];
+    $cartDel = $_GET['cartid'];
 		$cartDel = $ct->del_cart($cartDel);
-    }
+  }
 ?>
 
 <section>
@@ -24,7 +24,11 @@ include 'inc/header-sp.php' ;?>
     <div class="container">
       <span><a href="./" class="clblack">Trang chủ</a></span>
       <span style="margin: 0 7px;">
-        <img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" class="bi bi-chevron-right"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </svg>
       </span>
       <span class="clpink">Giỏ hàng</span>
     </div>
@@ -86,7 +90,7 @@ include 'inc/header-sp.php' ;?>
                     value="<?php echo $result['price'] ?>" />
                   <input data-id="<?php echo $result['cartId'] ?>" class="cart-sl" type="number" name="quantity"
                     value="<?php echo $result['quantity'] ?>" min="1" />
-                  <input class="cart-up" type="submit" name="capnhat" value="Cập nhật" />
+                  <input class="btn btn-warning cart-up" type="submit" name="capnhat" value="Cập nhật" />
                 </form>
               </td>
               <td data-label="Giá :">
@@ -110,7 +114,6 @@ include 'inc/header-sp.php' ;?>
                 </a>
               </td>
             </tr>
-
             <?php }} ?>
           </table>
         </form>
@@ -131,7 +134,7 @@ include 'inc/header-sp.php' ;?>
         <div class="container">
           <div class="row">
             <div class="col-xl-6">
-              <img src="img/empty-cart.webp" alt="giỏ hàng trống" title="giỏ hàng trống">
+              <img src="img/empty-cart.webp" alt="giỏ hàng trống" title="giỏ hàng trống" width="350">
             </div>
             <div class="col-xl-6">
               <h1 class="text-success">[Thành viên mới] Tôi có thể mua hàng Salanest mà không cần tài khoản Salanest
@@ -148,15 +151,13 @@ include 'inc/header-sp.php' ;?>
             </div>
           </div>
         </div>
-        <?php
-				echo "<span>*Cập nhật giỏ hàng để lưu đơn hàng & xem thông tin đơn hàng.</span>";
-			}
-			?>
+        <?php echo "<span>*Cập nhật giỏ hàng để lưu đơn hàng & xem thông tin đơn hàng.</span>";}?>
       </div>
       <div class="clear40"></div>
       <div class="shopping">
         <div class="shopleft">
-          <a href="sanpham.html"><button class="custom-btn btn-7"><span>Quay lại cửa hàng</span></button></a>
+          <a href="sanpham.html"><button class="btn btn-warning shopleft-btn"><span>Quay lại cửa
+                hàng</span></button></a>
         </div>
         <?php if($check_cart){ ?>
         <div class="shopright">

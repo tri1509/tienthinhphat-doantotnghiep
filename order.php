@@ -18,13 +18,23 @@
 		$delCart = $ct -> del_all_data_cart();
 		header('Location:success.html');
 	}
+
+  $get_product_cart = $ct -> get_product_cart();
+  $subTotal = 0;
+  $total = 0;
+  $gtotal = 0;
+  $qty = 0;
 ?>
 <section>
   <div class="main-breac">
     <div class="container">
       <span><a href="./" class="clblack">Trang chủ</a></span>
       <span style="margin: 0 7px;">
-        <img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" class="bi bi-chevron-right"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </svg>
       </span>
       <span class="clpink">Thanh toán</span>
     </div>
@@ -34,9 +44,9 @@
     <div class="container">
       <div id="wrapper" class="wp-inner clearfix">
         <?php 
-			$login_check = Session::get('customer_login');
-			if($login_check) {
-		?>
+        $login_check = Session::get('customer_login');
+        if($login_check) {
+      ?>
         <div class="section" id="customer-info-wp">
           <div class="section-head">
             <h1 class="section-title">Thông tin khách hàng</h1>
@@ -91,11 +101,6 @@
               </thead>
               <tbody>
                 <?php
-								$get_product_cart = $ct -> get_product_cart();
-								$subTotal = 0;
-								$total = 0;
-								$gtotal = 0;
-								$qty = 0;
 								if($get_product_cart){
 								$i = 0;
 								while($result = $get_product_cart -> fetch_assoc()){
@@ -120,8 +125,11 @@
               </tfoot>
             </table>
             <div class="place-order-wp clearfix">
-              <a href="order.html?orderid=order"><button class="custom-btn btn-7" type="button"><span>Đặt
-                    hàng</span></button></a>
+              <a href="order.html?orderid=order">
+                <button class="btn btn-danger" type="button">
+                  Đặt hàng
+                </button>
+              </a>
             </div>
             <div class="clear40"></div>
             </form>
@@ -185,11 +193,6 @@
               </thead>
               <tbody>
                 <?php
-								$get_product_cart = $ct -> get_product_cart();
-								$subTotal = 0;
-								$total = 0;
-								$gtotal = 0;
-								$qty = 0;
 								if($get_product_cart){
 								$i = 0;
 								while($result = $get_product_cart -> fetch_assoc()){
@@ -214,7 +217,7 @@
               </tfoot>
             </table>
             <div class="place-order-wp clearfix">
-              <input type="submit" id="order-now" value="Đặt hàng" name="submit">
+              <input type="submit" id="order-now" value="Đặt hàng" name="submit" class="btn btn-danger">
             </div>
             </form>
           </div>

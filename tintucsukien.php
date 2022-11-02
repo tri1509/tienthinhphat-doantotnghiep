@@ -5,7 +5,11 @@ include 'inc/header.php';include 'inc/sale.php';?>
   <div class="container">
     <span><a href="./" class="clblack">Trang chủ</a></span>
     <span style="margin: 0 7px;">
-      <img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" class="bi bi-chevron-right"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+      </svg>
     </span>
     <span class="clpink">Tin Tức & Sự Kiện</span>
     <div class="clear20"></div>
@@ -101,38 +105,39 @@ include 'inc/header.php';include 'inc/sale.php';?>
           </div>
         </div>
       </div>
-            <div class="pro-relative">
-                <div class="tit-pr">
-              <h1 class="bold clred nomargin text-uppercase">Sản phẩm bán chạy</h1>
-            </div>
-            <div class="clear20"></div>
-          <div class="img-slider">
-              <?php
+      <div class="pro-relative">
+        <div class="tit-pr">
+          <h1 class="bold clred nomargin text-uppercase">Sản phẩm bán chạy</h1>
+        </div>
+        <div class="clear20"></div>
+        <div class="img-slider">
+          <?php
               $sp_rand = $product->getproduct_feathered_10();
               if ($sp_rand) {
                 while ($result_rand= $sp_rand->fetch_assoc()) {
               ?>
-            <div class="img-item border-item">
-              <div class="home-product__item-img"
-                style="background-image:url(./img/<?php echo $result_rand['hinh']; ?>);"></div>
-              <div class="ct-item-pro">
-                <p class="bold item-name"><?php echo $result_rand['sanpham_name']; ?></p>
-                <div class="clear10"></div>
-                <div class="flex-bw">
-                  <p class="old-pri">
-                    <?php echo number_format($result_rand['sanpham_gia']) . " đ"; ?></p>
-                  <p class="new-pri bold">
-                    <?php echo number_format($result_rand['sanpham_giakhuyenmai']) . " đ"; ?>
-                  </p>
-                </div>
-                <div class="clear10"></div>
-                <a href="chi-tiet/<?php echo $result_rand['sanpham_id'] ?>.html" class="addtocart">
-                  xem sản phẩm
-                </a>
+          <div class="img-item border-item">
+            <div class="home-product__item-img"
+              style="background-image:url(./img/<?php echo $result_rand['hinh']; ?>);"></div>
+            <div class="ct-item-pro">
+              <p class="bold item-name"><?php echo $result_rand['sanpham_name']; ?></p>
+              <div class="clear10"></div>
+              <div class="flex-bw">
+                <p class="old-pri">
+                  <?php echo number_format($result_rand['sanpham_gia']) . " đ"; ?></p>
+                <p class="new-pri bold">
+                  <?php echo number_format($result_rand['sanpham_giakhuyenmai']) . " đ"; ?>
+                </p>
               </div>
+              <div class="clear10"></div>
+              <a href="chi-tiet/<?php echo $result_rand['sanpham_id'] ?>/<?php echo $result_rand['sanpham_url'] ?>.html"
+                class="addtocart">
+                xem sản phẩm
+              </a>
             </div>
-            <?php } } ?>
           </div>
+          <?php } } ?>
+        </div>
       </div>
     </div>
   </div>

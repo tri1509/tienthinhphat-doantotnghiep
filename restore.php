@@ -45,12 +45,12 @@
                       <div class="information-wrapper">
                         <form action="" method="post">
                           <div class="form-label-group">
+                            <label for="inputUserame">Số điện thoại đăng ký</label>
                             <input type="text" name="phone_login" class="form-control"
                               placeholder="Số điên thoại đăng ký" required autofocus>
-                            <label for="inputUserame">Số điện thoại đăng ký</label>
                           </div>
                           <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Xác nhận"
-                            name="check_phone" style="border-radius: 10px;">
+                            name="check_phone" style="border-radius: 10px;margin-top:30px">
                         </form>
                       </div>
                     </div>

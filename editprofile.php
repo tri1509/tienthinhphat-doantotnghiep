@@ -24,13 +24,21 @@
         <img src="./img/back.png" alt="" style="transform: rotate(180deg);" width="18">
       </span>
       <span class="clpink">Thông tin khách hàng</span><br>
-      <?php 
-        if(isset($updateCustomers)) {
-            echo $updateCustomers ;
-        }else{
-            echo "<div class='clear20'></div>";
-        }
-      ?>
+      <?php if(isset($updateCustomers)) { ?>
+      <div class="modal-thanhtoan" id="modal-thanhtoan" onclick="addClassFunc()">
+        <div class="hinhthuc-thanhtoan">
+          <div class="close-act"></div>
+          <?php echo $updateCustomers ?>
+          <p class="message_box">
+            <a href="profile.php">
+              <button type="button" class="btn btn-info message_box-btn">
+                trở về
+              </button>
+            </a>
+          </p>
+        </div>
+      </div>
+      <?php }else{ echo "<div class='clear20'></div>"; }?>
       <table class="table table-hover profile-tabel">
         <thead>
           <tr>
@@ -71,8 +79,8 @@
             </tr>
             <tr>
               <td colspan="3" align="center">
-                <a href="profile.php" style="margin-right:20px">Trở về</a>
-                <input type="submit" value="Cập nhật" name="save" class="capnhat-khach"><br>
+                <a href="profile.php" style="margin-right:20px" class="btn btn-warning shopleft-btn">Trở về</a>
+                <input type="submit" value="Cập nhật" name="save" class="btn btn-warning shopleft-btn"><br>
               </td>
             </tr>
           </form>
