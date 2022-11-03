@@ -52,7 +52,7 @@
               <label>Nội dung</label>
             </td>
             <td>
-                <textarea class="ckeditor" name="baiviet_noidung">
+              <textarea class="ckeditor" name="baiviet_noidung">
               <?php echo $result_post['baiviet_noidung'] ?>
               </textarea>
             </td>
@@ -73,9 +73,10 @@
               <label>URL</label>
             </td>
             <td>
-              <input type="text" placeholder="vi-du-gia-bao-duong-phen" class="medium" name="url"/>
+              <input value="<?php echo $result_post['tbl_url'] ?>" type="text" placeholder="vi-du-gia-bao-duong-phen"
+                class="medium" name="url" />
             </td>
-          </tr>      
+          </tr>
 
           <tr>
             <td>

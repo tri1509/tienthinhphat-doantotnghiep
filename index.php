@@ -27,23 +27,22 @@ include 'inc/header.php';
             while ($result = $showProduct->fetch_assoc()) {
         ?>
         <div class="sanpham-noibat-item border-item">
-          <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>.html" title="<?php echo $result['sanpham_name'] ?>"> <a
-              href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
-              title="<?php echo $result['sanpham_name'] ;?>">
-              <div class="home-product__item-img" style="background-image:url(./img/<?php echo $result['hinh'] ?>);">
+          <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
+            title="<?php echo $result['sanpham_name'] ;?>">
+            <div class="home-product__item-img" style="background-image:url(./img/<?php echo $result['hinh'] ?>);">
+            </div>
+            <div class="ct-item-pro">
+              <p class="bold item-name"><?php echo $result['sanpham_name'] ?></p>
+              <div class="clear10"></div>
+              <div class="flex-bw">
+                <p class="old-pri"><?php echo number_format($result['sanpham_gia']) . " đ"; ?></p>
+                <p class="new-pri bold"><?php echo number_format($result['sanpham_giakhuyenmai']) . " đ"; ?></p>
               </div>
-              <div class="ct-item-pro">
-                <p class="bold item-name"><?php echo $result['sanpham_name'] ?></p>
-                <div class="clear10"></div>
-                <div class="flex-bw">
-                  <p class="old-pri"><?php echo number_format($result['sanpham_gia']) . " đ"; ?></p>
-                  <p class="new-pri bold"><?php echo number_format($result['sanpham_giakhuyenmai']) . " đ"; ?></p>
-                </div>
-                <div class="clear10"></div>
-                <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
-                  class="addtocart" title="<?php echo $result['sanpham_name'] ?>">Xem ngay</a>
-              </div>
-            </a>
+              <div class="clear10"></div>
+              <a href="chi-tiet/<?php echo $result['sanpham_id'] ?>/<?php echo $result['sanpham_url'] ?>.html"
+                class="addtocart" title="<?php echo $result['sanpham_name'] ?>">Xem ngay</a>
+            </div>
+          </a>
         </div>
         <?php } } ?>
       </div>

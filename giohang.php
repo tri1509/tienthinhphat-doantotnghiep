@@ -90,6 +90,8 @@ include 'inc/header-sp.php' ;?>
                     value="<?php echo $result['price'] ?>" />
                   <input data-id="<?php echo $result['cartId'] ?>" class="cart-sl" type="number" name="quantity"
                     value="<?php echo $result['quantity'] ?>" min="1" />
+                  <br class="show480">
+                  <div class="clear10 show480"></div>
                   <input class="btn btn-warning cart-up" type="submit" name="capnhat" value="Cập nhật" />
                 </form>
               </td>

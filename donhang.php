@@ -22,13 +22,19 @@
   <div class="main-breac">
     <div class="container">
       <span><a href="./" class="clblack">Trang chủ</a></span>
-      <span style="margin: 0 7px;"><i class="fas fa-angle-right"></i></span>
+      <span style="margin: 0 7px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" class="bi bi-chevron-right"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </span>
       <span class="clpink">Đơn hàng của bạn</span>
     </div>
   </div>
   <?php
     if($check_order) {
-    ?>
+  ?>
   <div class="main-wraper">
     <div class="clear20"></div>
     <div class="container">
@@ -48,13 +54,13 @@
               <th>Huỷ đơn</th>
             </tr>
             <?php
-						$customer_id = Session::get('customer_id');
-                        $get_cart_ordered = $ct -> get_cart_ordered($customer_id);
-                        if($get_cart_ordered){
-                            $i = 0;
-                        while($result = $get_cart_ordered -> fetch_assoc()){
-                            $i ++ ;
-                            $total = $result['price'] * $result['quantity'];
+              $customer_id = Session::get('customer_id');
+              $get_cart_ordered = $ct -> get_cart_ordered($customer_id);
+              if($get_cart_ordered){
+                  $i = 0;
+              while($result = $get_cart_ordered -> fetch_assoc()){
+                  $i ++ ;
+                  $total = $result['price'] * $result['quantity'];
 						?>
             <tr>
               <td><?php echo $i ?></td>
@@ -120,13 +126,13 @@
       </div>
     </div>
   </div>
-
   <?php }else{ ?>
-
   <div class="main-wraper">
     <div class="clear20"></div>
     <div class="container">
-      Bạn chưa đặt hàng, mời bạn về trang chủ để mua sản phẩm.
+      <p class="bold">
+        Bạn chưa đặt hàng, mời bạn về trang chủ để mua sản phẩm
+      </p>
       <div class="clear40"></div>
       <div class="shopping">
         <div class="shopleft">

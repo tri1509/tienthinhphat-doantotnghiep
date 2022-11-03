@@ -354,7 +354,8 @@ header("Cache-Control: max-age=2592000");
               while ($result = $show_brand->fetch_assoc()) {
             ?>
             <li>
-              <a href="san-pham-theo-thuong-hieu/<?php echo $result['brand_id'] ?>.html">
+              <a
+                href="san-pham-theo-thuong-hieu/<?php echo $result['brand_id'] ?>-<?php echo $result['brand_url'] ?>.html">
                 <?php echo $result['brand_name'] ?>
               </a>
             </li>

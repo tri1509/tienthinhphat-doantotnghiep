@@ -68,7 +68,7 @@ include 'inc/sale.php';
             </p>
           </div>
         </div>
-        <?php } else {echo "<div class='clear20'></div>";} ?>
+        <?php } ?>
         <div class="col-12">
           <?php
             $get_product_details = $product->get_details($id);
@@ -119,36 +119,49 @@ include 'inc/sale.php';
             </div>
             <div class="clear20 show767"></div>
             <div class="col-md-6 col-sm-12 col-12 detail">
-              <div class="details">
-                <h3 class="nomargin bold clred"><?php echo $result_detils['sanpham_name'] ?></h3>
-                <div class="clear10"></div>
-                <p> <span>Thương hiệu:</span>
-                  <span class="bold">
-                    <?php echo $result_detils['brand_name'] ?>
-                  </span> | <span>Tình trạng: </span>
-                  <span class="bold">
-                    <?php $tinhtrang = $result_detils['sanpham_soluong'];
-                      if ($tinhtrang > 0) {
-                        echo "Còn hàng";
-                      } else {
-                        echo "Đã bán hết";
-                      }; ?>
-                  </span>
-                </p>
-                <div class="clear10"></div>
+              <h3 class="nomargin bold clred"><?php echo $result_detils['sanpham_name'] ?></h3>
+              <div class="clear10"></div>
+              <p><span>Thương hiệu:</span>
+                <span class="bold">
+                  <?php echo $result_detils['brand_name'] ?>
+                </span> | <span>Tình trạng: </span>
+                <span class="bold">
+                  <?php 
+                    $tinhtrang = $result_detils['sanpham_soluong'];
+                    if ($tinhtrang > 0) { echo "Còn hàng";} else { echo "Đã bán hết";}; 
+                  ?>
+                </span>
+              </p>
+              <div class="clear10"></div>
+              <div class="area_order">
                 <div class="flex">
-                  <h3 class="nomargin bold clred gia-sp">
-                    <?php echo number_format($result_detils['sanpham_giakhuyenmai']) . " đ"; ?><span
-                      class="donvi"></span>
-                  </h3>
-                  <p class="old-pri"><?php echo number_format($result_detils['sanpham_gia']) . " đ"; ?></p>
+                  <form action="" method="post">
+                    <h3 class="nomargin bold clred gia-sp" id="gia-sp">
+                      <?php echo number_format($result_detils['sanpham_giakhuyenmai']) . " ₫"; ?>
+                    </h3>
+                  </form>
+                  <p class="old-pri"><?php echo number_format($result_detils['sanpham_gia']) . " ₫"; ?></p>
                 </div>
-                <hr>
                 <div class="clear20"></div>
+                <div class="area_promotion zero">
+                  <div class="prohead bold">Ưu đãi Khuyến mãi</div>
+                  <div class="infopr">
+                    <p>Freeship đơn hàng từ 200.000 đ</p>
+                  </div>
+                </div>
                 <form action="" method="post">
                   <div class="thanhtoan">
-                    <div class="soluong">
-                      <span>Số lượng:</span><input type="number" class="center" name="quantity" min="1" value="1">
+                    <div class="soluong bold">
+                      <span>Số lượng:</span>
+                      <input data-id="<?php echo $result_detils['sanpham_giakhuyenmai'] ?>" type="number" class="center"
+                        name="quantity" min="1" value="1" max="<?php echo $result_detils['sanpham_soluong'] ?>">
+                    </div>
+                    <div class="clear20"></div>
+                    <div class="soluong bold">
+                      <span>Thanh toán:</span>
+                      <strong class="bold clred gia-sp" id="thanh-toan">
+                        <?php echo number_format($result_detils['sanpham_giakhuyenmai']) . " ₫"; ?>
+                      </strong>
                     </div>
                     <div class="muahang but-buy">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-basket3-fill"
@@ -167,27 +180,26 @@ include 'inc/sale.php';
                     Tư vấn & đặt hàng: <span class="clred">(028)36 221 286</span>
                   </p>
                 </div>
-                <div class="clear20"></div>
-                <?php echo $result_detils['sanpham_chitiet'] ?>
               </div>
+              <div class="clear20"></div>
             </div>
           </div>
-          <div class="clear40"></div>
-          <div class="container">
-            <div class="clear20"></div>
+          <div class="container sanpham_chitiet">
+            <h1 class="text-danger">Thông tin sản phẩm</h1>
+            <?php echo $result_detils['sanpham_chitiet'] ?>
             <?php echo $result_detils['sanpham_mota'] ?>
           </div>
-          <?php }}else { header('Location:404.php');} ?>
+          <?php }} else { header('Location:404.php');} ?>
 
           <div class="clear20"></div>
-          <p class="tag-p">
+          <!-- <p class="tag-p">
             <span><i class="fas fa-tag"></i> Tag: </span>
             <a href="#">Tag 1,</a>
             <a href="#">Tag 2,</a>
             <a href="#">Tag 3,</a>
             <a href="#">Tag 4,</a>
             <a href="#">Tag 5</a>
-          </p>
+          </p> -->
           <div class="clear40"></div>
           <div class="pro-relative">
             <div class="tit-pr">

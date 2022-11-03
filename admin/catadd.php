@@ -9,29 +9,28 @@
 	}
 ?>
 <?php  ?>
-        <div class="grid_10">
-            <div class="box round first grid">
-                <h2>Thêm danh mục</h2>
-                <?php 
-                if(isset($insertCat)){echo $insertCat;};
-                ?>
-               <div class="block copyblock"> 
-                 <form action="catadd.php" method="post">
-                    <table class="form">					
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Thêm danh mục" class="medium" name="catName" />
-                            </td>
-                        </tr>
-						<tr> 
-                            <td>
-                                <input type="submit" name="submit" Value="Thêm sản phẩm" />
-                            </td>
-                        </tr>
-                    </table>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="grid_10">
+  <div class="box round first grid">
+    <h2>Thêm danh mục</h2>
+    <?php 
+      if(isset($insertCat)){echo $insertCat;};
+    ?>
+    <div class="block copyblock">
+      <form action="catadd.php" method="post">
+        <table class="form">
+          <tr>
+            <td>
+              <input type="text" placeholder="Thêm danh mục" class="medium" name="catName" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="submit" name="submit" Value="Thêm sản phẩm" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
 <?php include 'inc/footer.php';?>
-<!-- localhost/shopmvc/admin/catadd.php -->

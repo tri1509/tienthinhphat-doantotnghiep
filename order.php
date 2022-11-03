@@ -5,11 +5,50 @@
 ?>
 <?php
 	if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-		$insertCustomer = $cs->insert_customer_order($_POST);
-		$customer_id = Session::get('customer_id');
-		$insertOrder = $ct -> insertOrder_offline($customer_id);
-		$delCart = $ct -> del_all_data_cart();
-		header('Location:success.html');
+    $error = array();
+    $alert = array();
+    if(empty($_POST['name'])) {
+      $error['name'] = "Không được để trống tên đăng nhập";
+    }else{
+      $name = $_POST['name'];
+    }
+    if(empty($_POST['zipcode'])) {
+      $error['phone'] = "Không được để trống số điện thoại";
+    }else{
+      $phone = $_POST['zipcode'];
+    }
+    if(empty($_POST['address'])) {
+      $error['address'] = "Bạn vui lòng điền địa chỉ";
+    }else{
+      $address = $_POST['address'];
+    }
+    if(!empty($_POST['password'])) {
+      $password = $_POST['password'];
+    }
+    if(empty($_POST['email'])) {
+      $error['email'] = "Không được để trống email";
+    }else{
+      $pattern = '/^[A-Za-z0-9_.]{2,32}@([a-zA-Z0-9]{2,12})(.[a-zA-Z]{2,12})+$/';
+      if(!preg_match($pattern,$_POST['email'])){
+        $error['email'] = "email không đúng định dạng";
+      }else{
+        $email = $_POST['email'];
+      }
+    }
+    if(empty($error)){
+      $data = array(
+        'name' => $name,
+        'email' => $email,
+        'password' => $password,
+        'address' => $address,
+        'phone' => $phone,
+      );
+      $insertCustomer = $cs->insert_customer_order($_POST);
+      $customer_id = Session::get('customer_id');
+      $insertOrder = $ct -> insertOrder_offline($customer_id);
+      $delCart = $ct -> del_all_data_cart();
+      header('Location:success.html');
+    }
 	}
 	
 	if(isset($_GET['orderid']) && $_GET['orderid']=='order'){
@@ -59,27 +98,25 @@
 						if($get_customer) {
 							while($result = $get_customer -> fetch_assoc()){
 						?>
-              <div class="form-row clearfix">
-                <div class="form-col fl-left">
-                  <label for="fullname">Họ tên</label>
-                  <input readonly="readonly" type="text" name="name" id="fullname"
-                    value="<?php echo $result['name'] ?>">
-                </div>
-                <div class="form-col fl-right">
-                  <label for="email">Email</label>
-                  <input readonly="readonly" type="email" name="email" id="email"
-                    value="<?php echo $result['email'] ?>">
-                </div>
+              <div class="form-label-group">
+                <label for="fullname">Họ tên</label>
+                <input class="form-control" readonly="readonly" type="text" name="name" id="fullname"
+                  value="<?php echo $result['name'] ?>">
+              </div>
+              <div class="form-label-group">
+                <label for="email">Email</label>
+                <input class="form-control" readonly="readonly" type="email" name="email" id="email"
+                  value="<?php echo $result['email'] ?>">
               </div>
               <div class="form-row clearfix">
-                <div class="form-col fl-left">
+                <div class="form-label-group">
                   <label for="address">Địa chỉ</label>
-                  <input readonly="readonly" type="text" name="address" id="address"
+                  <input class="form-control" readonly="readonly" type="text" name="address" id="address"
                     value="<?php echo $result['address'] ?>">
                 </div>
-                <div class="form-col fl-right">
+                <div class="form-label-group">
                   <label for="phone">Số điện thoại</label>
-                  <input readonly="readonly" type="tel" name="zipcode" id="phone"
+                  <input class="form-control" readonly="readonly" type="tel" name="zipcode" id="phone"
                     value="<?php echo $result['zipcode'] ?>">
                 </div>
               </div>
@@ -145,36 +182,64 @@
 						{echo $insertCustomer;}
 					else{
 						echo "<div class='clear20'></div>";
-						} 
-                        ?>
+						} ?>
           <div class="section-detail">
             <form method="POST" action="" name="form-checkout">
-              <div class="form-row clearfix">
-                <div class="form-col fl-left">
-                  <label for="fullname">Họ tên</label>
-                  <input type="text" name="name" id="fullname" required>
-                </div>
-                <div class="form-col fl-right">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" id="email" required>
-                </div>
+              <div class="form-label-group">
+                <label for="fullname">Họ tên</label>
+                <input value="<?php if(!empty($name)){echo $name;}?>" class="form-control" type="text" name="name"
+                  id="fullname">
+                <span style="color:red;font-size:12px">
+                  <?php
+                      if(!empty($error['name'])) {
+                        echo $error['name'];
+                      }else{echo "<div class='clear10'></div>";} 
+                    ?>
+                </span>
               </div>
-              <div class="form-row clearfix">
-                <div class="form-col fl-left">
-                  <label for="address">Địa chỉ</label>
-                  <input type="text" name="address" id="address" required>
-                  <i class="i_color"># Bạn ghi rõ thành phố, quận/ huyện để shop tiện giao hàng nhé !!! Tránh trường hợp
-                    giao hàng sai địa chỉ !!!</i>
-                </div>
-                <div class="form-col fl-right">
-                  <label for="phone">Số điện thoại</label>
-                  <input type="tel" name="zipcode" id="phone" required>
-                </div>
+              <div class="form-label-group">
+                <label for="email">Email</label>
+                <input value="<?php if(!empty($email)){echo $email;}?>" class="form-control" type="email" name="email"
+                  id="email">
+                <span style="color:red;font-size:12px">
+                  <?php
+                      if(!empty($error['email'])) {
+                        echo $error['email'];
+                      }else{echo "<div class='clear10'></div>";} 
+                    ?>
+                </span>
               </div>
-              <div class="form-row">
-                <div class="form-col">
+              <div class="form-label-group">
+                <label for="address">Địa chỉ</label>
+                <input value="<?php if(!empty($address)){echo $address;}?>" class="form-control" type="text"
+                  name="address" id="address">
+                <span style="color:red;font-size:12px">
+                  <?php
+                      if(!empty($error['address'])) {
+                        echo $error['address'];
+                      }else{echo "<div class='clear10'></div>";} 
+                    ?>
+                  <i class="i_color"># Bạn ghi rõ thành phố, quận/ huyện để shop tiện giao hàng nhé !!!
+                    Tránh
+                    trường hợp giao hàng sai địa chỉ !!!</i>
+                </span>
+              </div>
+              <div class="form-label-group">
+                <label for="phone">Số điện thoại</label>
+                <input value="<?php if(!empty($phone)){echo $phone;}?>" class="form-control" type="tel" name="zipcode"
+                  id="phone">
+                <span style="color:red;font-size:12px">
+                  <?php
+                      if(!empty($error['phone'])) {
+                        echo $error['phone'];
+                      }else{echo "<div class='clear10'></div>";} 
+                    ?>
+                </span>
+              </div>
+              <div class="form-label-group">
+                <div class="form-label-group">
                   <label for="notes">Ghi chú</label>
-                  <textarea name="password" required></textarea>
+                  <textarea class="form-control" name="password"></textarea>
                 </div>
               </div>
           </div>

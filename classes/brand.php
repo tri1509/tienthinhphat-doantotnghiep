@@ -12,17 +12,19 @@
             $this->db = new Database();
             $this->fm = new Format();
         }
-        public function insert_brand($brand_name){
+        public function insert_brand($brand_name,$url){
             $brand_name = $this->fm->validation($brand_name);
+            $brand_url = $this->fm->validation($url);
             $brand_name = mysqli_real_escape_string($this->db->link,$brand_name);
+            $brand_url = mysqli_real_escape_string($this->db->link,$url);
             if(empty($brand_name)) {
                 $alert = "<span class='notok'>Không để trống</span>";
                 return $alert;
             }else{
-                $query = "INSERT INTO tbl_brand(brand_name) VALUES('$brand_name')";
+                $query = "INSERT INTO tbl_brand(brand_name,brand_url) VALUES('$brand_name','$brand_url')";
                 $result = $this->db->insert($query);
                 if($result){
-                    $alert= "<span class='success'>Them thanh cong</span>";
+                    $alert= "<span class='success'>Thêm thành công</span>";
                     return $alert;
                 }else{
                     $alert= "<span class='ok'>That bai</span>";
@@ -51,15 +53,17 @@
             return $result;
         }
 
-        public function update_brand($brand_name,$id) {
+        public function update_brand($brand_name,$id,$url) {
             $brand_name = $this->fm->validation($brand_name);
+            $brand_url = $this->fm->validation($url);
             $brand_name = mysqli_real_escape_string($this->db->link,$brand_name);
+            $brand_url = mysqli_real_escape_string($this->db->link,$url);
             $id = mysqli_real_escape_string($this->db->link,$id);
             if(empty($brand_name)) {
                 $alert = "<span class='notok'>Sửa thất bại</span>";
                 return $alert;
             }else{
-                $query = "UPDATE tbl_brand SET brand_name = '$brand_name' WHERE brand_id='$id'";
+                $query = "UPDATE tbl_brand SET brand_name = '$brand_name', brand_url = '$brand_url' WHERE brand_id='$id'";
                 $result = $this->db->update($query);
                 if($result){
                     $alert= "<span class='success'>Đã cập nhật</span>";

@@ -45,7 +45,10 @@
             <td><img src="../img/<?php echo $resule['hinh'] ?>" alt="" width='100' height='100'></td>
             <td><?php echo $resule['category_id'] ?></td>
             <td><?php echo $resule['brand_id'] ?></td>
-            <td><?php echo $fm -> textShorten($resule['sanpham_chitiet'],50) ; ?></td>
+            <td><?php
+            $htmlspecialchars = $fm -> textShorten($resule['sanpham_chitiet'],80) ;
+            echo htmlspecialchars($htmlspecialchars);
+            ?></td>
             <td><a href="productedit.php?productid=<?php echo $resule['sanpham_id'] ?>">Chỉnh sửa</a> || <a
                 href="?productid=<?php echo $resule['sanpham_id'] ?>"
                 onclick="return confirm('Bạn có muốn xoá không?')">Xóa</a></td>

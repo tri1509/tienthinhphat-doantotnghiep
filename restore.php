@@ -31,17 +31,22 @@
                     <h5 class="color_login">Khôi phục mật khẩu</h5>
                     <div class="card-body py-5 px-md-5">
                       <?php 
-                          if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['check_phone'])) {
-                            $check_phoneCustomer = $cs->check_phone_customer($_POST);
-                            $check_phone = $_POST['phone_login'];
-                          }
-                        ?>
+                        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['check_phone'])) {
+                          $check_phone = $_POST['phone_login'];
+                          $check_phoneCustomer = $cs->check_phone_customer($_POST);
+                        }
+                      ?>
                       <div class="clear20"></div>
-                      <?php
-                        if(isset($check_phoneCustomer)){
-                          echo $check_phoneCustomer;
-                        }else{echo "<div class='clear20'></div>";}
-                        ?>
+                      <?php if(isset($check_phoneCustomer)){ ?>
+                      <div class="modal-thanhtoan" id="modal-thanhtoan" onclick="addClassFunc()">
+                        <div class="hinhthuc-thanhtoan">
+                          <div class="close-act"></div>
+                          <p class="message_box">
+                            <?php echo $check_phoneCustomer ;?>
+                          </p>
+                        </div>
+                      </div>
+                      <?php } ?>
                       <div class="information-wrapper">
                         <form action="" method="post">
                           <div class="form-label-group">

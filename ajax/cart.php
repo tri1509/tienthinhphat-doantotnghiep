@@ -7,3 +7,4 @@ $sub_total = $qty * $price;
     'sub_total' => number_format($sub_total)."đ",
   );
   echo json_encode($data);
+?>

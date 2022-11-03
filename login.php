@@ -41,15 +41,13 @@
                   <div class="card">
                     <div class="clear20"></div>
                     <h5 class="color_login">ĐĂNG NHẬP</h5>
-                    <div class="card-body py-5 px-md-5">
-                      <?php
-                          if(isset($loginCustomer))
-                          {echo $loginCustomer;}
+                    <?php
+                      if(isset($loginCustomer))
+                        {echo $loginCustomer;}
                       else{
-                          echo "<div class='clear20'></div>
-                          ";
-                          } 
-                        ?>
+                        echo "<div class='clear20'></div>";} 
+                    ?>
+                    <div class="card-body py-5 px-md-5">
                       <div class="information-wrapper">
                         <form action="" method="post">
                           <div class="form-label-group">
@@ -87,7 +85,6 @@
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -97,4 +94,4 @@
     </div>
   </div>
 </div>
-<?php 	include 'inc/footer.php';?>
+<?php include 'inc/footer.php';?>
