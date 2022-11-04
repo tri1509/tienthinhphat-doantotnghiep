@@ -34,14 +34,36 @@
         <div class="clear20 show767"></div>
         <div class="col-md-3 col-sm-4">
           <h4 class="tit-ft">CHÍNH SÁCH</h4>
-          <p class="footer_cs"><a href="bai-viet/11-.html" title="Chinh-sach-bao-mat">- Chính sách khiếu nại.</a></p>
-          <p class="footer_cs"><a href="bai-viet/12-.html" title="Chinh-sach-thanh-toan">- Chính sách thanh toán.</a>
+          <p class="footer_cs">
+            <a href="bai-viet/11-chinh-sach-khieu-nai.html" title="Chinh-sach-bao-mat">
+              - Chính sách khiếu nại.
+            </a>
           </p>
-          <p class="footer_cs"><a href="bai-viet/13-.html" title="chinh-sach-mua-hang">- Chính sách mua hàng.</a></p>
-          <p class="footer_cs"><a href="bai-viet/14-.html" title="chinh-sach-bao-mat.">- Chính sách bảo mật.</a></p>
-          <p class="footer_cs"><a href="bai-viet/15-.html" title="chinh-sach-van-chuyen.">- Chính sách vận chuyển.</a>
+          <p class="footer_cs">
+            <a href="bai-viet/12-chinh-sach-thanh-toan.html" title="Chinh-sach-thanh-toan">
+              - Chính sách thanh toán.
+            </a>
           </p>
-          <p class="footer_cs"><a href="bai-viet/16-.html" title="chinh-sach-doi-tra.">- Chính sách đổi trả.</a></p>
+          <p class="footer_cs">
+            <a href="bai-viet/13-chinh-sach-mua-hang.html" title="chinh-sach-mua-hang">
+              - Chính sách mua hàng.
+            </a>
+          </p>
+          <p class="footer_cs">
+            <a href="bai-viet/14-chinh-sach-bao-mat.html" title="chinh-sach-bao-mat.">
+              - Chính sách bảo mật.
+            </a>
+          </p>
+          <p class="footer_cs">
+            <a href="bai-viet/15-chinh-sach-van-chuyen.html" title="chinh-sach-van-chuyen.">
+              - Chính sách vận chuyển.
+            </a>
+          </p>
+          <p class="footer_cs">
+            <a href="bai-viet/16-chinh-sach-doi-tra.html" title="chinh-sach-doi-tra">
+              - Chính sách đổi trả.
+            </a>
+          </p>
           <div class="clear10"></div>
           </p>
         </div>
@@ -80,12 +102,10 @@
       d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
   </svg>
 </div>
-
 <script src="js/lightslider.js"></script>
 <script src="js/jquery.nivo.slider.pack.js"></script>
 <script src="js/main.js" type="text/javascript"></script>
 <script src="js/ajax.js" type="text/javascript"></script>
-
 <!--  slick -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -130,50 +150,6 @@ $("body").hotline({
   position: "fixed",
 });
 </script>
-<!-- <script>
-  var link_image =
-  "https://lennguyenmedia.com/wp-content/uploads/2021/10/diem-hen-du-lich-anh-dai-dien.jpg";
-  var link = "https://namdinhweb.net/";
-  var icon_close = "https://namdinhweb.net/wp-content/uploads/2018/07/0-15.png";
-  function closePopupBeta() {
-    document.getElementById("popup_banner_beta").remove(),
-      setCookie("showPopupBannerBeta", 1, 1);
-  }
-
-  function setCookie(e, n, o) {
-    var t = "";
-    if (o) {
-      var i = new Date();
-      i.setTime(i.getTime() + 60 * 1000), (t = "; expires=" + i.toUTCString());
-    }
-    document.cookie = e + "=" + (n || "") + t + "; path=/";
-  }
-  function getCookie(e) {
-    for (
-      var n = e + "=", o = document.cookie.split(";"), t = 0;
-      t < o.length;
-      t++
-    ) {
-      for (var i = o[t]; " " == i.charAt(0); ) i = i.substring(1, i.length);
-      if (0 == i.indexOf(n)) return i.substring(n.length, i.length);
-    }
-    return null;
-  }
-  1 != getCookie("showPopupBannerBeta") &&
-    document.addEventListener("DOMContentLoaded", function (event) {
-      var e =
-        '<div id="popup_banner_beta"><div onclick="closePopupBeta()" class="mask_popup_banner_beta"></div><div class="content_popup_banner_beta"><img src="' +
-        icon_close +
-        '" class="close_icon" onclick="closePopupBeta()" alt="Close Image"><a href="' +
-        link +
-        '"><img src="' +
-        link_image +
-        '" alt="Image Popup Banner" width="500" height="auto"/></a></div></div>';
-      setTimeout(function () {
-        document.body.innerHTML += e;
-      }, 3000);
-    });
-</script> -->
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSKPTHQ" height="0" width="0"
     style="display:none;visibility:hidden"></iframe></noscript>

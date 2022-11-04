@@ -410,7 +410,7 @@ li {
   padding: 0 10px !important;
   letter-spacing: 1px;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   position: relative;
 }
@@ -419,6 +419,7 @@ li {
 .bottom-item-child a:hover,
 .bottom-item-child a.active {
   color: var(--red--nhat);
+  transform: translateX(2px);
 }
 
 .bottom-item-child a {
@@ -427,7 +428,7 @@ li {
   font-size: 1.5rem;
   transition: 0.1s;
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 0.6px;
 }
 .grid {
   width: 100%;
@@ -522,12 +523,20 @@ li {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 998;
+  z-index: 990;
+  opacity: 1;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.modal-thanhtoan.hide {
-  display: none !important;
+.modal-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 990;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .hinhthuc-thanhtoan {
@@ -539,6 +548,16 @@ li {
   padding: 10px 20px;
   z-index: 999;
   border-radius: 10px;
+  background-color: #ffff;
+  transform: translate(-50%, -50%);
+}
+
+div.cookie-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  z-index: 999;
   background-color: #ffff;
   transform: translate(-50%, -50%);
 }
@@ -3188,57 +3207,6 @@ footer p a:hover {
 .mySlidesnext:hover {
   transform: scale(1.1);
   background-color: rgba(212, 212, 212, 0.5);
-}
-
-/* popup */
-
-#popup_banner_beta {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 99999;
-  top: 0;
-  left: 0;
-}
-.mask_popup_banner_beta {
-  background: rgba(0, 0, 0, 0.38);
-  cursor: pointer;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  z-index: 99999;
-  left: 0;
-}
-.content_popup_banner_beta {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 999999;
-  transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-}
-.close_icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20px;
-  cursor: pointer;
-}
-@media only screen and (max-width: 480px) {
-  .content_popup_banner_beta {
-    width: 300px;
-  }
-  .content_popup_banner_beta a img:nth-of-type(1) {
-    width: 100%;
-  }
-  .close_icon {
-    top: -60px;
-    right: -20px;
-    width: 50px;
-  }
 }
 
 .area_order {

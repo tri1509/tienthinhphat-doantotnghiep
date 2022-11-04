@@ -25,6 +25,7 @@ header("Pragma: no-cache");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: max-age=2592000");
 ?>
+
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='vi'>
@@ -63,6 +64,24 @@ header("Cache-Control: max-age=2592000");
 </head>
 
 <body>
+  <?php
+  if (session_id() === '')
+  session_start();
+  if( isset( $_SESSION['popup'] ) ){
+      $_SESSION['popup'] += 1;
+  }else{
+      $_SESSION['popup'] = 1;
+  }
+  $luotvao = $_SESSION['popup'];
+  if ($luotvao == '1') {
+  ?>
+  <div class="modal-popup" id="close-modal">
+    <div class="cookie-popup">
+      <div class="close-act" id="close-modal"></div>
+      <img src="./img/popup.jpg" alt="" width="300">
+    </div>
+  </div>
+  <?php } ?>
   <div class="hide991 header-pc">
     <div class="header-dc">
       <div class="wide-flex-left">
@@ -70,7 +89,6 @@ header("Cache-Control: max-age=2592000");
       </div>
       <div class="wide-flex-right">
         HOTLINE: 0876.88.39.39 | Mở Cửa : 8:00 - 18:00 T2-T7
-
       </div>
     </div>
     <div class="header">
@@ -180,11 +198,11 @@ header("Cache-Control: max-age=2592000");
                       <div class="bottom-child">
                         <ul class="bottom-list-child">
                           <?php 
-                      $id_lv2 = $result['brand_id'];
-                      $show_brand_lv2 = $brand->show_brand_lv2($id_lv2);
-                      if ($show_brand_lv2) {
-                        while ($result_lv2 = $show_brand_lv2->fetch_assoc()) {
-                      ?>
+                            $id_lv2 = $result['brand_id'];
+                            $show_brand_lv2 = $brand->show_brand_lv2($id_lv2);
+                            if ($show_brand_lv2) {
+                              while ($result_lv2 = $show_brand_lv2->fetch_assoc()) {
+                          ?>
                           <li class="bottom-item-child">
                             <a
                               href="san-pham-theo-thuong-hieu/<?php echo $result_lv2['brand_id'] ?>/<?php echo $result_lv2['brand_id_lv2'] ?>-<?php echo $result_lv2['url'] ?>.html">

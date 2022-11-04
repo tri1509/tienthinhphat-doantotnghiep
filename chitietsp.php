@@ -53,9 +53,9 @@ include 'inc/sale.php';
     <div class="container">
       <div class="row flex-order">
         <?php if (isset($addtoCart)) { ?>
-        <div class="modal-thanhtoan" id="modal-thanhtoan" onclick="addClassFunc()">
+        <div class="modal-thanhtoan" id="close-modal">
           <div class="hinhthuc-thanhtoan">
-            <div class="close-act"></div>
+            <div class="close-act" id="close-modal"></div>
             <?php
             echo $addtoCart ;
             ?>

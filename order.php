@@ -251,7 +251,7 @@
           <div class="section-detail">
             <table class="shop-table">
               <thead>
-                <tr>
+                <tr class="bold">
                   <td>Sản phẩm</td>
                   <td>Tổng</td>
                 </tr>
@@ -276,8 +276,14 @@
               </tbody>
               <tfoot>
                 <tr class="order-total">
-                  <td>Tổng đơn hàng:</td>
-                  <td><strong class="total-price"><?php echo number_format($gtotal).' ₫'; ?></strong></td>
+                  <td><span class="bold">Tổng đơn hàng:</span></td>
+                  <td>
+                    <strong class="total-price">
+                      <span class="bold">
+                        <?php echo number_format($gtotal).' ₫'; ?>
+                      </span>
+                    </strong>
+                  </td>
                 </tr>
               </tfoot>
             </table>

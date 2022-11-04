@@ -1,4 +1,13 @@
 $(document).ready(function () {
+  setTimeout(function () {
+    $(".modal-popup").fadeIn(500);
+  }, 3000);
+  $("#close-modal").click(function () {
+    $(".modal-popup").fadeOut(500);
+  });
+  $("#close-modal").click(function () {
+    $(".modal-thanhtoan").fadeOut(500);
+  });
   $(".sp-cn").hide();
   $(".sp-sn").click(function () {
     $(this).hide();
@@ -246,9 +255,4 @@ function showSlides(n) {
   }
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
-}
-
-function addClassFunc() {
-  var result = document.getElementById("modal-thanhtoan");
-  result.classList.add("hide");
 }
