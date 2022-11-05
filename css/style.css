@@ -314,6 +314,7 @@ li {
   border-radius: 20px;
   outline: none;
   transition: 0.2s;
+  z-index: 20;
   background: var(--red--nhat);
 }
 
@@ -326,6 +327,7 @@ li {
   position: absolute;
   top: 4px;
   right: 40px;
+  z-index: 21;
 }
 
 @media screen and (min-width: 991px) and (max-width: 1294.98px) {
@@ -641,11 +643,9 @@ div.cookie-popup {
   box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-.phuongthuc {
-  transform: translateY(300px);
-}
 .profile-tabel {
   width: 800px;
+  margin: 0 auto;
 }
 .profile-tabel tr {
   height: 50px;
@@ -3167,19 +3167,15 @@ footer p a:hover {
 .demo {
   opacity: 0.8;
   cursor: pointer;
-  margin: 0 1px;
+  margin: 0 3px;
   border-radius: 5px;
-  border: 2px solid transparent;
+  border: 2px dotted var(--red--nhat);
+  z-index: 30;
 }
 
-.demo.active,
 .demo:hover {
   opacity: 1;
   border: 2px solid var(--red--nhat);
-}
-
-.slider-detail {
-  position: relative;
 }
 
 .mySlidesprev,

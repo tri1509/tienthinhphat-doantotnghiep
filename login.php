@@ -53,7 +53,7 @@
                           <div class="form-label-group">
                             <label for="inputUserame">Tên Đăng Nhập & Tài Khoản</label>
                             <input type="text" id="inputUserame" name="email" class="form-control"
-                              placeholder="Tên Đăng Nhập & Tài Khoản" required autofocus>
+                              value="<?php if(!empty($_POST['email'])){ echo $_POST['email'] ; } ?>" required autofocus>
                           </div>
                           <div class="form-label-group position-relative">
                             <label for="inputPassword">Password</label>

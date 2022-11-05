@@ -24,7 +24,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 }
 
 include 'inc/sale.php'; 
-?>
+
+if (isset($addtoCart)) { ?>
+<div class="modal-thanhtoan" id="close-modal">
+  <div class="hinhthuc-thanhtoan">
+    <div class="close-act" id="close-modal"></div>
+    <?php echo $addtoCart ;?>
+    <p class="message_box">
+      <a href="giohang.html">
+        <button type="button" class="btn btn-info message_box-btn">
+          xem giỏ hàng
+        </button>
+      </a>
+    </p>
+  </div>
+</div>
+<?php } ?>
 
 <section>
   <div class="main-breac">
@@ -52,23 +67,6 @@ include 'inc/sale.php';
     <div class="clear20"></div>
     <div class="container">
       <div class="row flex-order">
-        <?php if (isset($addtoCart)) { ?>
-        <div class="modal-thanhtoan" id="close-modal">
-          <div class="hinhthuc-thanhtoan">
-            <div class="close-act" id="close-modal"></div>
-            <?php
-            echo $addtoCart ;
-            ?>
-            <p class="message_box">
-              <a href="giohang.html">
-                <button type="button" class="btn btn-info message_box-btn">
-                  xem giỏ hàng
-                </button>
-              </a>
-            </p>
-          </div>
-        </div>
-        <?php } ?>
         <div class="col-12">
           <?php
             $get_product_details = $product->get_details($id);
@@ -84,9 +82,11 @@ include 'inc/sale.php';
                   <?php
                     $get_product_img = $product->get_img($img_id);
                     if ($get_product_img) {
+                      $t = 0 ;
                       while ($result_img = $get_product_img->fetch_assoc()) {
+                        $t ++;
                   ?>
-                  <div class="mySlides">
+                  <div class="mySlides tabcontent" id="<?php echo $t ?>">
                     <div class="home-product__item-img"
                       style="background-image:url(./img/<?php echo $result_img['hinh'] ;?>);">
                     </div>
@@ -108,7 +108,7 @@ include 'inc/sale.php';
                           $i++;
                     ?>
                     <div class="demo">
-                      <div onclick="currentSlide(<?php echo $i ?>)" class="home-product__item-img"
+                      <div onmouseover="openImg(event, '<?php echo $i ?>')" class="home-product__item-img tablinks"
                         style="background-image:url(./img/<?php echo $result_img['hinh'] ;?>);">
                       </div>
                     </div>

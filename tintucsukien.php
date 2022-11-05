@@ -17,7 +17,6 @@ include 'inc/header.php';include 'inc/sale.php';?>
   <div class="main-wraper ">
     <div class="cart_background">
       <div class="row">
-        <?php  include 'inc/danhmuc.php';?>
         <div class="col-12">
           <div id="right">
             <h1 class="text-center">Tin Tức & Sự Kiện</h1>
@@ -116,13 +115,13 @@ include 'inc/header.php';include 'inc/sale.php';?>
               if ($sp_rand) {
                 while ($result_rand= $sp_rand->fetch_assoc()) {
               ?>
-          <div class="img-item border-item">
+          <div class="img-item">
             <div class="home-product__item-img"
               style="background-image:url(./img/<?php echo $result_rand['hinh']; ?>);"></div>
             <div class="ct-item-pro">
               <p class="bold item-name"><?php echo $result_rand['sanpham_name']; ?></p>
               <div class="clear10"></div>
-              <div class="flex-bw">
+              <div class="block">
                 <p class="old-pri">
                   <?php echo number_format($result_rand['sanpham_gia']) . " đ"; ?></p>
                 <p class="new-pri bold">

@@ -3,14 +3,12 @@
     include 'inc/header.php'; 
     include 'inc/sale.php';
 
-    $login_check = Session::get('customer_login');
-	if($login_check ==false) {
+  $login_check = Session::get('customer_login');
+	if($login_check == false) {
 		header('Location:login.php');
 	}
-?>
 
-<?php
-    $id = Session::get('customer_id');
+  $id = Session::get('customer_id');
 	if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save'])) {
 		$updateCustomers = $cs -> update_Customers($_POST,$id);
 	}
@@ -25,13 +23,13 @@
       </span>
       <span class="clpink">Thông tin khách hàng</span><br>
       <?php if(isset($updateCustomers)) { ?>
-      <div class="modal-thanhtoan" id="modal-thanhtoan" onclick="addClassFunc()">
+      <div class="modal-thanhtoan" id="close-modal">
         <div class="hinhthuc-thanhtoan">
-          <div class="close-act"></div>
+          <div class="close-act" id="close-modal"></div>
           <?php echo $updateCustomers ?>
           <p class="message_box">
             <a href="profile.php">
-              <button type="button" class="btn btn-info message_box-btn">
+              <button type="button" class="btn btn-info message_box-btn bold">
                 trở về
               </button>
             </a>

@@ -127,7 +127,7 @@
                 $alert .= "<a href='restorepass.php?id=$mahoa_id' class='text-success'>Mời bạn đổi password <span class='text-info bold'>tại đây</span></a>";
                 return $alert ;
             }else{
-                $alert = "<span class='notok'>Số điện thoại không khớp, mời bạn kiểu tra lại !</span>";
+                $alert = "<span class='notok'>Số điện thoại không khớp, mời bạn kiểm tra lại !</span>";
                 return $alert ;
             }
         }

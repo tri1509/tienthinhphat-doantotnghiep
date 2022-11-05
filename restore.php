@@ -38,9 +38,9 @@
                       ?>
                       <div class="clear20"></div>
                       <?php if(isset($check_phoneCustomer)){ ?>
-                      <div class="modal-thanhtoan" id="modal-thanhtoan" onclick="addClassFunc()">
+                      <div class="modal-thanhtoan" id="close-modal">
                         <div class="hinhthuc-thanhtoan">
-                          <div class="close-act"></div>
+                          <div class="close-act" id="close-modal"></div>
                           <p class="message_box">
                             <?php echo $check_phoneCustomer ;?>
                           </p>
@@ -52,7 +52,8 @@
                           <div class="form-label-group">
                             <label for="inputUserame">Số điện thoại đăng ký</label>
                             <input type="text" name="phone_login" class="form-control"
-                              placeholder="Số điên thoại đăng ký" required autofocus>
+                              value="<?php if(!empty($_POST['phone_login'])){ echo $_POST['phone_login'] ; } ?>"
+                              required autofocus>
                           </div>
                           <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Xác nhận"
                             name="check_phone" style="border-radius: 10px;margin-top:30px">
