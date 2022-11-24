@@ -135,8 +135,7 @@
         public function restore_Pass($data,$id) {
             $restorepass = mysqli_real_escape_string($this->db->link, $data['password']);
             $query = "UPDATE tbl_customer SET password = '$restorepass'
-            WHERE md5(id)='$id';
-            ";
+            WHERE md5(id)='$id' ";
             $result = $this->db->update($query);
             if($result) {
                 $alert = "<span class='ok'>Đổi mật khẩu thành công</span>";

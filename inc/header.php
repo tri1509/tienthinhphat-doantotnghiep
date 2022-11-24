@@ -54,7 +54,6 @@ header("Cache-Control: max-age=2592000");
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta content='index,follow,all' name='robots' />
   <meta property="og:image" content="https://salanest.com/img/salanest.png" />
-
   <link rel="shortcut icon" href="./img/ttp.webp" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/lightslider.css" />
@@ -103,7 +102,6 @@ header("Cache-Control: max-age=2592000");
                 $login_check = Session::get('customer_login');
                   if($login_check) {
               ?>
-
             <div class="header-contact-item-login">
               <a href='profile.html'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffff" class="bi bi-person-circle"

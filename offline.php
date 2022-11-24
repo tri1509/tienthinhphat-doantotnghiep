@@ -1,14 +1,14 @@
 <?php 
-   $title = "Kiểm tra giỏ hàng";
-   include 'inc/header.php' ;
-   include 'inc/sale.php' ;
+  $title = "Kiểm tra giỏ hàng";
+  include 'inc/header.php' ;
+  include 'inc/sale.php' ;
 
-   if(isset($_GET['orderid']) && $_GET['orderid']=='order'){
-   $customer_id = Session::get('customer_id');
-      $insertOrder = $ct -> insertOrder($customer_id);
-   $delCart = $ct -> del_all_data_cart();
-   header('Location:success.html');
-   }
+  if(isset($_GET['orderid']) && $_GET['orderid']=='order'){
+  $customer_id = Session::get('customer_id');
+    $insertOrder = $ct -> insertOrder($customer_id);
+  $delCart = $ct -> del_all_data_cart();
+  header('Location:success.html');
+  }
 ?>
 <section>
   <div class="container">
@@ -29,19 +29,19 @@
           </thead>
           <tbody>
             <?php
-               $get_product_cart = $ct -> get_product_cart();
-               $subTotal = 0;
-               $total = 0;
-               $gtotal = 0;
-               $qty = 0;
-               if($get_product_cart){
+              $get_product_cart = $ct -> get_product_cart();
+              $subTotal = 0;
+              $total = 0;
+              $gtotal = 0;
+              $qty = 0;
+              if($get_product_cart){
                   $i = 0;
                   while($result = $get_product_cart -> fetch_assoc()){
-                     $total = $result['price'] * $result['quantity'];
-                     $qty = $qty + $result['quantity'];
-                     $subTotal += $total ;
-                     $gtotal = $subTotal;
-                     $i++;
+                    $total = $result['price'] * $result['quantity'];
+                    $qty = $qty + $result['quantity'];
+                    $subTotal += $total ;
+                    $gtotal = $subTotal;
+                    $i++;
             ?>
             <tr>
               <th scope="row"><?php echo $i ?></th>
@@ -85,7 +85,7 @@
                   $get_customer = $cs -> show_customer($id);
                   if($get_customer) {
                         while($result = $get_customer -> fetch_assoc()){
-               ?>
+            ?>
             <tr>
               <th scope="row">1</th>
               <td>Tên khách hàng</td>

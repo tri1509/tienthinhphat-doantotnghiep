@@ -5,7 +5,6 @@
 ?>
 <?php
     class product {
-
         private $db;
         private $fm;
         public function __construct() {
@@ -170,7 +169,6 @@
             $result = $this->db->select($query);
             return $result;
         }
-        
         
         public function getproduct_feathered_10(){
             $query = "SELECT * FROM tbl_sanpham ORDER BY rand() LIMIT 10";

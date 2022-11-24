@@ -34,7 +34,7 @@ include 'inc/header.php';
             <div class="ct-item-pro">
               <p class="bold item-name"><?php echo $result['sanpham_name'] ?></p>
               <div class="clear10"></div>
-              <div class="flex-bw">
+              <div class="block">
                 <p class="old-pri"><?php echo number_format($result['sanpham_gia']) . " đ"; ?></p>
                 <p class="new-pri bold"><?php echo number_format($result['sanpham_giakhuyenmai']) . " đ"; ?></p>
               </div>

@@ -40,7 +40,6 @@
             return $result;
         }
 
-
         public function show_brand_lv2($id_lv2){
             $query = "SELECT * FROM tbl_brand_lv2 WHERE brand_id = '$id_lv2' ORDER BY brand_id_lv2 ASC";
             $result = $this->db->select($query);
@@ -75,7 +74,6 @@
                 }
             }
         }
-
         
         public function del_brand($id) {
             $query = "DELETE FROM tbl_brand WHERE brand_id = '$id'";
